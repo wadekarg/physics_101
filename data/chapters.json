@@ -1,3 +1,4 @@
+
 {
   "chapters": [
     {
@@ -559,7 +560,7 @@
           "funFacts": [
             "Newton's second law (F=ma) is arguably the most used equation in all of engineering. Every bridge, building, car, aircraft, and rocket is designed using this law to ensure that structures can withstand the forces they will experience.",
             "A 70 kg person standing on Earth's surface experiences a gravitational force of about 686 newtons (70 x 9.8). On Mars, where gravity is only 3.7 m/s^2, the same person would weigh just 259 newtons -- about 38% of their Earth weight -- while their mass stays the same.",
-            "The Space Shuttle's main engines and solid rocket boosters together produced about 30 million newtons of thrust at launch. With a total liftoff mass of about 2 million kg, F=ma gives an initial acceleration of roughly 15 m/s^2, or about 1.5g."
+            "The Space Shuttle's main engines and solid rocket boosters together produced about 30 million newtons of thrust at launch. With a total liftoff mass of about 2 million kg, the thrust-to-mass ratio is 15 m/s^2 — but gravity pulls back at 9.8 m/s^2, so the actual net upward acceleration at liftoff was roughly 5.2 m/s^2 (about 0.5g). The crew felt an apparent force of ~1.5g because they were being pushed upward while gravity still acted on them."
           ],
           "quiz": [
             {
@@ -1307,7 +1308,7 @@
           "slug": "springs-hookes-law",
           "description": "Understand how springs obey Hooke's law and produce simple harmonic motion",
           "funFacts": [
-            "Hooke's law (F = -kx) was published by Robert Hooke in 1676 as a Latin anagram: 'ceiiinosssttuv,' which unscrambles to 'ut tensio, sic vis' -- meaning 'as the extension, so the force.' Hooke used anagrams to establish priority for his discoveries without revealing them to competitors.",
+            "Hooke's law (F = -kx) was published by Robert Hooke in 1676 as a Latin anagram: 'ceiiinosssttuu,' which unscrambles to 'ut tensio, sic vis' -- meaning 'as the extension, so the force.' Hooke used anagrams to establish priority for his discoveries without revealing them to competitors.",
             "The period of a mass-spring system depends on the mass and spring constant, but not on the amplitude. Whether you pull the spring a little or a lot, it takes the same time to complete one oscillation. This amplitude-independence is what makes springs useful for timekeeping.",
             "Car suspension systems use springs (and shock absorbers) to smooth out bumps. When a wheel hits a bump, the spring compresses and stores the energy, then releases it slowly. The spring constant is carefully chosen so the car oscillates at a comfortable frequency."
           ],
@@ -1505,7 +1506,7 @@
           "description": "Learn how waves combine through constructive and destructive interference",
           "funFacts": [
             "Noise-cancelling headphones use destructive interference. A microphone picks up ambient noise, electronics generate an anti-phase wave (shifted by 180 degrees), and when this combines with the noise, they cancel out. The technology was first developed for helicopter pilots in the 1980s.",
-            "Thomas Young's double-slit experiment in 1801 demonstrated the wave nature of light by showing interference fringes. When light passes through two narrow slits, it creates alternating bright and dark bands on a screen -- a pattern only possible if light behaves as a wave.",
+            "Thomas Young's double-slit experiment in 1803 demonstrated the wave nature of light by showing interference fringes. When light passes through two narrow slits, it creates alternating bright and dark bands on a screen -- a pattern only possible if light behaves as a wave.",
             "Thin-film interference creates the iridescent colors you see on soap bubbles and oil slicks. Light reflects from both the top and bottom surfaces of the thin film, and the two reflected waves interfere. The film thickness determines which wavelengths (colors) interfere constructively."
           ],
           "quiz": [
@@ -2500,7 +2501,7 @@
           "funFacts": [
             "Nikola Tesla's AC induction motor and transformer system won the 'War of Currents' against Thomas Edison's DC system in the 1890s. The key advantage: transformers can easily step AC voltage up for long-distance transmission (reducing current and I²R losses) and then step it down for safe household use. This is impossible with DC using a simple transformer.",
             "The largest power transformers weigh over 400 tonnes and can step voltage from 765,000 V on transmission lines down to the 120–240 V used in homes. They are so large that some must be transported on custom railcars. A single failure can leave hundreds of thousands of people without power.",
-            "Hydroelectric generators at Hoover Dam spin at exactly 60 revolutions per second (in the US) to produce 60 Hz AC electricity. The rotation rate must be maintained with extreme precision — even a tiny frequency deviation can desynchronize the power grid, potentially causing cascading blackouts across entire regions."
+            "Hydroelectric generators at Hoover Dam spin at about 180 RPM — just 3 revolutions per second — yet produce 60 Hz AC electricity. They achieve this because each generator has 40 magnetic poles; the formula frequency = (RPM × poles) / 120 gives (180 × 40) / 120 = 60 Hz. The rotation rate must be maintained with extreme precision — even a tiny frequency deviation can desynchronize the power grid, potentially causing cascading blackouts across entire regions."
           ],
           "quiz": [
             {
@@ -2845,7 +2846,7 @@
           "slug": "wave-optics",
           "description": "See how light's wave nature creates interference patterns and diffraction effects",
           "funFacts": [
-            "Thomas Young's double-slit experiment in 1801 provided the first strong evidence that light is a wave. When coherent light passes through two narrow slits, it creates an alternating pattern of bright and dark bands on a screen — bright where waves constructively interfere (in phase), dark where they destructively interfere (out of phase). This experiment has been called 'the most beautiful experiment in physics.'",
+            "Thomas Young's double-slit experiment in 1803 provided the first strong evidence that light is a wave. When coherent light passes through two narrow slits, it creates an alternating pattern of bright and dark bands on a screen — bright where waves constructively interfere (in phase), dark where they destructively interfere (out of phase). This experiment has been called 'the most beautiful experiment in physics.'",
             "The colorful sheen on a soap bubble or an oil slick on wet pavement is caused by thin-film interference. Light reflects from both the top and bottom surfaces of the thin film, and the two reflected waves interfere. Because the film thickness varies, different colors (wavelengths) are reinforced at different locations, creating the swirling rainbow patterns.",
             "Diffraction limits the resolution of every optical instrument. No matter how perfect a telescope's optics are, stars appear as tiny diffraction patterns (Airy disks) rather than true points. This is why astronomers build bigger mirrors — larger apertures produce smaller Airy disks and can resolve finer details."
           ],

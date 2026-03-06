@@ -35,17 +35,17 @@
     {
       "id": "half-way",
       "name": "Halfway There",
-      "description": "Complete 32 topics — half the curriculum!",
+      "description": "Complete 34 topics — halfway through the curriculum!",
       "icon": "🏔️",
-      "condition": { "type": "topicsCompleted", "count": 32 },
+      "condition": { "type": "topicsCompleted", "count": 34 },
       "xpBonus": 750
     },
     {
       "id": "all-topics",
       "name": "Physics Master",
-      "description": "Complete all 63 topics",
+      "description": "Complete all 67 topics",
       "icon": "👑",
-      "condition": { "type": "topicsCompleted", "count": 63 },
+      "condition": { "type": "topicsCompleted", "count": 67 },
       "xpBonus": 2000
     },
     {
@@ -67,9 +67,9 @@
     {
       "id": "all-quizzes",
       "name": "Perfect Scholar",
-      "description": "Complete all 63 quizzes",
+      "description": "Complete all 67 quizzes",
       "icon": "🎓",
-      "condition": { "type": "quizzesCompleted", "count": 63 },
+      "condition": { "type": "quizzesCompleted", "count": 67 },
       "xpBonus": 2000
     },
     {
