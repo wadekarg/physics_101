@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Playground — Interactive Physics Learning</title>
+  <meta name="description" content="Explore the universe through interactive physics simulations, quizzes, and visual experiments. A gamified learning platform for physics enthusiasts.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Header
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="header">
+    <!-- Logo -->
+    <a href="index.html" class="header__logo">
+      <span class="header__logo-icon">&nbsp;&#9883;&nbsp;</span>
+      <span>Quantum Playground</span>
+    </a>
+
+    <!-- Search -->
+    <div class="header__search search-wrapper">
+      <input
+        type="search"
+        id="search-input"
+        class="search-input"
+        placeholder="Search topics..."
+        autocomplete="off"
+        aria-label="Search topics"
+      >
+    </div>
+
+    <!-- Actions -->
+    <div class="header__actions">
+      <!-- XP / Level badge -->
+      <div class="badge badge--xp" id="header-xp-badge" title="Your XP">
+        <span id="header-xp-value">0</span> XP
+      </div>
+      <div class="badge badge--level" id="header-level-badge" title="Your level">
+        <span id="header-level-icon"></span>
+        <span id="header-level-name"></span>
+      </div>
+
+      <!-- Theme toggle -->
+      <button
+        class="btn btn--icon btn--ghost"
+        data-action="toggle-theme"
+        aria-label="Toggle dark/light theme"
+        title="Toggle theme"
+      >
+        <span class="theme-icon"></span>
+      </button>
+
+      <!-- Mobile sidebar toggle -->
+      <button
+        class="btn btn--icon btn--ghost sidebar-toggle"
+        data-action="toggle-sidebar"
+        aria-label="Toggle navigation sidebar"
+        title="Menu"
+      >
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Sidebar Overlay (mobile)
+       ═══════════════════════════════════════════════════════════════ -->
+  <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Sidebar Navigation
+       ═══════════════════════════════════════════════════════════════ -->
+  <aside id="sidebar" class="sidebar" aria-label="Chapter navigation">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Main Content
+       ═══════════════════════════════════════════════════════════════ -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Hero Section -->
+      <section class="landing-hero">
+        <h1 class="landing-hero__title">Quantum Playground</h1>
+        <p class="landing-hero__subtitle">
+          Explore the Universe Through Interactive Physics
+        </p>
+      </section>
+
+      <!-- Stats Bar -->
+      <div id="stats-bar"></div>
+
+      <!-- Level Display -->
+      <div id="level-display"></div>
+
+      <!-- Chapter Cards Grid -->
+      <section id="chapters-grid" class="chapters-grid" aria-label="Chapters"></section>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Toast Container (achievement notifications, etc.)
+       ═══════════════════════════════════════════════════════════════ -->
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Floating Particles (CSS-only ambient effect)
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="particles" aria-hidden="true">
+    <div class="particle" style="left:  3%; width: 2px; height: 2px; animation-duration: 18s; animation-delay: 0.0s;"></div>
+    <div class="particle" style="left:  9%; width: 3px; height: 3px; animation-duration: 22s; animation-delay: 1.2s;"></div>
+    <div class="particle" style="left: 15%; width: 2px; height: 2px; animation-duration: 20s; animation-delay: 3.5s;"></div>
+    <div class="particle" style="left: 21%; width: 1px; height: 1px; animation-duration: 25s; animation-delay: 0.8s;"></div>
+    <div class="particle" style="left: 28%; width: 2px; height: 2px; animation-duration: 19s; animation-delay: 5.1s;"></div>
+    <div class="particle" style="left: 34%; width: 3px; height: 3px; animation-duration: 23s; animation-delay: 2.3s;"></div>
+    <div class="particle" style="left: 40%; width: 2px; height: 2px; animation-duration: 17s; animation-delay: 4.7s;"></div>
+    <div class="particle" style="left: 47%; width: 1px; height: 1px; animation-duration: 21s; animation-delay: 6.0s;"></div>
+    <div class="particle" style="left: 53%; width: 2px; height: 2px; animation-duration: 24s; animation-delay: 1.8s;"></div>
+    <div class="particle" style="left: 59%; width: 3px; height: 3px; animation-duration: 18s; animation-delay: 3.2s;"></div>
+    <div class="particle" style="left: 65%; width: 2px; height: 2px; animation-duration: 26s; animation-delay: 0.5s;"></div>
+    <div class="particle" style="left: 71%; width: 1px; height: 1px; animation-duration: 20s; animation-delay: 7.4s;"></div>
+    <div class="particle" style="left: 77%; width: 2px; height: 2px; animation-duration: 22s; animation-delay: 2.9s;"></div>
+    <div class="particle" style="left: 83%; width: 3px; height: 3px; animation-duration: 19s; animation-delay: 5.6s;"></div>
+    <div class="particle" style="left: 88%; width: 2px; height: 2px; animation-duration: 25s; animation-delay: 4.0s;"></div>
+    <div class="particle" style="left: 93%; width: 1px; height: 1px; animation-duration: 21s; animation-delay: 6.8s;"></div>
+    <div class="particle" style="left: 97%; width: 2px; height: 2px; animation-duration: 23s; animation-delay: 1.5s;"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Scripts
+       ═══════════════════════════════════════════════════════════════ -->
+  <script src="libs/p5.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

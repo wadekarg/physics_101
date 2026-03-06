@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ohm's Law &amp; Resistance — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="ohms-law">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>DC Circuits</span> /
+          <span>Ohm's Law &amp; Resistance</span>
+        </div>
+        <h1 class="topic-hero__title">Ohm's Law &amp; Resistance</h1>
+        <p class="topic-hero__subtitle">The fundamental relationship between voltage, current, and resistance in electrical circuits.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Ohm's Law</strong> states that the voltage across a conductor is proportional to the current through it: <span class="equation">V = IR</span>, where V is voltage (volts), I is current (amperes), and R is resistance (ohms, Ω). <strong>Current</strong> is the rate of flow of electric charge: <span class="equation">I = ΔQ/Δt</span>. Conventional current flows from high to low potential (positive to negative), though electrons actually move in the opposite direction. A current of 1 ampere means 1 coulomb of charge passes a point each second.</p>
+        <p><strong>Resistance</strong> opposes the flow of current and converts electrical energy to heat. The resistance of a wire depends on its material, length, and cross-sectional area: <span class="equation">R = ρL/A</span>, where ρ is the <strong>resistivity</strong> of the material (in Ω·m). Good conductors like copper have low resistivity; insulators like rubber have extremely high resistivity. Resistivity typically increases with temperature for metals. <strong>Resistor color codes</strong> use colored bands to indicate resistance values: each color represents a digit (black=0, brown=1, red=2, ..., white=9), with bands for digits and a multiplier.</p>
+        <p>The <strong>power</strong> dissipated by a resistor is <span class="equation">P = IV = I²R = V²/R</span>. This is why high-resistance heating elements get hot and why power transmission uses high voltage (to reduce current and thus reduce I²R losses in the wires). Ohm's Law applies to <strong>ohmic</strong> materials where R is constant regardless of voltage. Non-ohmic devices (like diodes and LEDs) have resistance that varies with voltage. Despite this, Ohm's Law remains the cornerstone of circuit analysis and is used every day by electrical engineers worldwide.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch13-ohms-law.js"></script>
+</body>
+</html>

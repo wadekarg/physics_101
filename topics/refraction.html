@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refraction &amp; Snell's Law — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="refraction">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Optics</span> /
+          <span>Refraction &amp; Snell's Law</span>
+        </div>
+        <h1 class="topic-hero__title">Refraction &amp; Snell's Law</h1>
+        <p class="topic-hero__subtitle">How light bends when passing between different transparent materials.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Refraction</strong> is the bending of light as it passes from one transparent medium to another, caused by a change in the speed of light. The <strong>index of refraction</strong> (n) of a medium is the ratio of the speed of light in vacuum to the speed in the medium: <span class="equation">n = c/v</span>. For example, n = 1.00 for air, n = 1.33 for water, and n = 1.50 for typical glass. Light slows down in denser media (higher n) and bends toward the normal when entering a denser medium.</p>
+        <p><strong>Snell's Law</strong> quantifies refraction: <span class="equation">n₁ sin θ₁ = n₂ sin θ₂</span>, where θ₁ and θ₂ are the angles of incidence and refraction measured from the normal. When light passes from a denser medium to a less dense medium (e.g., glass to air), it bends away from the normal. If the angle of incidence exceeds the <strong>critical angle</strong> (<span class="equation">θ_c = sin⁻¹(n₂/n₁)</span>), the light is completely reflected back — this is <strong>total internal reflection</strong>.</p>
+        <p>Total internal reflection is the principle behind <strong>fiber optics</strong>: light bounces along the inside of a glass fiber with virtually no loss, enabling high-speed internet and medical endoscopes. Refraction causes familiar phenomena: a straw appears bent in a glass of water, swimming pools look shallower than they are, and <strong>dispersion</strong> (the dependence of n on wavelength) causes white light to separate into a rainbow when passing through a prism. Diamonds sparkle because of their high index of refraction (n = 2.42) and strong dispersion, combined with total internal reflection from many facets.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch17-refraction.js"></script>
+</body>
+</html>

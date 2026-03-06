@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Collisions &amp; Center of Mass — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="2d-collisions">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Momentum &amp; Collisions</span> /
+          <span>2D Collisions &amp; Center of Mass</span>
+        </div>
+        <h1 class="topic-hero__title">2D Collisions &amp; Center of Mass</h1>
+        <p class="topic-hero__subtitle">Analyzing collisions in two dimensions and understanding the center of mass of a system.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>In <strong>two-dimensional collisions</strong>, momentum is conserved independently in each direction: <span class="equation">Σp_x,i = Σp_x,f</span> and <span class="equation">Σp_y,i = Σp_y,f</span>. This gives us two equations, which means we need additional information (such as the angle of deflection or whether the collision is elastic) to fully solve the problem. A common example is a billiard ball striking another at an angle: the two balls fly off in different directions, but the vector sum of their momenta equals the initial momentum.</p>
+        <p>The <strong>center of mass</strong> (COM) of a system is the mass-weighted average position: <span class="equation">x_cm = Σ(m_i x_i) / Σm_i</span>. The center of mass moves as if all the mass were concentrated there and all external forces acted on that point. For an isolated system, the velocity of the center of mass is constant: <span class="equation">v_cm = p_total / M_total</span>. In any collision (elastic or inelastic), the center of mass continues moving at the same velocity throughout.</p>
+        <p>Analyzing collisions in the center-of-mass frame simplifies many problems. In this frame, the total momentum is zero, so the two objects approach each other and recede symmetrically. For elastic collisions in the COM frame, each object simply reverses its velocity. The center of mass concept extends beyond collisions — it explains why a thrown wrench rotates around its center of mass, and why the center of mass of a system follows a smooth parabolic path even if individual parts tumble and spin.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch5-2d-collisions.js"></script>
+</body>
+</html>

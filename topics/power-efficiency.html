@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power &amp; Efficiency — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="power-efficiency">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Work, Energy &amp; Power</span> /
+          <span>Power &amp; Efficiency</span>
+        </div>
+        <h1 class="topic-hero__title">Power &amp; Efficiency</h1>
+        <p class="topic-hero__subtitle">The rate at which work is done or energy is transferred, and how efficiently machines operate.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Power</strong> is the rate at which work is done or energy is transferred: <span class="equation">P = W/t</span>, where W is work and t is time. The SI unit of power is the <strong>watt</strong> (W), where <span class="equation">1 W = 1 J/s</span>. For a constant force moving an object at constant velocity, power can also be expressed as <span class="equation">P = Fv cos θ</span>. A more powerful engine can do the same amount of work in less time, or more work in the same time. Common power units include kilowatts (kW) and horsepower (hp), where <span class="equation">1 hp ≈ 746 W</span>.</p>
+        <p>The concept of power is essential for understanding machines, engines, and electrical devices. A 100 W light bulb converts 100 joules of electrical energy per second into light and heat. A 2000 W microwave transfers 2000 joules per second to your food. The kilowatt-hour (kWh) is a unit of <em>energy</em> (not power) used by electric companies: <span class="equation">1 kWh = 3.6 × 10⁶ J</span>. Understanding the distinction between energy and power is crucial for analyzing any real-world system.</p>
+        <p><strong>Efficiency</strong> measures how well a machine converts input energy into useful output energy: <span class="equation">η = useful output energy / total input energy × 100%</span>, or equivalently <span class="equation">η = P_out / P_in × 100%</span>. No real machine is 100% efficient — some energy is always "lost" to friction, heat, sound, or other non-useful forms. An incandescent bulb is about 5% efficient (most energy becomes heat), while LED bulbs reach about 40%. Electric motors can achieve 90%+ efficiency. Improving efficiency is one of the most important goals in engineering and environmental science.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch4-power.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion Graphs — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="motion-graphs">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Kinematics</span> /
+          <span>Motion Graphs</span>
+        </div>
+        <h1 class="topic-hero__title">Motion Graphs</h1>
+        <p class="topic-hero__subtitle">Visual representations that reveal the relationships between position, velocity, and acceleration over time.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Motion graphs provide a powerful visual way to understand and analyze movement. The three main types are <strong>position-time</strong> (x-t), <strong>velocity-time</strong> (v-t), and <strong>acceleration-time</strong> (a-t) graphs. On a position-time graph, the <strong>slope</strong> at any point equals the instantaneous velocity: a steep slope means high speed, a flat line means the object is at rest, and a negative slope means the object is moving in the negative direction. A straight line on a position-time graph indicates constant velocity, while a curve indicates changing velocity (acceleration).</p>
+        <p>On a <strong>velocity-time graph</strong>, the slope equals the acceleration. A horizontal line means constant velocity (zero acceleration), while a sloped line means constant acceleration. The crucial insight is that the <strong>area under the velocity-time curve</strong> equals the displacement: <span class="equation">Δx = ∫v dt</span>. Similarly, on an acceleration-time graph, the area under the curve gives the change in velocity: <span class="equation">Δv = ∫a dt</span>. These graphical relationships mirror the calculus connections between position, velocity, and acceleration.</p>
+        <p>Being able to translate between different types of motion graphs is a key skill. For example, constant acceleration appears as a parabola on a position-time graph, a straight line on a velocity-time graph, and a horizontal line on an acceleration-time graph. If an object reverses direction, the velocity-time graph crosses zero, and the position-time graph has a turning point. Practicing with motion graphs builds deep intuition about how objects move and is an essential step before tackling more complex problems in mechanics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch1-motion-graphs.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potential Energy &amp; Conservation — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="potential-energy">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Work, Energy &amp; Power</span> /
+          <span>Potential Energy &amp; Conservation</span>
+        </div>
+        <h1 class="topic-hero__title">Potential Energy &amp; Conservation</h1>
+        <p class="topic-hero__subtitle">Energy stored in position or configuration, and the fundamental law of energy conservation.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Potential energy</strong> is energy stored by virtue of an object's position or configuration within a force field. <strong>Gravitational potential energy</strong> near Earth's surface is <span class="equation">PE_g = mgh</span>, where h is the height above a chosen reference point. <strong>Elastic potential energy</strong> stored in a spring is <span class="equation">PE_s = ½kx²</span>, where k is the spring constant and x is the displacement from equilibrium. Both forms of potential energy are associated with <strong>conservative forces</strong> — forces for which the work done depends only on the initial and final positions, not on the path taken.</p>
+        <p>The <strong>law of conservation of energy</strong> states that energy cannot be created or destroyed, only transformed from one form to another. For a system with only conservative forces, the total mechanical energy is constant: <span class="equation">KE_i + PE_i = KE_f + PE_f</span>. A ball thrown upward converts kinetic energy to gravitational potential energy as it rises, then converts it back as it falls. A mass on a spring oscillates as energy transforms between kinetic and elastic potential energy.</p>
+        <p>When non-conservative forces like friction are present, mechanical energy is not conserved — some is converted to thermal energy (heat). The generalized energy equation becomes: <span class="equation">KE_i + PE_i + W_nc = KE_f + PE_f</span>, where W_nc is the work done by non-conservative forces (usually negative for friction). Despite this, the <em>total</em> energy of the universe is always conserved. Conservation of energy is one of the most fundamental and far-reaching principles in all of physics, applying from subatomic particles to galaxies.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch4-potential-energy.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Force on Moving Charges — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="magnetic-force-charges">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Magnetism</span> /
+          <span>Force on Moving Charges</span>
+        </div>
+        <h1 class="topic-hero__title">Force on Moving Charges</h1>
+        <p class="topic-hero__subtitle">How magnetic fields exert forces on moving charges and current-carrying wires.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>A magnetic field exerts a force on a moving charged particle given by: <span class="equation">F = qvB sin θ</span>, where q is the charge, v is the speed, B is the field strength, and θ is the angle between the velocity and field vectors. In vector notation: <span class="equation">⃗F = q⃗v × ⃗B</span>. The direction is given by the <strong>right-hand rule</strong>: point your fingers in the direction of ⃗v, curl them toward ⃗B, and your thumb points in the direction of ⃗F (for positive charges). The force is always perpendicular to both the velocity and the field.</p>
+        <p>Since the magnetic force is always perpendicular to the velocity, it does no work and cannot change the particle's speed — only its direction. A charged particle moving perpendicular to a uniform magnetic field follows a <strong>circular path</strong> with radius <span class="equation">r = mv/(qB)</span> (the cyclotron radius). The period of this circular motion is <span class="equation">T = 2πm/(qB)</span>, independent of speed. If the particle also has a velocity component parallel to B, it traces a <strong>helical</strong> (spiral) path.</p>
+        <p>A current-carrying wire in a magnetic field experiences a force: <span class="equation">F = BIL sin θ</span>, where I is the current and L is the wire length. This force is the basis of <strong>electric motors</strong>, loudspeakers, and galvanometers. Two parallel current-carrying wires exert forces on each other: parallel currents attract, antiparallel currents repel. This interaction is actually used to define the ampere in the SI system. Particle accelerators like cyclotrons use magnetic fields to bend charged particles into circular paths, while mass spectrometers use the radius dependence on mass to separate and identify different isotopes.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch14-magnetic-force.js"></script>
+</body>
+</html>

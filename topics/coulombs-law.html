@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Charge &amp; Coulomb's Law — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="coulombs-law">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Electrostatics</span> /
+          <span>Electric Charge &amp; Coulomb's Law</span>
+        </div>
+        <h1 class="topic-hero__title">Electric Charge &amp; Coulomb's Law</h1>
+        <p class="topic-hero__subtitle">The fundamental electric force between charged particles and the nature of electric charge.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Electric charge is a fundamental property of matter that comes in two types: <strong>positive</strong> and <strong>negative</strong>. Like charges repel; opposite charges attract. Charge is <strong>quantized</strong> — it comes in discrete units of the elementary charge: <span class="equation">e = 1.6 × 10⁻¹⁹ C</span>. Protons carry +e and electrons carry −e. Charge is also <strong>conserved</strong>: the total charge in an isolated system never changes. Objects become charged by transferring electrons, not protons (which are bound in nuclei). Charging methods include friction (rubbing), conduction (contact), and induction (proximity).</p>
+        <p><strong>Coulomb's Law</strong> describes the electric force between two point charges: <span class="equation">F = kq₁q₂/r²</span>, where <span class="equation">k = 8.99 × 10⁹ N·m²/C²</span> is Coulomb's constant, q₁ and q₂ are the charges, and r is the distance between them. The force is attractive if the charges have opposite signs and repulsive if they have the same sign. This law has the same mathematical form as Newton's law of gravitation, but the electric force is enormously stronger — about 10³⁶ times stronger for elementary particles.</p>
+        <p>For systems with more than two charges, the net force on any charge is found by <strong>superposition</strong>: calculate the force from each other charge individually and then add them as vectors. Coulomb's constant can also be written as <span class="equation">k = 1/(4πε₀)</span>, where <span class="equation">ε₀ = 8.85 × 10⁻¹² C²/(N·m²)</span> is the permittivity of free space. Coulomb's Law is the foundation of electrostatics and is essential for understanding electric fields, potential, circuits, and ultimately all of electromagnetism.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch12-coulombs-law.js"></script>
+</body>
+</html>

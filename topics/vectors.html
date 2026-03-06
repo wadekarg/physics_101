@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vectors — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="vectors">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>What Is Physics?</span> /
+          <span>Vectors</span>
+        </div>
+        <h1 class="topic-hero__title">Vectors</h1>
+        <p class="topic-hero__subtitle">Mathematical quantities with both magnitude and direction that form the language of physics.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>In physics, quantities fall into two categories: <strong>scalars</strong> (described by magnitude alone, like mass or temperature) and <strong>vectors</strong> (described by both magnitude and direction, like velocity or force). A vector is typically represented as an arrow whose length indicates its magnitude and whose orientation indicates its direction. In two dimensions, any vector can be broken into <strong>components</strong> along the x and y axes: <span class="equation">Aₓ = A cos θ</span> and <span class="equation">Aᵧ = A sin θ</span>, where A is the magnitude and θ is the angle measured from the positive x-axis.</p>
+        <p>Vectors are added using the <strong>tip-to-tail method</strong> or, equivalently, by adding their components: <span class="equation">R⃗ = A⃗ + B⃗</span> means <span class="equation">Rₓ = Aₓ + Bₓ</span> and <span class="equation">Rᵧ = Aᵧ + Bᵧ</span>. The magnitude of the resultant is <span class="equation">R = √(Rₓ² + Rᵧ²)</span>, and its direction is <span class="equation">θ = tan⁻¹(Rᵧ / Rₓ)</span>. Subtracting vectors is equivalent to adding the negative: <span class="equation">A⃗ − B⃗ = A⃗ + (−B⃗)</span>, where −B⃗ has the same magnitude as B⃗ but points in the opposite direction.</p>
+        <p>Two important vector operations arise frequently in physics. The <strong>dot product</strong> (scalar product) is defined as <span class="equation">A⃗ · B⃗ = AB cos θ</span>, where θ is the angle between the two vectors. It yields a scalar and is used in calculating work (<span class="equation">W = F⃗ · d⃗</span>). The <strong>cross product</strong> (vector product) gives a new vector perpendicular to both inputs, with magnitude <span class="equation">|A⃗ × B⃗| = AB sin θ</span>. The cross product is essential for torque (<span class="equation">τ⃗ = r⃗ × F⃗</span>) and magnetic force calculations. Mastering vectors is the foundation for nearly every topic in physics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch0-vectors.js"></script>
+</body>
+</html>

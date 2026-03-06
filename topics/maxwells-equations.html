@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maxwell's Equations &amp; EM Waves — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="maxwells-equations">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Electromagnetic Waves</span> /
+          <span>Maxwell's Equations &amp; EM Waves</span>
+        </div>
+        <h1 class="topic-hero__title">Maxwell's Equations &amp; EM Waves</h1>
+        <p class="topic-hero__subtitle">The four elegant equations that unify electricity, magnetism, and light into one framework.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Maxwell's Equations</strong> are four fundamental equations that describe all classical electromagnetic phenomena. Gauss's Law for electricity (<span class="equation">∮⃗E · d⃗A = Q/ε₀</span>) relates electric fields to charges. Gauss's Law for magnetism (<span class="equation">∮⃗B · d⃗A = 0</span>) states there are no magnetic monopoles. Faraday's Law (<span class="equation">∮⃗E · d⃗l = −dΦ_B/dt</span>) shows changing magnetic fields create electric fields. Ampère-Maxwell's Law (<span class="equation">∮⃗B · d⃗l = μ₀I + μ₀ε₀ dΦ_E/dt</span>) shows that both currents and changing electric fields create magnetic fields.</p>
+        <p>Maxwell's crucial addition was the <strong>displacement current</strong> term (<span class="equation">μ₀ε₀ dΦ_E/dt</span>) in Ampère's Law. This term means that a changing electric field produces a magnetic field, just as a changing magnetic field produces an electric field (Faraday's Law). This mutual creation allows electromagnetic disturbances to propagate through space as self-sustaining waves. Maxwell showed that these <strong>electromagnetic waves</strong> travel at speed <span class="equation">c = 1/√(μ₀ε₀) = 3 × 10⁸ m/s</span> — the speed of light. This revealed that light itself is an electromagnetic wave.</p>
+        <p>EM waves are transverse waves with oscillating electric and magnetic fields perpendicular to each other and to the direction of propagation. They carry energy (described by the <strong>Poynting vector</strong> <span class="equation">⃗S = (1/μ₀)⃗E × ⃗B</span>) and momentum, and require no medium to travel. Maxwell's equations represent one of the greatest achievements in physics, unifying electricity, magnetism, and optics into a single elegant theory and paving the way for radio, television, radar, wireless communications, and our understanding of light and radiation.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch16-maxwells.js"></script>
+</body>
+</html>

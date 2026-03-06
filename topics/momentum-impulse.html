@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linear Momentum &amp; Impulse — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="momentum-impulse">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Momentum &amp; Collisions</span> /
+          <span>Linear Momentum &amp; Impulse</span>
+        </div>
+        <h1 class="topic-hero__title">Linear Momentum &amp; Impulse</h1>
+        <p class="topic-hero__subtitle">The quantity of motion an object possesses and how forces change it over time.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Linear momentum</strong> is defined as the product of an object's mass and velocity: <span class="equation">p = mv</span>. It is a vector quantity pointing in the same direction as velocity and is measured in kg·m/s. Momentum quantifies the "quantity of motion" — a fast-moving truck has more momentum than a slowly rolling tennis ball. Newton actually stated his Second Law in terms of momentum: the net force on an object equals the rate of change of its momentum, <span class="equation">F_net = dp/dt</span>. For constant mass, this reduces to the familiar <span class="equation">F = ma</span>.</p>
+        <p><strong>Impulse</strong> is defined as the product of force and the time interval over which it acts: <span class="equation">J = FΔt</span>. The <strong>impulse-momentum theorem</strong> states that impulse equals the change in momentum: <span class="equation">J = Δp = mv_f − mv_i</span>. For a variable force, impulse is the integral: <span class="equation">J = ∫F dt</span>, which equals the area under the force-time curve. This theorem explains why extending the time of impact reduces the force: airbags, crumple zones, and bending your knees when landing all work by increasing Δt, thereby reducing the average force for the same change in momentum.</p>
+        <p>Impulse and momentum are especially useful for analyzing collisions and impacts where forces are large and act over short time intervals. The impulse-momentum theorem also provides a bridge between Newton's laws and conservation of momentum. Since the total momentum of an isolated system is conserved (see the next topic), momentum methods are often the most direct way to solve collision problems, particularly when the details of the impact forces are unknown.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch5-momentum.js"></script>
+</body>
+</html>

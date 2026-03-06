@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laws of Thermodynamics — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="laws-thermodynamics">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Thermodynamics</span> /
+          <span>Laws of Thermodynamics</span>
+        </div>
+        <h1 class="topic-hero__title">Laws of Thermodynamics</h1>
+        <p class="topic-hero__subtitle">The foundational principles governing energy, heat, work, and the direction of natural processes.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>Zeroth Law</strong> establishes the concept of temperature and thermal equilibrium. The <strong>First Law of Thermodynamics</strong> is the conservation of energy applied to thermodynamic systems: <span class="equation">ΔU = Q − W</span>, where ΔU is the change in internal energy, Q is heat added to the system, and W is work done by the system. For an ideal gas, internal energy depends only on temperature. Work done by a gas during expansion is <span class="equation">W = ∫P dV</span>, which equals the area under the curve on a PV diagram.</p>
+        <p>The <strong>Second Law of Thermodynamics</strong> can be stated several equivalent ways: heat spontaneously flows from hot to cold (never the reverse); no heat engine can be 100% efficient; the entropy of an isolated system never decreases. <strong>Entropy</strong> (S) is a measure of disorder or the number of microscopic configurations corresponding to a macroscopic state: <span class="equation">ΔS = Q/T</span> for a reversible process. Every real (irreversible) process increases the total entropy of the universe. This gives time its directionality — the "arrow of time."</p>
+        <p>The <strong>Third Law of Thermodynamics</strong> states that as temperature approaches absolute zero, the entropy of a perfect crystal approaches zero. It is impossible to reach absolute zero in a finite number of steps. On PV diagrams, common thermodynamic processes include: <strong>isothermal</strong> (constant T, hyperbolic curve), <strong>isobaric</strong> (constant P, horizontal line), <strong>isochoric</strong> (constant V, vertical line), and <strong>adiabatic</strong> (no heat exchange, steeper than isothermal, following <span class="equation">PVᵞ = constant</span> where γ is the heat capacity ratio). The area enclosed by a cycle on a PV diagram equals the net work done per cycle.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch11-thermo-laws.js"></script>
+</body>
+</html>

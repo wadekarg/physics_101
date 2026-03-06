@@ -1,0 +1,220 @@
+/* ===== Galaxy Progress Map ===== */
+
+.galaxy-map {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  margin: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.galaxy-map canvas {
+  width: 100%;
+  height: 500px;
+  border-radius: var(--radius-lg);
+}
+
+/* Landing Page Hero */
+.landing-hero {
+  text-align: center;
+  padding: var(--space-3xl) 0 var(--space-xl);
+}
+
+.landing-hero__title {
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  background: linear-gradient(135deg, var(--neon-mechanics), var(--neon-waves), var(--neon-modern));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+}
+
+.landing-hero__subtitle {
+  font-size: var(--fs-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  margin: var(--space-xl) 0;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat__value {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+.stat__label {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+/* Chapter Grid */
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+/* Level Progress */
+.level-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.level-display__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: var(--accent-dim);
+  border-radius: var(--radius-md);
+}
+
+.level-display__info {
+  flex: 1;
+}
+
+.level-display__title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+}
+
+.level-display__subtitle {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.level-display__bar {
+  flex: 1;
+  max-width: 200px;
+}
+
+/* Achievement Cards */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-md);
+}
+
+.achievement-card {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  opacity: 0.4;
+}
+
+.achievement-card.unlocked {
+  opacity: 1;
+  border-color: var(--accent-dim);
+}
+
+.achievement-card.unlocked:hover {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.achievement-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.achievement-card__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+  margin-bottom: 2px;
+}
+
+.achievement-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* Constellation Effect */
+.constellation-star {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.constellation-star.completed {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent-dim);
+  animation: starPulse 3s ease-in-out infinite;
+}
+
+.constellation-star:hover {
+  transform: scale(1.5);
+}
+
+@keyframes starPulse {
+  0%, 100% { box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent-dim); }
+  50% { box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent-glow); }
+}
+
+/* Floating Particles (CSS-only ambient effect) */
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.3; }
+  100% {
+    transform: translateY(-20px) translateX(50px);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superposition &amp; Interference — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="superposition">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Waves &amp; Sound</span> /
+          <span>Superposition &amp; Interference</span>
+        </div>
+        <h1 class="topic-hero__title">Superposition &amp; Interference</h1>
+        <p class="topic-hero__subtitle">How waves combine when they overlap, producing patterns of reinforcement and cancellation.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>principle of superposition</strong> states that when two or more waves overlap in the same region, the resulting displacement at any point is the algebraic sum of the individual displacements: <span class="equation">y_total = y₁ + y₂ + ...</span>. This simple rule leads to the rich phenomenon of <strong>interference</strong>. When two waves arrive at a point in phase (crest meets crest), they undergo <strong>constructive interference</strong> and the amplitude increases. When they arrive completely out of phase (crest meets trough), they undergo <strong>destructive interference</strong> and can cancel each other out.</p>
+        <p>The condition for constructive interference is that the <strong>path difference</strong> between the two waves equals a whole number of wavelengths: <span class="equation">ΔL = nλ</span> (n = 0, 1, 2, ...). Destructive interference occurs when the path difference is a half-integer number of wavelengths: <span class="equation">ΔL = (n + ½)λ</span>. These conditions apply to all types of waves — sound, light, water, and more. Noise-canceling headphones use destructive interference to reduce unwanted sound by generating an anti-phase wave.</p>
+        <p>When two waves of slightly different frequencies overlap, they produce <strong>beats</strong> — periodic variations in amplitude. The beat frequency equals the difference between the two frequencies: <span class="equation">f_beat = |f₁ − f₂|</span>. Musicians use beats to tune instruments: when two notes are close in pitch, you hear a slow pulsation that disappears when the frequencies match exactly. Superposition and interference are foundational concepts that extend far beyond classical waves into optics (thin film interference, diffraction) and quantum mechanics (electron wave interference).</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch9-superposition.js"></script>
+</body>
+</html>

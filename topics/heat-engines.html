@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heat Engines &amp; Entropy — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="heat-engines">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Thermodynamics</span> /
+          <span>Heat Engines &amp; Entropy</span>
+        </div>
+        <h1 class="topic-hero__title">Heat Engines &amp; Entropy</h1>
+        <p class="topic-hero__subtitle">Machines that convert thermal energy to work, and the fundamental limits on their efficiency.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>A <strong>heat engine</strong> is a device that converts thermal energy into mechanical work by operating in a cycle between a hot reservoir (at temperature T_H) and a cold reservoir (at temperature T_C). In each cycle, the engine absorbs heat Q_H from the hot reservoir, performs work W, and exhausts waste heat Q_C to the cold reservoir. By the First Law: <span class="equation">W = Q_H − Q_C</span>. The <strong>efficiency</strong> of the engine is <span class="equation">η = W/Q_H = 1 − Q_C/Q_H</span>.</p>
+        <p>The <strong>Carnot engine</strong> is a theoretical engine operating with maximum possible efficiency between two temperatures. Its efficiency is <span class="equation">η_Carnot = 1 − T_C/T_H</span> (with temperatures in kelvins). No real engine can exceed this efficiency — it is a fundamental limit set by the Second Law of Thermodynamics. To maximize efficiency, you want the largest possible temperature difference. This is why power plants use superheated steam (high T_H) and why engine exhaust is as cool as practical (low T_C). Real engines always have lower efficiency due to friction, irreversible processes, and incomplete heat transfer.</p>
+        <p><strong>Entropy</strong> provides the deepest understanding of why heat engines cannot be 100% efficient. In any real cycle, entropy is produced, and this entropy must be expelled as waste heat. The total entropy change of the universe is always positive: <span class="equation">ΔS_universe ≥ 0</span>. This principle explains the <strong>arrow of time</strong> — why processes naturally proceed in one direction (ice melts in warm water, never the reverse spontaneously). Refrigerators and heat pumps are "reverse" heat engines that move heat from cold to hot, but they require work input and still increase total entropy. Examples of heat engines include car engines (Otto cycle), diesel engines, jet engines (Brayton cycle), and steam turbines (Rankine cycle).</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch11-heat-engines.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ideal Gas Law — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="ideal-gas-law">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Thermodynamics</span> /
+          <span>Ideal Gas Law</span>
+        </div>
+        <h1 class="topic-hero__title">Ideal Gas Law</h1>
+        <p class="topic-hero__subtitle">The equation of state that relates pressure, volume, temperature, and amount of an ideal gas.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>Ideal Gas Law</strong> combines the empirical gas laws of Boyle, Charles, and Avogadro into a single equation: <span class="equation">PV = nRT</span>, where P is pressure, V is volume, n is the number of moles, R is the universal gas constant (<span class="equation">R = 8.314 J/(mol·K)</span>), and T is absolute temperature in kelvins. This equation describes the behavior of an "ideal" gas — one whose molecules have negligible volume and no intermolecular forces. Real gases approximate ideal behavior at low pressures and high temperatures.</p>
+        <p>The <strong>kinetic theory of gases</strong> provides a microscopic explanation for the ideal gas law. Gas molecules move randomly at various speeds, and their collisions with the container walls create pressure. The theory predicts that the average kinetic energy of a gas molecule depends only on temperature: <span class="equation">KE_avg = (3/2)k_BT</span>, where <span class="equation">k_B = 1.38 × 10⁻²³ J/K</span> is Boltzmann's constant. This means the root-mean-square speed of molecules is <span class="equation">v_rms = √(3k_BT/m)</span>, where m is the molecular mass. Lighter molecules move faster at the same temperature.</p>
+        <p>The ideal gas law can also be written as <span class="equation">PV = Nk_BT</span>, where N is the total number of molecules. For a fixed amount of gas undergoing a process, the combined gas law states <span class="equation">P₁V₁/T₁ = P₂V₂/T₂</span>. Special cases include isothermal processes (constant T: <span class="equation">P₁V₁ = P₂V₂</span>), isobaric processes (constant P: <span class="equation">V₁/T₁ = V₂/T₂</span>), and isochoric processes (constant V: <span class="equation">P₁/T₁ = P₂/T₂</span>). Understanding gas behavior is essential for thermodynamics, chemistry, atmospheric science, and engineering.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch11-ideal-gas.js"></script>
+</body>
+</html>

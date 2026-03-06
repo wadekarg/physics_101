@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC Circuits &amp; RLC Resonance — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="ac-circuits">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Electromagnetic Induction</span> /
+          <span>AC Circuits &amp; RLC Resonance</span>
+        </div>
+        <h1 class="topic-hero__title">AC Circuits &amp; RLC Resonance</h1>
+        <p class="topic-hero__subtitle">The behavior of resistors, capacitors, and inductors in alternating current circuits.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>In <strong>AC circuits</strong>, the voltage and current oscillate sinusoidally. A resistor in an AC circuit has current and voltage in phase. A <strong>capacitor</strong> has current leading voltage by 90°, with <strong>capacitive reactance</strong> <span class="equation">X_C = 1/(2πfC)</span> acting like a frequency-dependent resistance. An <strong>inductor</strong> has current lagging voltage by 90°, with <strong>inductive reactance</strong> <span class="equation">X_L = 2πfL</span>. At high frequencies, capacitors pass current easily while inductors block it; at low frequencies, the reverse is true.</p>
+        <p>In an <strong>RLC series circuit</strong> (resistor, inductor, capacitor), the total opposition to current is the <strong>impedance</strong>: <span class="equation">Z = √(R² + (X_L − X_C)²)</span>. The current amplitude is <span class="equation">I = V/Z</span>, and the phase angle between voltage and current is <span class="equation">tan φ = (X_L − X_C)/R</span>. Average power dissipated is <span class="equation">P = I_rms V_rms cos φ</span>, where cos φ is the <strong>power factor</strong>. Only the resistor dissipates power; capacitors and inductors alternately store and release energy.</p>
+        <p><strong>Resonance</strong> in an RLC circuit occurs when <span class="equation">X_L = X_C</span>, giving the resonance frequency <span class="equation">f₀ = 1/(2π√(LC))</span>. At resonance, impedance is minimum (Z = R), current is maximum, and the circuit behaves like a pure resistor. RLC resonance is the principle behind radio tuning — by adjusting the capacitance, you change the resonant frequency to match the desired radio station. RLC circuits are also used in filters (low-pass, high-pass, band-pass), oscillators, and signal processing throughout electronics and telecommunications.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch15-ac-circuits.js"></script>
+</body>
+</html>

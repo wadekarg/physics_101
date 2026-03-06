@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendulums — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="pendulums">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Oscillations &amp; SHM</span> /
+          <span>Pendulums</span>
+        </div>
+        <h1 class="topic-hero__title">Pendulums</h1>
+        <p class="topic-hero__subtitle">The classic oscillating system that helped define timekeeping for centuries.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>A <strong>simple pendulum</strong> consists of a mass (bob) suspended from a string of length L, swinging under the influence of gravity. For small angles (less than about 15°), the motion is approximately simple harmonic, with period <span class="equation">T = 2π√(L/g)</span>. This remarkable result shows that the period depends only on the length of the pendulum and the local gravitational acceleration — not on the mass of the bob or the amplitude of the swing. This property made pendulums the basis of accurate clocks for centuries.</p>
+        <p>The restoring force for a pendulum is the component of gravity tangent to the arc: <span class="equation">F = −mg sin θ</span>. For small θ, <span class="equation">sin θ ≈ θ</span> (in radians), so the force becomes approximately linear: <span class="equation">F ≈ −mgθ = −(mg/L)s</span>, where s is the arc length. This is mathematically identical to Hooke's Law with an effective spring constant <span class="equation">k_eff = mg/L</span>. A <strong>physical pendulum</strong> is any rigid body pivoted at a point other than its center of mass, with period <span class="equation">T = 2π√(I/mgh)</span>, where I is the moment of inertia about the pivot and h is the distance from pivot to center of mass.</p>
+        <p>In reality, pendulums experience <strong>damping</strong> due to air resistance and friction at the pivot, causing the amplitude to gradually decrease over time. The amplitude decays exponentially: <span class="equation">A(t) = A₀ e^(−γt)</span>, where γ is the damping coefficient. If energy is continuously supplied to compensate for damping (as in a grandfather clock's escapement mechanism), the pendulum maintains a constant amplitude. Pendulums have been used to measure g, demonstrate Earth's rotation (Foucault pendulum), and even detect gravitational waves in early experiments.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch8-pendulums.js"></script>
+</body>
+</html>

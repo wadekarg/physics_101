@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conservation of Momentum — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="conservation-momentum">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Momentum &amp; Collisions</span> /
+          <span>Conservation of Momentum</span>
+        </div>
+        <h1 class="topic-hero__title">Conservation of Momentum</h1>
+        <p class="topic-hero__subtitle">In an isolated system, the total momentum before and after any interaction remains constant.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>law of conservation of momentum</strong> states that if no external forces act on a system (an isolated system), the total momentum remains constant: <span class="equation">p_total,i = p_total,f</span>, or <span class="equation">m₁v₁i + m₂v₂i = m₁v₁f + m₂v₂f</span>. This is one of the most fundamental conservation laws in physics, derived directly from Newton's Third Law. When two objects interact, the forces they exert on each other are equal and opposite, so the changes in their momenta are equal and opposite, and the total momentum is unchanged.</p>
+        <p>Collisions are classified by what happens to kinetic energy. In a perfectly <strong>elastic collision</strong>, both momentum and kinetic energy are conserved. In an <strong>inelastic collision</strong>, momentum is conserved but kinetic energy is not — some is converted to heat, sound, or deformation. In a <strong>perfectly inelastic collision</strong>, the objects stick together and move as one unit; this results in the maximum kinetic energy loss while still conserving momentum. The equation for a perfectly inelastic collision is: <span class="equation">(m₁ + m₂)v_f = m₁v₁i + m₂v₂i</span>.</p>
+        <p>Conservation of momentum applies universally: from subatomic particle decays to rocket propulsion to billiard ball collisions. A rocket works by expelling exhaust gas backward (giving it momentum), which by conservation means the rocket gains forward momentum. Explosions also conserve momentum — the total momentum of all fragments equals the initial momentum (often zero for a stationary bomb). This principle is so fundamental that even in quantum mechanics and relativity, momentum conservation holds true.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch5-conservation.js"></script>
+</body>
+</html>

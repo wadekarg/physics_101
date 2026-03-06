@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Length Contraction — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="length-contraction">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Special Relativity</span> /
+          <span>Length Contraction</span>
+        </div>
+        <h1 class="topic-hero__title">Length Contraction</h1>
+        <p class="topic-hero__subtitle">How objects appear shorter along the direction of motion at relativistic speeds.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Length contraction</strong> is the phenomenon where an object moving relative to an observer appears shorter along the direction of motion. The contracted length is <span class="equation">L = L₀/γ = L₀√(1 − v²/c²)</span>, where L₀ is the <strong>proper length</strong> (measured in the object's rest frame) and γ is the Lorentz factor. Like time dilation, length contraction is imperceptible at everyday speeds but becomes dramatic near the speed of light. At v = 0.87c, objects appear half their rest length.</p>
+        <p>Length contraction is intimately connected to the <strong>relativity of simultaneity</strong> — events that are simultaneous in one frame are not necessarily simultaneous in another. Measuring the length of a moving object requires noting the positions of both ends at the same time, and since "same time" depends on the observer, different observers measure different lengths. This is not an optical illusion — it is a real physical effect arising from the structure of <strong>spacetime</strong>.</p>
+        <p>Time dilation and length contraction are two aspects of the <strong>Lorentz transformation</strong>, which relates space and time coordinates between inertial frames: <span class="equation">x' = γ(x − vt)</span> and <span class="equation">t' = γ(t − vx/c²)</span>. These replace the Galilean transformation of classical physics. The spacetime interval <span class="equation">Δs² = c²Δt² − Δx²</span> is invariant — all observers agree on its value. Minkowski diagrams provide a visual way to understand relativistic effects, showing how different observers "slice" spacetime differently. Special relativity fundamentally changed our understanding of space and time as interwoven into a single four-dimensional fabric.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch18-length-contraction.js"></script>
+</body>
+</html>

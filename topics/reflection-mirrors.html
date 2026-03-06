@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reflection &amp; Mirrors — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="reflection-mirrors">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Optics</span> /
+          <span>Reflection &amp; Mirrors</span>
+        </div>
+        <h1 class="topic-hero__title">Reflection &amp; Mirrors</h1>
+        <p class="topic-hero__subtitle">How light bounces off surfaces and how mirrors form images.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>law of reflection</strong> states that the angle of incidence equals the angle of reflection: <span class="equation">θ_i = θ_r</span>, where both angles are measured from the <strong>normal</strong> (the line perpendicular to the surface). <strong>Specular reflection</strong> occurs on smooth surfaces (mirrors) where all reflected rays are parallel, forming clear images. <strong>Diffuse reflection</strong> occurs on rough surfaces where reflected rays scatter in many directions, allowing us to see objects from any angle. Both types obey the law of reflection at each microscopic surface element.</p>
+        <p>A <strong>flat (plane) mirror</strong> forms a virtual image that appears to be behind the mirror, at the same distance as the object is in front. The image is upright, the same size, but laterally inverted (left-right reversed). <strong>Curved mirrors</strong> can be concave (converging) or convex (diverging). The <strong>mirror equation</strong> relates object distance (d_o), image distance (d_i), and focal length (f): <span class="equation">1/d_o + 1/d_i = 1/f</span>. The <strong>magnification</strong> is <span class="equation">m = −d_i/d_o</span>. For a concave mirror, <span class="equation">f = R/2</span>, where R is the radius of curvature.</p>
+        <p>Concave mirrors can form both <strong>real images</strong> (formed where reflected rays actually converge, can be projected on a screen) and <strong>virtual images</strong> (formed where rays appear to diverge from, behind the mirror). When the object is beyond the focal point, a concave mirror forms a real, inverted image. When the object is inside the focal point, it forms a virtual, upright, magnified image (like a makeup mirror). Convex mirrors always form virtual, upright, diminished images and are used for wide-angle viewing (car side mirrors, security mirrors). Ray diagrams using three principal rays are the key tool for understanding image formation.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch17-reflection.js"></script>
+</body>
+</html>

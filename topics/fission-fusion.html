@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuclear Fission &amp; Fusion — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="fission-fusion">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Nuclear &amp; Particle Physics</span> /
+          <span>Nuclear Fission &amp; Fusion</span>
+        </div>
+        <h1 class="topic-hero__title">Nuclear Fission &amp; Fusion</h1>
+        <p class="topic-hero__subtitle">Splitting heavy atoms and combining light atoms — the most powerful energy sources in the universe.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>binding energy</strong> of a nucleus is the energy required to disassemble it into individual protons and neutrons. The binding energy per nucleon varies across the periodic table, peaking at iron-56. This curve explains both fission and fusion: energy is released when nuclei move toward the peak. <strong>Nuclear fission</strong> splits a heavy nucleus (like uranium-235) into two medium-sized fragments, releasing energy because the products are more tightly bound. A neutron striking U-235 causes it to split, releasing about 200 MeV per fission, along with 2–3 additional neutrons: <span class="equation">ΔE = Δmc²</span>.</p>
+        <p>These released neutrons can trigger further fissions, creating a <strong>chain reaction</strong>. In a <strong>nuclear reactor</strong>, control rods absorb excess neutrons to maintain a steady, controlled chain reaction. In a nuclear weapon, the chain reaction is uncontrolled and explosive. The <strong>critical mass</strong> is the minimum amount of fissile material needed to sustain a chain reaction. Nuclear power plants produce about 10% of the world's electricity with no direct carbon emissions, though they generate radioactive waste that must be stored safely for thousands of years.</p>
+        <p><strong>Nuclear fusion</strong> combines light nuclei (typically hydrogen isotopes) to form heavier ones, releasing even more energy per unit mass than fission. The Sun and all stars are powered by fusion: in the Sun's core, hydrogen fuses into helium at temperatures of about 15 million kelvins via the proton-proton chain. On Earth, achieving controlled fusion is extremely difficult because nuclei must overcome their electrostatic repulsion (the <strong>Coulomb barrier</strong>), requiring temperatures exceeding 100 million kelvins. Experimental reactors like ITER use magnetic confinement of plasma. If achieved, fusion would provide virtually limitless clean energy from abundant hydrogen fuel.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch20-fission-fusion.js"></script>
+</body>
+</html>

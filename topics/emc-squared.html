@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E=mc² &amp; Relativistic Effects — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="emc-squared">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Special Relativity</span> /
+          <span>E=mc² &amp; Relativistic Effects</span>
+        </div>
+        <h1 class="topic-hero__title">E=mc² &amp; Relativistic Effects</h1>
+        <p class="topic-hero__subtitle">The equivalence of mass and energy, and how momentum and energy behave at relativistic speeds.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Einstein's most famous equation, <span class="equation">E = mc²</span>, reveals that mass and energy are equivalent — two forms of the same thing. The <strong>rest energy</strong> of an object is the energy associated with its mass: even a small mass corresponds to an enormous amount of energy because c² is a huge number (<span class="equation">c² = 9 × 10¹⁶ m²/s²</span>). For example, 1 kg of matter contains <span class="equation">9 × 10¹⁶ J</span> of rest energy — equivalent to about 21 megatons of TNT. This is the energy source of nuclear weapons and nuclear power plants.</p>
+        <p>The total energy of a particle is <span class="equation">E = γmc²</span>, which includes both rest energy and kinetic energy. The <strong>relativistic kinetic energy</strong> is <span class="equation">KE = (γ − 1)mc²</span>, which reduces to <span class="equation">½mv²</span> at low speeds. The <strong>relativistic momentum</strong> is <span class="equation">p = γmv</span>, which increases without bound as v approaches c. This means no massive object can reach the speed of light — it would require infinite energy. The complete energy-momentum relation is <span class="equation">E² = (pc)² + (mc²)²</span>.</p>
+        <p>For <strong>massless particles</strong> like photons, m = 0 and the relation gives <span class="equation">E = pc</span>. Photons have momentum despite having no mass, which is confirmed by radiation pressure and the Compton effect. Mass-energy equivalence explains the <strong>mass defect</strong> in nuclear reactions: the products have slightly less mass than the reactants, and the "missing" mass appears as kinetic energy of the products via <span class="equation">ΔE = Δmc²</span>. This principle underlies nuclear fission (splitting heavy atoms), nuclear fusion (combining light atoms), and even the energy released in chemical reactions (though the mass change is immeasurably small for chemistry). E=mc² stands as one of the most profound and far-reaching equations in all of science.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch18-emc-squared.js"></script>
+</body>
+</html>

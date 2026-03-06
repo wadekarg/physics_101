@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Optics — Interference &amp; Diffraction — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="wave-optics">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Optics</span> /
+          <span>Wave Optics — Interference &amp; Diffraction</span>
+        </div>
+        <h1 class="topic-hero__title">Wave Optics — Interference &amp; Diffraction</h1>
+        <p class="topic-hero__subtitle">Light behaving as a wave, producing interference patterns and bending around obstacles.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Wave optics</strong> describes phenomena that cannot be explained by ray optics alone. <strong>Young's double-slit experiment</strong> provided definitive evidence that light is a wave. When coherent light passes through two narrow slits, it produces an interference pattern of bright and dark fringes on a screen. Bright fringes (constructive interference) occur where the path difference is a whole number of wavelengths: <span class="equation">d sin θ = mλ</span> (m = 0, ±1, ±2, ...). Dark fringes (destructive interference) occur at <span class="equation">d sin θ = (m + ½)λ</span>.</p>
+        <p>A <strong>diffraction grating</strong> consists of many equally spaced slits and produces much sharper and brighter interference maxima than a double slit. The condition for bright fringes is the same: <span class="equation">d sin θ = mλ</span>, but with many slits the peaks are extremely narrow, allowing precise wavelength measurement. Diffraction gratings are the basis of spectrometers used to analyze the composition of stars, identify chemicals, and study atomic structure.</p>
+        <p><strong>Diffraction</strong> is the bending of waves around obstacles or through openings. Single-slit diffraction produces a central maximum with dimmer side maxima, with minima at <span class="equation">a sin θ = mλ</span> (m = ±1, ±2, ...), where a is the slit width. <strong>Thin-film interference</strong> creates the colorful patterns seen in soap bubbles and oil slicks: light reflecting from the top and bottom surfaces of a thin film interferes constructively or destructively depending on the film thickness and wavelength. The condition depends on whether there is a phase change upon reflection (occurs when reflecting from a denser medium). Wave optics is essential for understanding resolution limits of microscopes and telescopes, holography, and many modern technologies.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch17-wave-optics.js"></script>
+</body>
+</html>

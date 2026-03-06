@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Units &amp; Measurement — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="units-measurement">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>What Is Physics?</span> /
+          <span>Units &amp; Measurement</span>
+        </div>
+        <h1 class="topic-hero__title">Units &amp; Measurement</h1>
+        <p class="topic-hero__subtitle">How physicists quantify the natural world using standardized units and careful measurement techniques.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Physics is a quantitative science — every measurement requires a <strong>number</strong> and a <strong>unit</strong>. The internationally agreed system of units is the <strong>SI system</strong> (Système International), which defines seven base units: the meter (m) for length, the kilogram (kg) for mass, the second (s) for time, the ampere (A) for electric current, the kelvin (K) for temperature, the mole (mol) for amount of substance, and the candela (cd) for luminous intensity. All other units in physics are <strong>derived</strong> from these base units. For example, force is measured in newtons: <span class="equation">1 N = 1 kg · m/s²</span>.</p>
+        <p><strong>Dimensional analysis</strong> is a powerful technique for checking equations and converting units. Every valid physics equation must be dimensionally consistent — the dimensions on the left side must match the dimensions on the right. For instance, kinetic energy <span class="equation">KE = ½mv²</span> has dimensions of <span class="equation">[M][L²][T⁻²]</span>, which matches the SI unit of joules. Dimensional analysis can also reveal errors: if you derive an equation and find the dimensions don't match, something has gone wrong. Prefixes like kilo (10³), mega (10⁶), milli (10⁻³), and micro (10⁻⁶) are used to express very large or very small quantities conveniently.</p>
+        <p>Every measurement has an associated <strong>uncertainty</strong>, and understanding <strong>significant figures</strong> helps communicate this precision. The number of significant figures in a measurement reflects how precisely it was made. For example, 3.14 has three significant figures, while 3.1400 has five. When performing calculations, the result should be rounded to match the least precise input: for multiplication and division, match the fewest significant figures; for addition and subtraction, match the fewest decimal places. Understanding uncertainty and significant figures is essential for producing trustworthy experimental results.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch0-units.js"></script>
+</body>
+</html>

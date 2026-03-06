@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faraday's Law — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="faradays-law">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Electromagnetic Induction</span> /
+          <span>Faraday's Law</span>
+        </div>
+        <h1 class="topic-hero__title">Faraday's Law</h1>
+        <p class="topic-hero__subtitle">How changing magnetic fields create electric fields and induce voltage in conductors.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Faraday's Law of Electromagnetic Induction</strong> states that a changing magnetic flux through a loop induces an electromotive force (EMF): <span class="equation">EMF = −dΦ_B/dt</span>, where <span class="equation">Φ_B = BA cos θ</span> is the <strong>magnetic flux</strong> — the product of the magnetic field, the area of the loop, and the cosine of the angle between them. The flux can change by changing B, A, or θ. For a coil with N turns: <span class="equation">EMF = −N dΦ_B/dt</span>. The negative sign reflects <strong>Lenz's Law</strong>.</p>
+        <p><strong>Lenz's Law</strong> states that the induced current flows in a direction that opposes the change in flux that produced it. If the flux through a loop is increasing, the induced current creates a magnetic field opposing the increase. If the flux is decreasing, the induced current tries to maintain it. Lenz's Law is a consequence of conservation of energy — if the induced current reinforced the change, energy would be created from nothing. This opposition is why generators require mechanical work and why eddy currents create braking forces.</p>
+        <p>Faraday's Law has enormous practical significance. It is the principle behind <strong>electric generators</strong>, <strong>transformers</strong>, <strong>inductors</strong>, and many sensors. A guitar pickup works by detecting changes in magnetic flux caused by vibrating steel strings. Induction cooktops heat pans by inducing eddy currents. Faraday's discovery that changing magnetic fields create electric fields (and Maxwell's later discovery that changing electric fields create magnetic fields) unified electricity and magnetism and led directly to the prediction of electromagnetic waves.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch15-faradays-law.js"></script>
+</body>
+</html>

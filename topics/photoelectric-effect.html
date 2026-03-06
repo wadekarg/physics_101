@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photoelectric Effect — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="photoelectric-effect">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Quantum Physics</span> /
+          <span>Photoelectric Effect</span>
+        </div>
+        <h1 class="topic-hero__title">Photoelectric Effect</h1>
+        <p class="topic-hero__subtitle">The experiment that revealed light comes in discrete packets of energy called photons.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>photoelectric effect</strong> is the emission of electrons from a metal surface when light shines on it. Classical wave theory predicted that brighter light should give ejected electrons more energy, and that any frequency should work if the intensity is high enough. Experiments showed the opposite: below a certain <strong>threshold frequency</strong> (f₀), no electrons are emitted regardless of intensity. Above the threshold, electrons are emitted immediately, and their maximum kinetic energy depends on frequency, not intensity. Brighter light ejects more electrons but does not increase their energy.</p>
+        <p>Einstein explained this in 1905 by proposing that light consists of <strong>photons</strong> — discrete packets of energy with <span class="equation">E = hf</span>, where <span class="equation">h = 6.63 × 10⁻³⁴ J·s</span> is Planck's constant. Each photon interacts with a single electron. The electron needs a minimum energy called the <strong>work function</strong> (Φ) to escape the metal. Einstein's photoelectric equation is: <span class="equation">KE_max = hf − Φ</span>. The threshold frequency is <span class="equation">f₀ = Φ/h</span>. This equation was confirmed by Millikan's experiments and earned Einstein the 1921 Nobel Prize.</p>
+        <p>The photoelectric effect was revolutionary because it showed that light has particle-like properties, complementing the wave properties demonstrated by interference and diffraction. This was one of the key experiments that launched <strong>quantum physics</strong>. The effect has many practical applications: <strong>photocells</strong> (light sensors), solar panels (photovoltaic cells), image sensors in cameras (CCD and CMOS), and photomultiplier tubes for detecting extremely faint light. The photoelectric effect also established the concept of wave-particle duality that would become central to quantum mechanics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch19-photoelectric.js"></script>
+</body>
+</html>

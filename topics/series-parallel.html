@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series &amp; Parallel Circuits — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="series-parallel">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>DC Circuits</span> /
+          <span>Series &amp; Parallel Circuits</span>
+        </div>
+        <h1 class="topic-hero__title">Series &amp; Parallel Circuits</h1>
+        <p class="topic-hero__subtitle">Two fundamental ways to connect circuit elements and how they affect current and voltage.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Circuit elements can be connected in two basic configurations. In a <strong>series circuit</strong>, components are connected end-to-end so the same current flows through each: <span class="equation">I_total = I₁ = I₂ = I₃</span>. The voltages across each component add up to the total: <span class="equation">V_total = V₁ + V₂ + V₃</span>. The equivalent resistance of resistors in series is simply their sum: <span class="equation">R_eq = R₁ + R₂ + R₃ + ...</span>. If any component in a series circuit fails (opens), the entire circuit stops working.</p>
+        <p>In a <strong>parallel circuit</strong>, components are connected across the same two nodes so they all have the same voltage: <span class="equation">V_total = V₁ = V₂ = V₃</span>. The currents through each branch add up to the total: <span class="equation">I_total = I₁ + I₂ + I₃</span>. The equivalent resistance of parallel resistors is found from: <span class="equation">1/R_eq = 1/R₁ + 1/R₂ + 1/R₃ + ...</span>. For two resistors in parallel: <span class="equation">R_eq = R₁R₂/(R₁ + R₂)</span>. The equivalent resistance is always less than the smallest individual resistance.</p>
+        <p>Most real circuits are <strong>combination circuits</strong> containing both series and parallel elements. To analyze them, identify series and parallel groups, simplify step by step to find the total resistance, then work backward to find individual currents and voltages. Household wiring uses parallel circuits so that each appliance gets the full supply voltage and can be operated independently. Understanding series and parallel combinations is essential for analyzing any electrical circuit, from simple flashlights to complex electronic systems.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch13-series-parallel.js"></script>
+</body>
+</html>

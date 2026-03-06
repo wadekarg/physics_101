@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orbital Mechanics — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="orbital-mechanics">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Gravitation</span> /
+          <span>Orbital Mechanics</span>
+        </div>
+        <h1 class="topic-hero__title">Orbital Mechanics</h1>
+        <p class="topic-hero__subtitle">The physics governing satellites, planets, and spacecraft in gravitational orbits.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Orbital mechanics applies Newton's gravitation and laws of motion to objects in orbit. For a circular orbit, the gravitational force provides the centripetal force: <span class="equation">GMm/r² = mv²/r</span>, giving the orbital velocity <span class="equation">v = √(GM/r)</span>. Remarkably, the orbital speed depends only on the mass of the central body and the orbital radius, not on the mass of the orbiting object. This is why all objects in the same orbit move at the same speed, and why astronauts in orbit experience "weightlessness" — they are in free fall together with their spacecraft.</p>
+        <p><strong>Kepler's three laws</strong> describe orbital motion: (1) orbits are ellipses with the central body at one focus; (2) a line from the planet to the star sweeps equal areas in equal times (conservation of angular momentum); (3) the square of the period is proportional to the cube of the semi-major axis: <span class="equation">T² = (4π²/GM)a³</span>. For circular orbits, a equals the radius r, and the period is <span class="equation">T = 2πr/v = 2π√(r³/GM)</span>.</p>
+        <p>A <strong>geostationary orbit</strong> has a period of exactly 24 hours, so the satellite stays above the same point on Earth's equator. Using Kepler's Third Law, this requires an altitude of about 35,786 km. Satellites in lower orbits move faster and have shorter periods. Changing orbits requires thrust — the <strong>Hohmann transfer orbit</strong> is the most fuel-efficient way to move between two circular orbits. Understanding orbital mechanics is essential for satellite communications, GPS, space exploration, and understanding the dynamics of the solar system.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch7-orbits.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Velocity &amp; Tides — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="escape-velocity">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Gravitation</span> /
+          <span>Escape Velocity &amp; Tides</span>
+        </div>
+        <h1 class="topic-hero__title">Escape Velocity &amp; Tides</h1>
+        <p class="topic-hero__subtitle">The minimum speed to escape a gravitational field and how gravity creates ocean tides.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Escape velocity</strong> is the minimum speed an object needs to escape a gravitational field without further propulsion. It is found by setting the total energy (kinetic plus potential) equal to zero: <span class="equation">½mv² − GMm/r = 0</span>, giving <span class="equation">v_esc = √(2GM/r)</span>. For Earth's surface, <span class="equation">v_esc ≈ 11.2 km/s</span>. Note that escape velocity depends on the mass and radius of the body but not on the mass of the escaping object. It also does not depend on the direction of launch — only on the starting location.</p>
+        <p><strong>Gravitational potential energy</strong> in the general form (not just near the surface) is <span class="equation">PE = −GMm/r</span>. The negative sign reflects that energy must be added to separate the masses. At infinite distance, PE = 0. The total mechanical energy <span class="equation">E = KE + PE</span> determines the type of orbit: E < 0 gives a bound (elliptical) orbit, E = 0 gives a parabolic escape trajectory, and E > 0 gives a hyperbolic trajectory. Black holes are objects so dense that the escape velocity at their surface (event horizon) exceeds the speed of light.</p>
+        <p><strong>Tidal forces</strong> arise because gravity varies with distance. The Moon's gravitational pull is stronger on the near side of Earth than the far side. This differential force stretches Earth along the Earth-Moon line, creating two tidal bulges — high tides on both the near and far sides. As Earth rotates beneath these bulges, most coastal locations experience two high tides and two low tides per day. <strong>Spring tides</strong> (extra high) occur when the Sun and Moon align; <strong>neap tides</strong> (moderate) occur when they are at right angles. Tidal forces also cause the Moon to slowly recede from Earth and have locked the Moon into synchronous rotation.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch7-escape-velocity.js"></script>
+</body>
+</html>

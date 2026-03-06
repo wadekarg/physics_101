@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universal Gravitation — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="universal-gravitation">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Gravitation</span> /
+          <span>Universal Gravitation</span>
+        </div>
+        <h1 class="topic-hero__title">Universal Gravitation</h1>
+        <p class="topic-hero__subtitle">Newton's law describing the gravitational attraction between any two masses in the universe.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Newton's <strong>Law of Universal Gravitation</strong> states that every mass attracts every other mass with a force proportional to the product of their masses and inversely proportional to the square of the distance between their centers: <span class="equation">F = GMm/r²</span>. Here G is the <strong>gravitational constant</strong>, <span class="equation">G = 6.674 × 10⁻¹¹ N·m²/kg²</span>. This single equation explains falling apples, orbiting planets, and the structure of galaxies. The force is always attractive, acts along the line connecting the two masses, and obeys Newton's Third Law — each mass pulls equally on the other.</p>
+        <p>The <strong>gravitational field</strong> at a point in space describes the force per unit mass that a test mass would experience: <span class="equation">g = GM/r²</span>, directed toward the source mass M. Near Earth's surface, this gives the familiar <span class="equation">g ≈ 9.8 m/s²</span>. The principle of <strong>superposition</strong> applies: the gravitational field from multiple masses is the vector sum of the individual fields. Inside a uniform spherical shell, the gravitational field is zero — a remarkable result that simplifies many calculations.</p>
+        <p>Newton's gravitational law was a monumental achievement, unifying terrestrial and celestial mechanics. The same force that makes an apple fall keeps the Moon in orbit. However, Newton's theory has limitations: it cannot explain the precession of Mercury's orbit or the bending of light by gravity. These phenomena require Einstein's General Theory of Relativity, which describes gravity not as a force but as the curvature of spacetime caused by mass and energy. For most everyday and solar system calculations, however, Newton's law remains an excellent and far simpler approximation.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch7-gravitation.js"></script>
+</body>
+</html>

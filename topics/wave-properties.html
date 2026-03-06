@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave Properties — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="wave-properties">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Waves &amp; Sound</span> /
+          <span>Wave Properties</span>
+        </div>
+        <h1 class="topic-hero__title">Wave Properties</h1>
+        <p class="topic-hero__subtitle">The fundamental characteristics shared by all waves, from ocean swells to sound and light.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>A <strong>wave</strong> is a disturbance that transfers energy without transferring matter. Waves are characterized by several key properties: <strong>wavelength</strong> (λ) is the distance between two consecutive identical points (e.g., crest to crest); <strong>frequency</strong> (f) is the number of complete oscillations per second, measured in hertz (Hz); <strong>amplitude</strong> (A) is the maximum displacement from equilibrium; and <strong>wave speed</strong> (v) is how fast the wave pattern moves. These are related by the fundamental wave equation: <span class="equation">v = fλ</span>.</p>
+        <p>Waves are classified as <strong>transverse</strong> or <strong>longitudinal</strong>. In a transverse wave, the medium oscillates perpendicular to the direction of wave travel — like waves on a string or electromagnetic waves. In a longitudinal wave, the medium oscillates parallel to the wave direction — like sound waves, which consist of alternating compressions and rarefactions. Some waves, like ocean surface waves, have both transverse and longitudinal components. The <strong>period</strong> T is the time for one complete cycle: <span class="equation">T = 1/f</span>.</p>
+        <p>The mathematical description of a sinusoidal wave traveling in the +x direction is <span class="equation">y(x,t) = A sin(kx − ωt)</span>, where <span class="equation">k = 2π/λ</span> is the wave number and <span class="equation">ω = 2πf</span> is the angular frequency. The speed of a wave depends on the properties of the medium: for a string, <span class="equation">v = √(T/μ)</span>, where T is tension and μ is linear mass density. For sound in air, speed depends on temperature. Understanding these basic properties is the foundation for all wave phenomena, from music to telecommunications to quantum mechanics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch9-wave-properties.js"></script>
+</body>
+</html>

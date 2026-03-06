@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doppler Effect &amp; Sonic Booms — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="doppler-effect">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Waves &amp; Sound</span> /
+          <span>Doppler Effect &amp; Sonic Booms</span>
+        </div>
+        <h1 class="topic-hero__title">Doppler Effect &amp; Sonic Booms</h1>
+        <p class="topic-hero__subtitle">The change in observed frequency when a wave source and observer are in relative motion.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>The <strong>Doppler effect</strong> is the change in observed frequency (and wavelength) of a wave when the source and observer are moving relative to each other. When a source approaches, the observed frequency is higher (higher pitch for sound, bluer color for light); when it recedes, the frequency is lower (lower pitch, redder color). For sound, the general formula is: <span class="equation">f' = f(v ± v_o)/(v ∓ v_s)</span>, where v is the wave speed, v_o is the observer speed, and v_s is the source speed. The upper signs apply when source and observer approach each other.</p>
+        <p>The Doppler effect has countless applications. Police radar guns use the Doppler shift of reflected microwaves to measure vehicle speeds. Medical ultrasound uses the Doppler effect to measure blood flow velocity. In astronomy, the <strong>redshift</strong> of light from distant galaxies reveals that the universe is expanding — one of the most important discoveries in modern science. Weather radar uses the Doppler shift to detect wind patterns and rotation in storms.</p>
+        <p>When a source moves faster than the speed of sound, it creates a <strong>shock wave</strong> known as a <strong>sonic boom</strong>. The wave fronts pile up into a cone-shaped wavefront called a <strong>Mach cone</strong>. The half-angle of this cone is given by <span class="equation">sin θ = v/v_s = 1/M</span>, where M is the <strong>Mach number</strong> (the ratio of object speed to sound speed). A Mach number greater than 1 means supersonic flight. The sonic boom is not a one-time event — it is a continuous shock wave that follows the aircraft. The loud "boom" is heard when the cone sweeps past the observer.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch9-doppler.js"></script>
+</body>
+</html>

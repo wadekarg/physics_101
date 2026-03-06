@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pressure &amp; Pascal's Principle — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="pressure-pascal">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Fluid Mechanics</span> /
+          <span>Pressure &amp; Pascal's Principle</span>
+        </div>
+        <h1 class="topic-hero__title">Pressure &amp; Pascal's Principle</h1>
+        <p class="topic-hero__subtitle">How force distributed over area creates pressure and how it transmits through confined fluids.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Pressure</strong> is defined as force per unit area: <span class="equation">P = F/A</span>, measured in pascals (Pa), where <span class="equation">1 Pa = 1 N/m²</span>. Atmospheric pressure at sea level is approximately <span class="equation">1 atm = 101,325 Pa</span>. In a fluid at rest, pressure increases with depth due to the weight of the fluid above: <span class="equation">P = P₀ + ρgh</span>, where ρ is the fluid density, g is gravitational acceleration, and h is the depth below the surface. This explains why your ears feel pressure when diving — every 10 meters of water adds roughly one atmosphere of pressure.</p>
+        <p><strong>Pascal's Principle</strong> states that a change in pressure applied to an enclosed fluid is transmitted undiminished to every point in the fluid and to the walls of the container. This principle is the basis of <strong>hydraulic systems</strong>. In a hydraulic press, a small force applied to a small piston creates the same pressure as a large force on a large piston: <span class="equation">F₁/A₁ = F₂/A₂</span>. This means the output force can be much larger than the input force, providing a mechanical advantage of <span class="equation">A₂/A₁</span>. Hydraulic brakes, car lifts, and heavy machinery all exploit this principle.</p>
+        <p>Pressure in fluids is measured using various devices. A <strong>manometer</strong> uses a column of liquid to measure pressure differences. A <strong>barometer</strong> measures atmospheric pressure using a mercury column (standard atmospheric pressure supports a column of about 760 mm Hg). <strong>Gauge pressure</strong> is the pressure above atmospheric: <span class="equation">P_gauge = P_absolute − P_atm</span>. Tire pressure gauges, for example, read gauge pressure. Understanding pressure is essential for engineering, medicine (blood pressure), meteorology, and any application involving fluids.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch10-pressure.js"></script>
+</body>
+</html>

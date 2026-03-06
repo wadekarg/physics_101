@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heat vs Temperature — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="heat-temperature">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Thermodynamics</span> /
+          <span>Heat vs Temperature</span>
+        </div>
+        <h1 class="topic-hero__title">Heat vs Temperature</h1>
+        <p class="topic-hero__subtitle">Understanding the distinction between thermal energy transfer and the measure of molecular motion.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Temperature</strong> is a measure of the average kinetic energy of the particles in a substance. It determines the direction of spontaneous heat flow: from hot to cold. The SI unit is the kelvin (K), related to Celsius by <span class="equation">T(K) = T(°C) + 273.15</span>. <strong>Heat</strong> (Q) is the transfer of thermal energy between objects at different temperatures. Heat is not something an object "has" — it is energy in transit. An object has thermal energy (internal energy), but heat refers only to the transfer process.</p>
+        <p>The amount of heat required to change an object's temperature depends on its mass, the temperature change, and a material property called <strong>specific heat capacity</strong> (c): <span class="equation">Q = mcΔT</span>. Water has an unusually high specific heat capacity (<span class="equation">c = 4186 J/(kg·°C)</span>), which is why it is an excellent coolant and why coastal climates are moderate. When substances change phase (melting, boiling), energy is absorbed or released without a temperature change: <span class="equation">Q = mL</span>, where L is the latent heat.</p>
+        <p>Heat transfers by three mechanisms: <strong>conduction</strong> (direct molecular contact, governed by <span class="equation">Q/t = kAΔT/d</span>), <strong>convection</strong> (bulk fluid motion carrying thermal energy), and <strong>radiation</strong> (electromagnetic waves, governed by the Stefan-Boltzmann law <span class="equation">P = εσAT⁴</span>). All objects above absolute zero radiate thermal energy. Thermal equilibrium occurs when two objects reach the same temperature and net heat flow ceases — this is formalized as the <strong>Zeroth Law of Thermodynamics</strong>: if A is in equilibrium with B, and B with C, then A is in equilibrium with C.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch11-heat-temp.js"></script>
+</body>
+</html>

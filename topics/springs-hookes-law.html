@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Springs &amp; Hooke's Law — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="springs-hookes-law">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Oscillations &amp; SHM</span> /
+          <span>Springs &amp; Hooke's Law</span>
+        </div>
+        <h1 class="topic-hero__title">Springs &amp; Hooke's Law</h1>
+        <p class="topic-hero__subtitle">The restoring force of springs and the elegant motion known as simple harmonic motion.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Hooke's Law</strong> states that the restoring force exerted by a spring is proportional to its displacement from equilibrium and directed opposite to the displacement: <span class="equation">F = −kx</span>, where k is the spring constant (in N/m) and x is the displacement. A stiffer spring has a larger k. This linear restoring force produces <strong>simple harmonic motion</strong> (SHM) — the mass oscillates back and forth with a sinusoidal pattern: <span class="equation">x(t) = A cos(ωt + φ)</span>, where A is the amplitude, ω is the angular frequency, and φ is the phase constant.</p>
+        <p>The period of a mass on a spring is <span class="equation">T = 2π√(m/k)</span>, and the frequency is <span class="equation">f = (1/2π)√(k/m)</span>. Notably, the period does <em>not</em> depend on the amplitude — large and small oscillations take the same time. During SHM, energy continuously converts between kinetic and potential forms: at the equilibrium position, all energy is kinetic; at maximum displacement, all energy is potential: <span class="equation">E = ½kA² = ½mv_max²</span>. The maximum velocity occurs at equilibrium: <span class="equation">v_max = Aω</span>.</p>
+        <p>Hooke's Law applies to many systems beyond literal metal springs: elastic bands, bending beams, vibrating molecules, and even the small oscillations of any system near a stable equilibrium point. When the displacement becomes too large, most real springs deviate from Hooke's Law, and the motion is no longer perfectly harmonic. The elastic potential energy stored in a spring is <span class="equation">PE = ½kx²</span>, a parabolic function that is characteristic of all SHM systems. Understanding springs and SHM provides the foundation for studying waves, sound, and quantum mechanics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch8-springs.js"></script>
+</body>
+</html>

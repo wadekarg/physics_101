@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work &amp; Kinetic Energy — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="work-kinetic-energy">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Work, Energy &amp; Power</span> /
+          <span>Work &amp; Kinetic Energy</span>
+        </div>
+        <h1 class="topic-hero__title">Work &amp; Kinetic Energy</h1>
+        <p class="topic-hero__subtitle">How forces transfer energy to objects through work and change their kinetic energy.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>In physics, <strong>work</strong> has a precise definition: work is done when a force causes a displacement. For a constant force at an angle θ to the displacement, work is <span class="equation">W = Fd cos θ</span>. If the force is perpendicular to the displacement (like the normal force on a sliding object on a flat surface), no work is done. Work is a scalar quantity measured in joules (J), where <span class="equation">1 J = 1 N · m</span>. Work can be positive (force in the direction of motion), negative (force opposing motion, like friction), or zero.</p>
+        <p><strong>Kinetic energy</strong> is the energy of motion, defined as <span class="equation">KE = ½mv²</span>. The <strong>work-energy theorem</strong> states that the net work done on an object equals the change in its kinetic energy: <span class="equation">W_net = ΔKE = ½mv² − ½mv₀²</span>. This is a powerful result because it relates force and displacement directly to speed, often bypassing the need to find acceleration and use kinematics. For variable forces, work is calculated as an integral: <span class="equation">W = ∫F · dx</span>, which geometrically equals the area under the force-displacement curve.</p>
+        <p>The work-energy theorem is particularly useful for problems involving friction, inclines, and varying forces. For example, to find the speed of a block after sliding down a rough incline, you can calculate the work done by gravity (positive), the work done by friction (negative), and set the net work equal to the change in kinetic energy. Energy methods are often simpler than force-based approaches because energy is a scalar — no vector components are needed.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch4-work-energy.js"></script>
+</body>
+</html>

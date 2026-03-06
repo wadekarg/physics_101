@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newton's First Law — Inertia — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="newtons-first-law">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Newton's Laws</span> /
+          <span>Newton's First Law — Inertia</span>
+        </div>
+        <h1 class="topic-hero__title">Newton's First Law — Inertia</h1>
+        <p class="topic-hero__subtitle">An object at rest stays at rest, and an object in motion stays in motion, unless acted upon by a net force.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Newton's First Law, often called the <strong>Law of Inertia</strong>, states that an object will remain at rest or continue moving in a straight line at constant velocity unless acted upon by a <strong>net external force</strong>. This was revolutionary because it contradicted the ancient Aristotelian view that objects naturally tend to come to rest. In reality, objects slow down due to friction and air resistance — forces that are always present in everyday experience but are not fundamental to motion itself.</p>
+        <p><strong>Inertia</strong> is the tendency of an object to resist changes in its state of motion. Mass is the quantitative measure of inertia: a more massive object is harder to accelerate, decelerate, or change direction. When the net force on an object is zero (<span class="equation">ΣF = 0</span>), the object is in <strong>equilibrium</strong>. This can mean it is at rest (static equilibrium) or moving at constant velocity (dynamic equilibrium). A book on a table is in static equilibrium; a car cruising at constant speed on a straight highway is in dynamic equilibrium.</p>
+        <p>The First Law also implicitly defines <strong>inertial reference frames</strong> — frames of reference in which Newton's laws hold true. An inertial frame is one that is not accelerating. If you are in an accelerating car, you feel "pushed" backward — but this is a fictitious force arising because the car is a non-inertial frame. Newton's First Law is the foundation upon which all of classical mechanics is built, and understanding it deeply is essential before moving to the Second and Third Laws.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch3-first-law.js"></script>
+</body>
+</html>

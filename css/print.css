@@ -1,0 +1,47 @@
+/* ===== Print Styles ===== */
+@media print {
+  .header,
+  .sidebar,
+  .sim-controls,
+  .sim-controls__toolbar,
+  .toast-container,
+  .particles,
+  .btn,
+  .search-wrapper,
+  .topic-nav,
+  .mini-game,
+  .quiz-container {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 12pt;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .main {
+    margin: 0;
+    padding: 1cm;
+  }
+
+  .card, .fun-fact, .myth-buster {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .sim-canvas-container {
+    border: 1px solid #ccc;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}

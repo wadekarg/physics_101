@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circular Motion — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="circular-motion">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Projectile &amp; 2D Motion</span> /
+          <span>Circular Motion</span>
+        </div>
+        <h1 class="topic-hero__title">Circular Motion</h1>
+        <p class="topic-hero__subtitle">Understanding the physics of objects moving along curved paths at constant or varying speeds.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>When an object moves in a circle at constant speed, it is undergoing <strong>uniform circular motion</strong>. Even though the speed is constant, the velocity is continuously changing direction, which means the object is accelerating. This acceleration is directed toward the center of the circle and is called <strong>centripetal acceleration</strong>: <span class="equation">a_c = v²/r</span>, where v is the speed and r is the radius. The force that causes this acceleration is the <strong>centripetal force</strong>: <span class="equation">F_c = mv²/r</span>. This is not a new type of force — it is whatever force (gravity, tension, friction, normal force) keeps the object on its circular path.</p>
+        <p>Circular motion is described by angular quantities. The <strong>period</strong> T is the time for one complete revolution, and the <strong>frequency</strong> f is the number of revolutions per second: <span class="equation">f = 1/T</span>. The angular velocity is <span class="equation">ω = 2π/T = 2πf</span>, measured in radians per second. The linear speed relates to angular velocity by <span class="equation">v = ωr</span>. These relationships allow us to convert between the linear and angular descriptions of circular motion.</p>
+        <p>If an object moves in a circle with changing speed, it has both centripetal acceleration (directed inward) and <strong>tangential acceleration</strong> (directed along the velocity). The total acceleration is the vector sum of these two components. Examples of circular motion are everywhere: planets orbiting the Sun, cars rounding curves, electrons in magnetic fields, and clothes in a spinning dryer. Understanding centripetal acceleration is essential for analyzing any curved-path motion in physics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch2-circular-motion.js"></script>
+</body>
+</html>

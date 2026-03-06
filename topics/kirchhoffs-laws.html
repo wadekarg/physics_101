@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirchhoff's Laws &amp; RC Circuits — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="kirchhoffs-laws">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>DC Circuits</span> /
+          <span>Kirchhoff's Laws &amp; RC Circuits</span>
+        </div>
+        <h1 class="topic-hero__title">Kirchhoff's Laws &amp; RC Circuits</h1>
+        <p class="topic-hero__subtitle">Powerful rules for analyzing complex circuits and the time-dependent behavior of capacitor circuits.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Kirchhoff's Current Law</strong> (KCL) states that the total current entering any junction equals the total current leaving: <span class="equation">ΣI_in = ΣI_out</span>. This is a consequence of conservation of charge. <strong>Kirchhoff's Voltage Law</strong> (KVL) states that the sum of all voltage changes around any closed loop is zero: <span class="equation">ΣV = 0</span>. This is a consequence of conservation of energy. Together, these two laws allow you to analyze any circuit, no matter how complex, by writing equations for each junction and loop.</p>
+        <p>To apply Kirchhoff's Laws: (1) label all currents with assumed directions, (2) apply KCL at each junction, (3) apply KVL around each independent loop (voltage rises for batteries from − to + terminal, voltage drops across resistors in the direction of current), and (4) solve the resulting system of equations. If a current comes out negative, it simply means the actual direction is opposite to your assumed direction.</p>
+        <p>An <strong>RC circuit</strong> contains a resistor and capacitor. When charging, the voltage across the capacitor grows exponentially: <span class="equation">V_C(t) = V₀(1 − e^(−t/RC))</span>. When discharging: <span class="equation">V_C(t) = V₀ e^(−t/RC)</span>. The product <span class="equation">τ = RC</span> is the <strong>time constant</strong> — the time for the voltage to reach about 63% of its final value (charging) or drop to about 37% (discharging). After 5 time constants, the capacitor is essentially fully charged or discharged. RC circuits are fundamental to timing circuits, filters, and signal processing in electronics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch13-kirchhoff.js"></script>
+</body>
+</html>

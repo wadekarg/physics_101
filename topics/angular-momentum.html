@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular Momentum — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="angular-momentum">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Rotational Motion</span> /
+          <span>Angular Momentum</span>
+        </div>
+        <h1 class="topic-hero__title">Angular Momentum</h1>
+        <p class="topic-hero__subtitle">The rotational analog of linear momentum and its powerful conservation law.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Angular momentum</strong> is the rotational analog of linear momentum. For a rigid body rotating about a fixed axis, angular momentum is <span class="equation">L = Iω</span>, where I is the moment of inertia and ω is the angular velocity. For a point particle, angular momentum about a point is <span class="equation">L = mvr sin θ</span>, or in vector form <span class="equation">⃗L = ⃗r × ⃗p</span>. Angular momentum is measured in kg·m²/s and is a vector quantity, with direction given by the right-hand rule.</p>
+        <p>The <strong>conservation of angular momentum</strong> states that if no net external torque acts on a system, the total angular momentum remains constant: <span class="equation">Στ_ext = 0 → L = constant</span>. This means <span class="equation">I_iω_i = I_fω_f</span>. A figure skater pulling in their arms decreases their moment of inertia, so their angular velocity increases to conserve angular momentum — they spin faster. Similarly, a diver in a tuck position rotates faster than in a layout position.</p>
+        <p>Conservation of angular momentum has profound consequences across all scales of physics. It explains why planets closer to the Sun orbit faster (Kepler's Second Law), why neutron stars spin incredibly fast after a star collapses, and why a gyroscope resists changes to its orientation. Angular momentum conservation is one of the fundamental conservation laws of nature, arising from the rotational symmetry of physical laws (Noether's theorem).</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch6-angular-momentum.js"></script>
+</body>
+</html>

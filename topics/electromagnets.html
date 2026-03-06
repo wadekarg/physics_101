@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electromagnets &amp; Motors — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="electromagnets">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Magnetism</span> /
+          <span>Electromagnets &amp; Motors</span>
+        </div>
+        <h1 class="topic-hero__title">Electromagnets &amp; Motors</h1>
+        <p class="topic-hero__subtitle">Creating controllable magnetic fields with electric current and converting them to rotational motion.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>An <strong>electromagnet</strong> is a magnet created by passing electric current through a coil of wire. A <strong>solenoid</strong> (a long coil of wire) produces a nearly uniform magnetic field inside: <span class="equation">B = μ₀nI</span>, where n is the number of turns per unit length and I is the current. The field inside is parallel to the axis and much stronger than outside. Adding a ferromagnetic core (like iron) dramatically increases the field strength because the core's <strong>magnetic domains</strong> align with the external field, amplifying it by factors of hundreds or thousands.</p>
+        <p><strong>Magnetic domains</strong> are microscopic regions in ferromagnetic materials where atomic magnetic moments are aligned. In an unmagnetized iron bar, domains point in random directions and cancel out. An external field causes domains aligned with the field to grow and others to shrink, creating a net magnetization. Above the <strong>Curie temperature</strong>, thermal energy disrupts domain alignment and the material loses its ferromagnetism. Permanent magnets are made of materials with high <strong>coercivity</strong> — strong resistance to demagnetization.</p>
+        <p>A <strong>DC motor</strong> converts electrical energy to rotational mechanical energy using the force on a current-carrying loop in a magnetic field. The torque on the loop is <span class="equation">τ = NIAB sin θ</span>, where N is the number of turns, A is the loop area, and θ is the angle between the field and the loop's normal. A <strong>commutator</strong> reverses the current direction every half turn to maintain continuous rotation. Real motors use multiple coils and shaped pole pieces for smoother torque. Electromagnets are used in MRI machines, maglev trains, particle accelerators, electric locks, and scrapyard cranes.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch14-electromagnets.js"></script>
+</body>
+</html>

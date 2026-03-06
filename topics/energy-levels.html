@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Levels &amp; Spectra — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="energy-levels">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Quantum Physics</span> /
+          <span>Energy Levels &amp; Spectra</span>
+        </div>
+        <h1 class="topic-hero__title">Energy Levels &amp; Spectra</h1>
+        <p class="topic-hero__subtitle">How atoms can only exist in discrete energy states, producing unique spectral fingerprints.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>In 1913, <strong>Niels Bohr</strong> proposed a model of the hydrogen atom where the electron can only occupy certain discrete orbits, each with a specific energy. The allowed energy levels are <span class="equation">E_n = −13.6/n² eV</span>, where n = 1, 2, 3, ... is the principal quantum number. The lowest energy state (n = 1) is the <strong>ground state</strong> with E = −13.6 eV. The energy is negative because the electron is bound to the nucleus — energy must be added to free it. The <strong>ionization energy</strong> of hydrogen is 13.6 eV.</p>
+        <p>When an electron transitions from a higher energy level to a lower one, it emits a photon with energy equal to the difference: <span class="equation">E_photon = hf = E_i − E_f = 13.6(1/n_f² − 1/n_i²) eV</span>. This produces an <strong>emission spectrum</strong> of discrete wavelengths unique to each element — an atomic fingerprint. The hydrogen spectrum has named series: the <strong>Lyman series</strong> (transitions to n = 1, ultraviolet), <strong>Balmer series</strong> (to n = 2, visible light), and <strong>Paschen series</strong> (to n = 3, infrared). Conversely, atoms absorb photons only at these same specific wavelengths, producing an <strong>absorption spectrum</strong> with dark lines.</p>
+        <p>The Bohr model was a crucial step toward modern quantum mechanics, correctly predicting hydrogen's spectrum. However, it fails for multi-electron atoms and cannot explain fine structure or molecular bonding. The full quantum mechanical model replaces orbits with <strong>orbitals</strong> — probability distributions described by quantum numbers n, l, and m_l. Despite its limitations, the concept of quantized energy levels is universally valid and explains emission/absorption spectra, lasers (stimulated emission between levels), fluorescence, and the operation of LEDs. Spectroscopy remains one of the most powerful tools in chemistry, astronomy, and materials science.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch19-energy-levels.js"></script>
+</body>
+</html>

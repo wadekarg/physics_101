@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generators &amp; Transformers — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="generators-transformers">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Electromagnetic Induction</span> /
+          <span>Generators &amp; Transformers</span>
+        </div>
+        <h1 class="topic-hero__title">Generators &amp; Transformers</h1>
+        <p class="topic-hero__subtitle">Converting mechanical energy to electrical energy and efficiently changing voltage levels.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>An <strong>AC generator</strong> (alternator) converts mechanical energy into alternating current by rotating a coil in a magnetic field. As the coil rotates, the magnetic flux changes sinusoidally, inducing an EMF: <span class="equation">EMF = NABω sin(ωt)</span>, where N is the number of turns, A is the coil area, B is the field strength, and ω is the angular velocity. The peak EMF is <span class="equation">EMF₀ = NABω</span>. This produces alternating current (AC) that oscillates between positive and negative values — the basis of the electrical power grid.</p>
+        <p>A <strong>transformer</strong> transfers electrical energy between two coils through a shared magnetic core, using Faraday's Law to change voltage levels. The primary coil creates a changing magnetic flux that induces an EMF in the secondary coil. The voltage ratio equals the turns ratio: <span class="equation">V₂/V₁ = N₂/N₁</span>. A <strong>step-up transformer</strong> (N₂ > N₁) increases voltage; a <strong>step-down transformer</strong> decreases it. For an ideal transformer, power is conserved: <span class="equation">V₁I₁ = V₂I₂</span>, so increasing voltage decreases current proportionally.</p>
+        <p>Transformers are essential for efficient power transmission. Power plants generate electricity at moderate voltage, step it up to hundreds of thousands of volts for long-distance transmission (reducing I²R losses), then step it down at substations for distribution, and finally step it down again to household voltage (120 V or 240 V depending on country). Transformers only work with AC because the flux must change continuously. This is the primary reason AC won over DC in the "War of Currents" between Tesla/Westinghouse and Edison. Real transformers have efficiencies of 95–99%.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch15-generators.js"></script>
+</body>
+</html>

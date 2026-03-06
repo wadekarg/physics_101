@@ -1,0 +1,188 @@
+{
+  "achievements": [
+    {
+      "id": "first-sim",
+      "name": "First Steps",
+      "description": "Complete your first simulation",
+      "icon": "🎯",
+      "condition": { "type": "topicsCompleted", "count": 1 },
+      "xpBonus": 50
+    },
+    {
+      "id": "five-topics",
+      "name": "Getting Started",
+      "description": "Complete 5 topics",
+      "icon": "🌟",
+      "condition": { "type": "topicsCompleted", "count": 5 },
+      "xpBonus": 100
+    },
+    {
+      "id": "ten-topics",
+      "name": "Dedicated Learner",
+      "description": "Complete 10 topics",
+      "icon": "📖",
+      "condition": { "type": "topicsCompleted", "count": 10 },
+      "xpBonus": 200
+    },
+    {
+      "id": "twenty-topics",
+      "name": "Physics Enthusiast",
+      "description": "Complete 20 topics",
+      "icon": "🔬",
+      "condition": { "type": "topicsCompleted", "count": 20 },
+      "xpBonus": 500
+    },
+    {
+      "id": "half-way",
+      "name": "Halfway There",
+      "description": "Complete 32 topics — half the curriculum!",
+      "icon": "🏔️",
+      "condition": { "type": "topicsCompleted", "count": 32 },
+      "xpBonus": 750
+    },
+    {
+      "id": "all-topics",
+      "name": "Physics Master",
+      "description": "Complete all 63 topics",
+      "icon": "👑",
+      "condition": { "type": "topicsCompleted", "count": 63 },
+      "xpBonus": 2000
+    },
+    {
+      "id": "first-quiz",
+      "name": "Quiz Taker",
+      "description": "Complete your first quiz",
+      "icon": "✏️",
+      "condition": { "type": "quizzesCompleted", "count": 1 },
+      "xpBonus": 50
+    },
+    {
+      "id": "ten-quizzes",
+      "name": "Quiz Whiz",
+      "description": "Complete 10 quizzes",
+      "icon": "🧠",
+      "condition": { "type": "quizzesCompleted", "count": 10 },
+      "xpBonus": 300
+    },
+    {
+      "id": "all-quizzes",
+      "name": "Perfect Scholar",
+      "description": "Complete all 63 quizzes",
+      "icon": "🎓",
+      "condition": { "type": "quizzesCompleted", "count": 63 },
+      "xpBonus": 2000
+    },
+    {
+      "id": "xp-500",
+      "name": "Apprentice",
+      "description": "Earn 500 XP",
+      "icon": "⚗️",
+      "condition": { "type": "xpReached", "count": 500 },
+      "xpBonus": 0
+    },
+    {
+      "id": "xp-1500",
+      "name": "Scholar",
+      "description": "Earn 1,500 XP",
+      "icon": "📚",
+      "condition": { "type": "xpReached", "count": 1500 },
+      "xpBonus": 0
+    },
+    {
+      "id": "xp-3000",
+      "name": "Master",
+      "description": "Earn 3,000 XP",
+      "icon": "🎓",
+      "condition": { "type": "xpReached", "count": 3000 },
+      "xpBonus": 0
+    },
+    {
+      "id": "xp-5000",
+      "name": "Quantum Wizard",
+      "description": "Earn 5,000 XP — the highest level!",
+      "icon": "🧙",
+      "condition": { "type": "xpReached", "count": 5000 },
+      "xpBonus": 0
+    },
+    {
+      "id": "streak-3",
+      "name": "On a Roll",
+      "description": "Visit 3 days in a row",
+      "icon": "🔥",
+      "condition": { "type": "streak", "count": 3 },
+      "xpBonus": 100
+    },
+    {
+      "id": "streak-7",
+      "name": "Week Warrior",
+      "description": "Visit 7 days in a row",
+      "icon": "💪",
+      "condition": { "type": "streak", "count": 7 },
+      "xpBonus": 300
+    },
+    {
+      "id": "streak-30",
+      "name": "Monthly Master",
+      "description": "Visit 30 days in a row",
+      "icon": "🏆",
+      "condition": { "type": "streak", "count": 30 },
+      "xpBonus": 1000
+    },
+    {
+      "id": "ch-mechanics",
+      "name": "Newton's Heir",
+      "description": "Complete all Mechanics chapters (1-7)",
+      "icon": "🍎",
+      "condition": { "type": "chaptersCompleted", "chapters": [1, 2, 3, 4, 5, 6, 7] },
+      "xpBonus": 500
+    },
+    {
+      "id": "ch-waves",
+      "name": "Wave Rider",
+      "description": "Complete all Wave & Sound chapters (8-10)",
+      "icon": "🌊",
+      "condition": { "type": "chaptersCompleted", "chapters": [8, 9, 10] },
+      "xpBonus": 300
+    },
+    {
+      "id": "ch-em",
+      "name": "Electromagnetic Hero",
+      "description": "Complete all E&M chapters (12-16)",
+      "icon": "⚡",
+      "condition": { "type": "chaptersCompleted", "chapters": [12, 13, 14, 15, 16] },
+      "xpBonus": 500
+    },
+    {
+      "id": "ch-modern",
+      "name": "Quantum Explorer",
+      "description": "Complete all Modern Physics chapters (18-20)",
+      "icon": "⚛️",
+      "condition": { "type": "chaptersCompleted", "chapters": [18, 19, 20] },
+      "xpBonus": 500
+    },
+    {
+      "id": "first-orbit",
+      "name": "First Orbit",
+      "description": "Successfully launch a satellite into orbit",
+      "icon": "🛸",
+      "condition": { "type": "special", "key": "first-orbit" },
+      "xpBonus": 100
+    },
+    {
+      "id": "speed-of-light",
+      "name": "Speed of Light",
+      "description": "Reach 99% the speed of light in a simulation",
+      "icon": "💡",
+      "condition": { "type": "special", "key": "speed-of-light" },
+      "xpBonus": 100
+    },
+    {
+      "id": "energy-conserved",
+      "name": "Energy Conserved",
+      "description": "Complete the energy conservation simulation",
+      "icon": "♻️",
+      "condition": { "type": "special", "key": "energy-conserved" },
+      "xpBonus": 100
+    }
+  ]
+}

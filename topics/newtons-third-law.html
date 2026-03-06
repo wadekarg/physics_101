@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newton's Third Law — Action/Reaction — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="newtons-third-law">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Newton's Laws</span> /
+          <span>Newton's Third Law — Action/Reaction</span>
+        </div>
+        <h1 class="topic-hero__title">Newton's Third Law — Action/Reaction</h1>
+        <p class="topic-hero__subtitle">Every action has an equal and opposite reaction — forces always come in pairs.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Newton's Third Law states: for every action, there is an equal and opposite reaction. More precisely, if object A exerts a force on object B, then object B simultaneously exerts a force on object A that is equal in magnitude but opposite in direction: <span class="equation">⃗F_AB = −⃗F_BA</span>. These are called <strong>action-reaction pairs</strong> (or Newton's Third Law pairs). It is important to note that the two forces in a pair always act on <em>different</em> objects — they never cancel each other out.</p>
+        <p>A common source of confusion: if the Earth pulls you down with gravity, and you pull the Earth up with equal force, why don't these cancel? Because they act on different objects. Your weight (Earth pulling you) and the normal force (floor pushing you up) are <em>not</em> a Third Law pair — they both act on you. The actual Third Law pair to your weight is the gravitational force you exert on the Earth. Since the Earth has enormous mass, its acceleration from your pull is negligibly small: <span class="equation">a_Earth = F/M_Earth ≈ 0</span>.</p>
+        <p>Third Law pairs are present in every interaction: when you push a wall, the wall pushes you back; when a rocket expels exhaust gases backward, the gases push the rocket forward; when a swimmer pushes water backward, the water pushes the swimmer forward. The <strong>normal force</strong> is a reaction force that surfaces exert perpendicular to themselves when objects press against them. Understanding Third Law pairs is crucial for correctly identifying forces and drawing free-body diagrams.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch3-third-law.js"></script>
+</body>
+</html>

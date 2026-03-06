@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equations of Motion — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="equations-of-motion">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Kinematics</span> /
+          <span>Equations of Motion</span>
+        </div>
+        <h1 class="topic-hero__title">Equations of Motion</h1>
+        <p class="topic-hero__subtitle">The kinematic equations that relate position, velocity, acceleration, and time for constant acceleration.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>When an object moves with <strong>constant acceleration</strong>, its motion can be completely described by a set of kinematic equations. These five equations relate the quantities: initial velocity (<span class="equation">v₀</span>), final velocity (<span class="equation">v</span>), acceleration (<span class="equation">a</span>), time (<span class="equation">t</span>), and displacement (<span class="equation">Δx</span>). The most commonly used forms are: <span class="equation">v = v₀ + at</span>, <span class="equation">Δx = v₀t + ½at²</span>, <span class="equation">v² = v₀² + 2aΔx</span>, <span class="equation">Δx = ½(v₀ + v)t</span>, and <span class="equation">Δx = vt − ½at²</span>.</p>
+        <p>Each equation is useful in different scenarios depending on which quantities are known and which are unknown. For example, if you know the initial velocity and acceleration but not the final velocity, you might use <span class="equation">Δx = v₀t + ½at²</span> to find displacement. The key strategy is to identify the three known quantities and the one unknown, then select the equation that contains exactly those four variables. These equations are derived by integrating the constant-acceleration assumption: since <span class="equation">a = dv/dt</span> is constant, integrating once gives velocity as a linear function of time, and integrating again gives position as a quadratic function of time.</p>
+        <p>It is crucial to remember that these equations are only valid for <strong>constant (uniform) acceleration</strong>. In situations where acceleration varies — such as a car that gradually increases its throttle — these simple equations do not apply, and calculus-based methods must be used. Also, be careful with signs: choose a positive direction (e.g., upward or rightward) and consistently apply it to all vector quantities. A negative acceleration does not always mean "slowing down" — it means the acceleration points in the negative direction.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch1-equations-of-motion.js"></script>
+</body>
+</html>

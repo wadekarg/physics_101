@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bernoulli's Equation — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="bernoulli">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Fluid Mechanics</span> /
+          <span>Bernoulli's Equation</span>
+        </div>
+        <h1 class="topic-hero__title">Bernoulli's Equation</h1>
+        <p class="topic-hero__subtitle">The relationship between fluid speed, pressure, and height in flowing fluids.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Bernoulli's Equation</strong> describes the behavior of an ideal (incompressible, non-viscous) fluid flowing steadily along a streamline: <span class="equation">P + ½ρv² + ρgh = constant</span>. This equation is essentially conservation of energy applied to fluid flow. The three terms represent pressure energy, kinetic energy per unit volume, and gravitational potential energy per unit volume, respectively. Where the fluid speeds up, the pressure drops — and vice versa.</p>
+        <p>The <strong>continuity equation</strong>, <span class="equation">A₁v₁ = A₂v₂</span>, states that the volume flow rate is constant in an incompressible fluid flowing through a pipe of varying cross-section. Where the pipe narrows, the fluid speeds up. Combining continuity with Bernoulli's equation explains many phenomena. For example, when water flows through a constriction in a pipe, the velocity increases and the pressure decreases. This is the <strong>Venturi effect</strong>, used in carburetors, atomizers, and flow meters.</p>
+        <p>Bernoulli's principle helps explain (in simplified form) how airplane wings generate lift: air flows faster over the curved top surface, reducing pressure relative to the flatter bottom surface, creating an upward net force. It also explains why shower curtains get pulled inward (fast-flowing water lowers the air pressure inside), why two ships passing close together are drawn toward each other, and how a curveball in baseball curves. However, real fluids have viscosity and turbulence, so Bernoulli's equation is an idealization — more complete models include corrections for these effects.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch10-bernoulli.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position, Velocity &amp; Acceleration — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="position-velocity">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Kinematics</span> /
+          <span>Position, Velocity &amp; Acceleration</span>
+        </div>
+        <h1 class="topic-hero__title">Position, Velocity &amp; Acceleration</h1>
+        <p class="topic-hero__subtitle">The fundamental quantities that describe how objects move through space and time.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p><strong>Position</strong> describes where an object is located relative to a chosen origin. When an object moves, the change in position is called <strong>displacement</strong> (<span class="equation">Δx = x₂ − x₁</span>), which is a vector quantity — it has both magnitude and direction. This is different from <strong>distance</strong>, which is the total path length traveled and is always positive. For example, if you walk 3 m east and then 3 m west, your distance traveled is 6 m, but your displacement is 0 m.</p>
+        <p><strong>Velocity</strong> is the rate of change of position with respect to time. Average velocity is defined as <span class="equation">v̄ = Δx / Δt</span>, while <strong>instantaneous velocity</strong> is the velocity at a specific moment: <span class="equation">v = dx/dt</span>. Speed is the magnitude of velocity and is always non-negative. <strong>Acceleration</strong> is the rate of change of velocity: <span class="equation">a = dv/dt = d²x/dt²</span>. An object can be accelerating even while moving at constant speed — for example, a car turning a corner has changing velocity direction and therefore nonzero acceleration.</p>
+        <p>Understanding the relationships among position, velocity, and acceleration is the foundation of <strong>kinematics</strong>. If you know an object's acceleration as a function of time, you can integrate to find velocity, and integrate again to find position. Conversely, differentiating position gives velocity, and differentiating velocity gives acceleration. These relationships are central to all of classical mechanics and will appear repeatedly throughout your study of physics.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch1-position-velocity.js"></script>
+</body>
+</html>

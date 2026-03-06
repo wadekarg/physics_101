@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free-Body Diagrams — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="free-body-diagrams">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Newton's Laws</span> /
+          <span>Free-Body Diagrams</span>
+        </div>
+        <h1 class="topic-hero__title">Free-Body Diagrams</h1>
+        <p class="topic-hero__subtitle">A visual tool for identifying and analyzing all forces acting on an object.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>A <strong>free-body diagram</strong> (FBD) is a simplified drawing that shows a single object isolated from its surroundings with all external forces acting on it represented as arrows. Drawing FBDs is the most important problem-solving skill in Newtonian mechanics. To create one: (1) identify the object of interest, (2) draw it as a simple shape (usually a dot or box), (3) identify every force acting on it — gravity, normal forces, tension, friction, applied forces, etc. — and (4) draw each force as an arrow starting from the object, pointing in the correct direction with a length proportional to its magnitude.</p>
+        <p>Common forces you will encounter include: <strong>weight</strong> (<span class="equation">W = mg</span>, always directed downward), the <strong>normal force</strong> (perpendicular to the contact surface), <strong>tension</strong> (along a rope or string, pulling away from the object), <strong>friction</strong> (parallel to the surface, opposing relative motion, with static friction up to <span class="equation">f_s ≤ μ_s N</span> and kinetic friction <span class="equation">f_k = μ_k N</span>), and <strong>applied forces</strong> (pushes or pulls from external agents).</p>
+        <p>Once the FBD is drawn, choose a coordinate system (often aligning one axis with the direction of acceleration), resolve all forces into components, and apply Newton's Second Law: <span class="equation">ΣF_x = ma_x</span> and <span class="equation">ΣF_y = ma_y</span>. For objects in equilibrium, both sums equal zero. For inclined planes, it is usually best to tilt the coordinate axes so that x is along the plane and y is perpendicular to it. Mastering FBDs transforms intimidating physics problems into systematic, solvable exercises.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch3-fbd.js"></script>
+</body>
+</html>

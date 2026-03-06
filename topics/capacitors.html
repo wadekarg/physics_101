@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacitors — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="capacitors">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Electrostatics</span> /
+          <span>Capacitors</span>
+        </div>
+        <h1 class="topic-hero__title">Capacitors</h1>
+        <p class="topic-hero__subtitle">Devices that store electrical energy by accumulating charge on separated conducting plates.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>A <strong>capacitor</strong> is a device that stores electrical energy by holding equal and opposite charges on two conductors separated by an insulator (dielectric). <strong>Capacitance</strong> is defined as the ratio of charge stored to voltage applied: <span class="equation">C = Q/V</span>, measured in farads (F), where <span class="equation">1 F = 1 C/V</span>. For a <strong>parallel-plate capacitor</strong>, the capacitance is <span class="equation">C = ε₀A/d</span>, where A is the plate area, d is the separation, and ε₀ is the permittivity of free space. Larger plates or smaller separation yield greater capacitance.</p>
+        <p>The energy stored in a capacitor is <span class="equation">U = ½CV² = ½Q²/C = ½QV</span>. This energy is stored in the electric field between the plates, with energy density <span class="equation">u = ½ε₀E²</span>. Inserting a <strong>dielectric</strong> material (insulator) between the plates increases the capacitance by a factor κ (the dielectric constant): <span class="equation">C = κε₀A/d</span>. Common dielectrics include paper, ceramic, and plastic. The dielectric also increases the maximum voltage the capacitor can withstand before breakdown.</p>
+        <p>Capacitors can be combined in <strong>series</strong> (same charge, voltages add: <span class="equation">1/C_total = 1/C₁ + 1/C₂ + ...</span>) or in <strong>parallel</strong> (same voltage, charges add: <span class="equation">C_total = C₁ + C₂ + ...</span>). Note this is the opposite pattern from resistors. Capacitors are ubiquitous in electronics: they smooth power supply voltages, filter signals, store energy for camera flashes, tune radio circuits, and serve as memory elements in DRAM chips. Understanding capacitors bridges electrostatics and circuit analysis.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch12-capacitors.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resonance — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="resonance">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Oscillations &amp; SHM</span> /
+          <span>Resonance</span>
+        </div>
+        <h1 class="topic-hero__title">Resonance</h1>
+        <p class="topic-hero__subtitle">When a driving force matches a system's natural frequency, producing dramatically amplified oscillations.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Every oscillating system has a <strong>natural frequency</strong> (f₀) at which it vibrates when disturbed and left alone. For a mass on a spring, <span class="equation">f₀ = (1/2π)√(k/m)</span>; for a pendulum, <span class="equation">f₀ = (1/2π)√(g/L)</span>. When an external periodic force (a <strong>driving force</strong>) is applied to the system, the system undergoes <strong>forced oscillations</strong> at the driving frequency. If the driving frequency is very different from the natural frequency, the amplitude of oscillation is small.</p>
+        <p><strong>Resonance</strong> occurs when the driving frequency matches the natural frequency: <span class="equation">f_drive = f₀</span>. At resonance, the amplitude of oscillation increases dramatically because the driving force is always in phase with the velocity, maximizing energy transfer. The amplitude at resonance depends on the amount of damping in the system — less damping means a higher and sharper resonance peak. In the idealized case of zero damping, the amplitude would grow without bound, but real systems always have some damping.</p>
+        <p>Resonance is everywhere in physics and engineering. Musical instruments use resonance to amplify sound: a guitar body resonates with the vibrating strings. Radio receivers use electrical resonance (LC circuits) to select specific frequencies. However, resonance can also be destructive: the Tacoma Narrows Bridge collapsed in 1940 when wind-driven oscillations matched its natural frequency. Soldiers break step when crossing bridges to avoid resonant vibrations. Understanding resonance is essential for designing buildings resistant to earthquakes, tuning musical instruments, and building efficient wireless communication systems.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch8-resonance.js"></script>
+</body>
+</html>
