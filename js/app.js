@@ -175,6 +175,8 @@ function renderChapterCards(chapters) {
     'var(--neon-modern)',
     'var(--neon-modern)',
     'var(--neon-modern)',
+    'var(--neon-em)',       // ch21 semiconductor
+    'var(--neon-modern)',   // ch22 communication
   ];
 
   let html = '';

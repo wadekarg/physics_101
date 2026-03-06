@@ -3338,6 +3338,216 @@
           "xpReward": 100
         }
       ]
+    },
+    {
+      "id": 21,
+      "title": "Semiconductor Electronics",
+      "description": "How semiconductors, diodes, and transistors form the foundation of all modern electronic devices",
+      "color": "#f59e0b",
+      "icon": "💡",
+      "topics": [
+        {
+          "id": "21.1",
+          "title": "Semiconductors & Energy Bands",
+          "slug": "semiconductors",
+          "description": "Understand intrinsic and extrinsic semiconductors, energy bands, and how doping controls conductivity",
+          "funFacts": [
+            "Silicon is the second most abundant element in Earth's crust (after oxygen), yet a single silicon atom is almost perfectly useless as a semiconductor on its own. The magic happens when you add just one phosphorus atom per 10 million silicon atoms — a doping level so precise that the semiconductor industry routinely achieves it across 300 mm wafers the size of dinner plates.",
+            "The first transistor, invented at Bell Labs on 23 December 1947 by Bardeen, Brattain, and Shockley, was made from germanium and was about the size of a human palm. Today, a single modern processor chip contains over 100 billion transistors, each smaller than a virus, all etched from silicon using ultraviolet light.",
+            "LEDs work because when electrons recombine with holes across a p-n junction, the energy released equals the semiconductor's band gap and is emitted as a photon of light. By choosing different semiconductor materials with different band gaps, engineers can produce LEDs of any colour — from infrared to ultraviolet. The blue LED was so difficult to make that its inventors — Nakamura, Akasaki, and Amano — won the Nobel Prize in Physics in 2014."
+          ],
+          "quiz": [
+            {
+              "question": "In an n-type semiconductor, the majority charge carriers are:",
+              "options": ["Holes", "Electrons", "Protons", "Neutrons"],
+              "correct": 1,
+              "explanation": "In n-type semiconductors, pentavalent impurities (such as phosphorus or arsenic) are added to silicon. These donor atoms have 5 valence electrons — 4 form covalent bonds with silicon, and the 5th is weakly bound and easily freed. Electrons become the majority carriers, and holes become the minority carriers."
+            },
+            {
+              "question": "Which semiconductor has a smaller energy band gap?",
+              "options": ["Silicon (1.12 eV)", "Germanium (0.67 eV)", "Diamond (5.5 eV)", "Carbon (insulator)"],
+              "correct": 1,
+              "explanation": "Germanium has a band gap of about 0.67 eV, smaller than silicon's 1.12 eV. A smaller band gap means electrons can jump to the conduction band more easily, making Ge more conductive at room temperature but also more sensitive to temperature changes."
+            },
+            {
+              "question": "The conductivity of a semiconductor increases with temperature because:",
+              "options": ["Its resistance decreases like a metal", "More electron-hole pairs are thermally generated, increasing carrier concentration", "The band gap increases, freeing more electrons", "Impurity atoms become ionized only at high temperatures"],
+              "correct": 1,
+              "explanation": "As temperature rises, more electrons gain enough thermal energy to jump across the band gap from the valence band to the conduction band, creating electron-hole pairs. This increases the number of charge carriers, which increases conductivity — the opposite behaviour from metals."
+            }
+          ],
+          "xpReward": 100
+        },
+        {
+          "id": "21.2",
+          "title": "p-n Junction Diode",
+          "slug": "pn-junction",
+          "description": "Learn how a p-n junction forms, creates a depletion region, and acts as a one-way valve for electric current",
+          "funFacts": [
+            "The p-n junction was discovered accidentally by Russell Ohl at Bell Labs in 1939 while melting and re-solidifying silicon rods. He noticed a strange voltage appearing at a crack in the rod where n-type and p-type silicon had accidentally formed on opposite sides. This 'funny crystal' eventually led to the transistor, the integrated circuit, and the entire semiconductor industry.",
+            "A silicon diode needs about 0.6–0.7 V to conduct in forward bias. A germanium diode only needs 0.2–0.3 V. Schottky diodes (metal-semiconductor junction) need only about 0.15–0.45 V and switch extremely fast — which is why they are used in high-frequency circuits and as clamping diodes in computer motherboards.",
+            "India's solar capacity crossed 100 GW in 2023, powered by p-n junctions. In solar cells, photons with energy greater than the band gap create electron-hole pairs near the junction. The built-in electric field then separates them before they can recombine — electrons go one way, holes go the other — generating a current with no moving parts and no fuel."
+          ],
+          "quiz": [
+            {
+              "question": "In forward biasing of a p-n junction diode, the p-side is connected to:",
+              "options": ["Negative terminal of battery", "Positive terminal of battery", "Either terminal — it does not matter", "Ground only"],
+              "correct": 1,
+              "explanation": "In forward bias, the positive terminal of the battery is connected to the p-side and the negative terminal to the n-side. This reduces the built-in potential barrier across the depletion region, allowing majority carriers to diffuse across and produce a significant current."
+            },
+            {
+              "question": "The depletion region of a p-n junction is formed because:",
+              "options": ["Electrons are injected from outside", "Electrons and holes near the junction recombine, leaving a region devoid of free carriers", "The semiconductor is heated", "Light falls on the junction"],
+              "correct": 1,
+              "explanation": "At the p-n junction boundary, electrons from the n-side diffuse into the p-side and recombine with holes, and holes from the p-side diffuse into the n-side and recombine with electrons. This leaves a narrow region — the depletion region — with no free charge carriers but with fixed ionised impurity atoms, creating a built-in electric field."
+            },
+            {
+              "question": "Which best describes the I-V characteristic of a p-n diode in forward bias?",
+              "options": ["Linear — current increases proportionally with voltage", "Exponential — current rises steeply above the knee voltage (~0.7 V for Si)", "Constant — current does not depend on voltage", "The current decreases as voltage increases"],
+              "correct": 1,
+              "explanation": "The diode equation I = I₀(e^(V/V_T) − 1) describes exponential growth. Below the knee voltage the current is negligible; above it (about 0.6–0.7 V for silicon) current rises steeply. This makes the diode act as a one-way valve for current — conducting easily in one direction and blocking in the other."
+            }
+          ],
+          "xpReward": 100
+        },
+        {
+          "id": "21.3",
+          "title": "Transistors & Logic Gates",
+          "slug": "transistors",
+          "description": "Discover how a tiny base current controls a large collector current, enabling amplification and digital switching",
+          "funFacts": [
+            "The first integrated circuit was created by Jack Kilby at Texas Instruments in 1958. He connected a transistor, capacitor, and resistors on a single piece of germanium the size of a fingernail. For this invention he received the Nobel Prize in Physics in 2000 — 42 years later, one of the longest gaps between achievement and prize in Nobel history.",
+            "Your smartphone's processor contains around 15–20 billion transistors in an area roughly the size of a fingernail. Each transistor's gate is just a few nanometres wide — smaller than a DNA double helix. At this scale, quantum tunnelling of electrons becomes a real engineering challenge, which is why moving to even smaller transistors requires entirely new materials and architectures.",
+            "Moore's Law, proposed by Intel co-founder Gordon Moore in 1965, observed that the number of transistors on a chip doubled approximately every two years. This empirical observation held for nearly 60 years, driving the exponential growth of computing power. Industry experts now believe purely electronic silicon transistors will hit fundamental physical limits around the 1–2 nm scale, pushing researchers toward 3D chip architectures, carbon nanotubes, and quantum computing."
+          ],
+          "quiz": [
+            {
+              "question": "In a common-emitter NPN transistor circuit, if IB = 50 μA and β = 100, the collector current IC is:",
+              "options": ["0.5 μA", "50 mA", "5 mA", "500 mA"],
+              "correct": 2,
+              "explanation": "IC = β × IB = 100 × 50 μA = 5000 μA = 5 mA. The transistor amplifies the small base current by a factor of β to produce a much larger collector current. This current amplification is what makes transistors useful as amplifiers."
+            },
+            {
+              "question": "A transistor acts as a switch in which two operating regions?",
+              "options": ["Active and linear regions", "Saturation and cutoff regions", "Active and saturation regions", "Cutoff and linear regions"],
+              "correct": 1,
+              "explanation": "When used as a digital switch, a transistor operates in saturation (fully ON — collector-emitter acts like a closed switch, VCE ≈ 0 V) or cutoff (fully OFF — IC ≈ 0). The active region is used for analogue amplification, not switching."
+            },
+            {
+              "question": "The output of an AND gate is HIGH only when:",
+              "options": ["At least one input is HIGH", "Both inputs are LOW", "Both inputs are HIGH", "Neither input is HIGH"],
+              "correct": 2,
+              "explanation": "An AND gate produces a HIGH output (logic 1) only when all of its inputs are simultaneously HIGH. If any input is LOW, the output is LOW. This matches the Boolean expression Y = A·B. AND gates are fundamental building blocks of digital arithmetic circuits like adders."
+            }
+          ],
+          "xpReward": 100
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Communication Systems",
+      "description": "Learn how information is encoded onto carrier waves, transmitted through the atmosphere and space, and decoded at the receiver",
+      "color": "#10b981",
+      "icon": "📡",
+      "topics": [
+        {
+          "id": "22.1",
+          "title": "Modulation & Signal Transmission",
+          "slug": "modulation",
+          "description": "Understand why modulation is needed and how AM and FM encode information onto carrier waves",
+          "funFacts": [
+            "Reginald Fessenden made the world's first AM radio broadcast on Christmas Eve 1906 from Brant Rock, Massachusetts. Wireless telegraph operators on ships in the Atlantic, expecting only Morse code, were astonished to hear a human voice reading from the Bible and a violin playing 'O Holy Night.' Radio broadcasting was born that night.",
+            "The reason AM radio stations use low frequencies (530–1700 kHz) is that AM signals reflect off the ionosphere, allowing a single station to reach thousands of kilometres — especially at night when the ionosphere descends lower. FM signals (88–108 MHz) pass straight through the ionosphere and are limited to line-of-sight distances of about 80 km, which is why FM provides city-scale rather than national coverage.",
+            "India's All India Radio (AIR) began experimental broadcasts from Mumbai in 1923, making it one of the world's oldest broadcasting organizations. Today AIR operates 479 stations covering 99.19% of India's geographical area — a communication infrastructure that serves national unity across India's 22 official languages and 1.4 billion people."
+          ],
+          "quiz": [
+            {
+              "question": "In amplitude modulation (AM), the bandwidth required for transmission is:",
+              "options": ["Equal to the carrier frequency fc", "Equal to the message frequency fm", "Twice the message frequency (2fm)", "Half the carrier frequency (fc/2)"],
+              "correct": 2,
+              "explanation": "AM produces two sidebands — an upper sideband at (fc + fm) and a lower sideband at (fc − fm). The total bandwidth occupied is (fc + fm) − (fc − fm) = 2fm. For example, a 5 kHz audio signal requires 10 kHz of bandwidth in AM."
+            },
+            {
+              "question": "Which of the following is an advantage of FM over AM?",
+              "options": ["FM requires less bandwidth than AM", "FM is less affected by noise and interference", "FM transmitters are cheaper to build", "FM signals travel farther than AM signals"],
+              "correct": 1,
+              "explanation": "FM encodes information in the frequency of the carrier wave rather than its amplitude. Noise (which primarily affects signal amplitude) has minimal effect on the frequency, so FM receivers can reject most noise. This is why FM radio sounds clearer than AM radio, even though AM can travel farther due to ionospheric reflection."
+            },
+            {
+              "question": "If the carrier amplitude is 10 V and the message amplitude is 6 V, the AM modulation index μ is:",
+              "options": ["1.67", "0.6", "16 V", "4 V"],
+              "correct": 1,
+              "explanation": "Modulation index μ = Am / Ac = 6 / 10 = 0.6. A modulation index of 0 means no modulation, μ = 1 means 100% modulation (maximum without distortion), and μ > 1 causes over-modulation and distortion."
+            }
+          ],
+          "xpReward": 100
+        },
+        {
+          "id": "22.2",
+          "title": "Propagation of EM Waves",
+          "slug": "wave-propagation",
+          "description": "Explore how ground waves, sky waves, and space waves carry signals across local, national, and global distances",
+          "funFacts": [
+            "Arthur C. Clarke, the science fiction author best known for '2001: A Space Odyssey', proposed the geostationary communication satellite concept in a 1945 letter to Wireless World magazine. He described three satellites at ~36,000 km altitude covering the entire globe — a vision that came true with Early Bird (Intelsat I) in 1965. The geostationary orbital belt is now officially called the 'Clarke Orbit' in his honour.",
+            "During World War II, operators noticed that shortwave radio signals sometimes bounced off the Moon and returned to Earth with a delay of about 2.5 seconds (the round-trip light-time). This phenomenon — Earth-Moon-Earth (EME) or 'moonbounce' — is still used by radio amateurs today to contact others on the opposite side of the world using the Moon as a passive relay.",
+            "India's INSAT (Indian National Satellite System), launched from 1983 onward, was one of the largest domestic communication satellite systems in the Asia-Pacific region. The satellites support television broadcasting (bringing Doordarshan to every corner of India), telephone links to remote areas, and weather forecasting — a single infrastructure enabling national television, disaster warning, and rural telephony simultaneously."
+          ],
+          "quiz": [
+            {
+              "question": "Sky wave propagation is most suitable for which frequency range?",
+              "options": ["Very Low Frequency (3–30 kHz)", "High Frequency shortwave (3–30 MHz)", "Very High Frequency (30–300 MHz)", "Microwave (1–100 GHz)"],
+              "correct": 1,
+              "explanation": "Shortwave signals in the HF band (3–30 MHz) are reflected by the ionosphere back to Earth, enabling long-distance communication without satellites. At higher frequencies (VHF and above), waves penetrate the ionosphere rather than reflecting, so sky wave propagation is not possible above about 30 MHz."
+            },
+            {
+              "question": "The maximum line-of-sight range (d) of a transmitting antenna of height h on Earth of radius R is:",
+              "options": ["d = h / R", "d = √(2Rh)", "d = 2Rh", "d = R / √h"],
+              "correct": 1,
+              "explanation": "The line-of-sight range d = √(2Rh), where R is Earth's radius (~6400 km) and h is the antenna height. This formula comes from the geometry of a tangent line from the top of the antenna to Earth's surface. For example, a 100 m tall antenna has a range of about 36 km."
+            },
+            {
+              "question": "A geostationary satellite is placed at an altitude of approximately 36,000 km because at this height:",
+              "options": ["The satellite's orbital period equals one year", "The satellite's orbital period equals exactly 24 hours, matching Earth's rotation", "The satellite experiences zero gravity", "Radio waves travel fastest at this altitude"],
+              "correct": 1,
+              "explanation": "At ~36,000 km, the orbital period equals 24 hours — the same as Earth's rotation. The satellite appears stationary above a fixed point on the equator, making it ideal for continuous communication with fixed ground antennas. Three equally-spaced geostationary satellites can cover almost the entire Earth."
+            }
+          ],
+          "xpReward": 100
+        },
+        {
+          "id": "22.3",
+          "title": "Digital Communication & Information",
+          "slug": "digital-communication",
+          "description": "Learn how analog signals are sampled, quantized, and encoded into binary using PCM, and understand Shannon's channel capacity",
+          "funFacts": [
+            "Claude Shannon's 1948 paper 'A Mathematical Theory of Communication' is arguably the most important engineering paper of the 20th century. It mathematically defined 'information' in bits, proved that any channel has a maximum data rate (the Shannon limit), and showed that reliable communication over noisy channels is always possible using clever encoding. Shannon did much of this work while juggling in the corridors of Bell Labs.",
+            "The compact disc (CD), introduced in 1982, uses PCM with 16-bit depth and 44,100 Hz sampling rate per channel. The 16-bit depth gives 65,536 quantization levels and a dynamic range of 96 dB — far exceeding human hearing capability. The 74-minute capacity of a standard CD was reportedly chosen so it could hold Beethoven's 9th Symphony without interruption, at the insistence of Sony co-founder Akio Morita.",
+            "Optical fibre carries data as pulses of light through a strand thinner than a human hair. A single modern optical fibre can carry over 1 petabit (10^15 bits) per second. India's BharatNet project aims to connect all 250,000 gram panchayats with optical fibre broadband, making it one of the world's largest rural digital connectivity projects."
+          ],
+          "quiz": [
+            {
+              "question": "According to the Nyquist theorem, to faithfully reproduce a signal of maximum frequency fm, the sampling rate must be at least:",
+              "options": ["fm / 2", "fm", "2fm", "4fm"],
+              "correct": 2,
+              "explanation": "The Nyquist theorem states that the sampling rate must be at least twice the highest frequency component in the signal (fs ≥ 2fm). If the sampling rate is lower, aliasing occurs — high-frequency components appear as false lower frequencies. Audio CDs sample at 44,100 Hz to handle signals up to 22,050 Hz, safely above the human hearing limit of ~20,000 Hz."
+            },
+            {
+              "question": "PCM (Pulse Code Modulation) converts an analog signal to digital by which sequence?",
+              "options": ["Encoding → Sampling → Quantisation", "Sampling → Quantisation → Encoding", "Quantisation → Encoding → Sampling", "Encoding → Quantisation → Sampling"],
+              "correct": 1,
+              "explanation": "PCM works in three steps: (1) Sampling — the analog signal is measured at regular time intervals; (2) Quantisation — each sample value is rounded to the nearest of 2^n discrete levels; (3) Encoding — each quantised value is converted to a binary number. The resulting sequence of bits is the digital signal."
+            },
+            {
+              "question": "Which of the following is NOT an advantage of digital over analog communication?",
+              "options": ["Digital signals are more resistant to noise", "Digital signals can be easily encrypted", "Digital signals always require less bandwidth than analog", "Digital signals can be perfectly regenerated by repeaters"],
+              "correct": 2,
+              "explanation": "Digital communication is not always more bandwidth-efficient than analog — PCM typically requires more bandwidth than the original analog signal. However, digital's advantages — noise immunity, encryption, error correction, and lossless regeneration — usually outweigh the bandwidth cost, which can be recovered using compression algorithms."
+            }
+          ],
+          "xpReward": 100
+        }
+      ]
     }
   ]
 }

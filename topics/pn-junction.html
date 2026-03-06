@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p-n Junction Diode — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="pn-junction">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Semiconductor Electronics</span> /
+          <span>p-n Junction Diode</span>
+        </div>
+        <h1 class="topic-hero__title">p-n Junction Diode</h1>
+        <p class="topic-hero__subtitle">The fundamental building block of all semiconductor devices — a one-way valve for electric current.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>When p-type and n-type semiconductors are joined, electrons from the n-side diffuse across the boundary and recombine with holes on the p-side. This creates the <strong>depletion region</strong> — a thin zone (~1 μm) stripped of free carriers but containing fixed, ionised impurity atoms. The ionised donors on the n-side are positive; the ionised acceptors on the p-side are negative. This charge imbalance creates a <strong>built-in electric field</strong> (pointing from n to p) and a <strong>built-in potential</strong> of about 0.7 V for silicon that opposes further diffusion.</p>
+        <p>In <strong>forward bias</strong>, the positive terminal of the battery is connected to the p-side. This reduces the built-in potential barrier, allowing majority carriers to cross freely — exponential current flows. The diode equation is: <span class="equation">I = I₀(e^(V/V_T) − 1)</span>, where V_T = kT/q ≈ 26 mV at room temperature and I₀ is the tiny reverse saturation current (~nA). In <strong>reverse bias</strong>, the barrier widens, majority carriers are pushed away from the junction, and only a negligible leakage current flows — the diode blocks. A diode thus acts as a one-way valve for current.</p>
+        <p>The practical <strong>knee voltage</strong> (where significant forward current begins) is ~0.6–0.7 V for silicon and ~0.2–0.3 V for germanium. A <strong>half-wave rectifier</strong> uses a single diode to pass only positive half-cycles of AC; a <strong>full-wave bridge rectifier</strong> uses four diodes arranged in a bridge to convert both half-cycles to the same polarity. Rectification is the first step in every DC power supply. Special diodes include Zener diodes (designed to conduct in reverse at a precise breakdown voltage — used for voltage regulation), LEDs (light-emitting), and photodiodes (light-detecting).</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch21-pn-junction.js"></script>
+</body>
+</html>

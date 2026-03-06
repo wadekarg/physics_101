@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Communication &amp; Information — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="digital-communication">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Communication Systems</span> /
+          <span>Digital Communication &amp; Information</span>
+        </div>
+        <h1 class="topic-hero__title">Digital Communication &amp; Information</h1>
+        <p class="topic-hero__subtitle">How analog signals are sampled, quantized, and encoded into binary — the foundation of all modern data transmission.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>An <strong>analogue signal</strong> varies continuously in time and amplitude. A <strong>digital signal</strong> takes only discrete values (typically 0 and 1). Converting analogue to digital involves three steps. <strong>Sampling</strong>: measure the signal value at regular time intervals. The <strong>Nyquist theorem</strong> states that to faithfully reconstruct a signal of maximum frequency f_m, the sampling rate must be at least <span class="equation">f_s ≥ 2f_m</span>. Sampling below this rate causes <strong>aliasing</strong> — high frequencies appear as spurious low-frequency artefacts.</p>
+        <p><strong>Quantisation</strong> rounds each sample to the nearest of 2^n discrete levels, where n is the <strong>bit depth</strong>. A CD uses n = 16 bits, giving 65,536 levels and 96 dB dynamic range. The rounding error is called <strong>quantisation noise</strong>; it decreases as 2^n increases. <strong>Encoding</strong> converts each quantised value to a binary number. This three-step process — Sample, Quantise, Encode — is called <strong>Pulse Code Modulation (PCM)</strong>, the standard for telephone calls, audio CDs, and digital broadcasting.</p>
+        <p>Digital communication has decisive advantages over analogue: noise can be completely eliminated by <strong>signal regeneration</strong> (regenerators detect the 0/1 pattern and retransmit a perfect copy before noise accumulates); signals can be <strong>encrypted</strong>, <strong>compressed</strong>, and <strong>error-corrected</strong>; and they are directly compatible with computers. <strong>Shannon's channel capacity theorem</strong>: C = B log₂(1 + S/N), where B is bandwidth and S/N is the signal-to-noise ratio, sets the absolute maximum data rate for any channel — a result that guides the design of every WiFi router, 5G base station, and optical fibre network on Earth.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch22-digital.js"></script>
+</body>
+</html>

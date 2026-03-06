@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semiconductors &amp; Energy Bands — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="semiconductors">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Semiconductor Electronics</span> /
+          <span>Semiconductors &amp; Energy Bands</span>
+        </div>
+        <h1 class="topic-hero__title">Semiconductors &amp; Energy Bands</h1>
+        <p class="topic-hero__subtitle">How adding tiny amounts of impurities to silicon creates the foundation of all modern electronics.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>A <strong>semiconductor</strong> is a material whose electrical conductivity falls between a conductor and an insulator. In silicon, valence electrons are bound in covalent bonds at low temperatures, but some gain enough thermal energy to break free, leaving behind a <strong>hole</strong> — the absence of an electron that acts like a positive charge carrier. The energy needed to free an electron is the <strong>band gap</strong>: about 1.12 eV for silicon and 0.67 eV for germanium. Conductors have zero (or overlapping) band gaps; insulators have very large ones (5.5 eV for diamond).</p>
+        <p>Pure (intrinsic) silicon has equal numbers of electrons and holes. We can dramatically increase conductivity by <strong>doping</strong> — adding tiny amounts of impurity atoms. <strong>N-type</strong> doping uses pentavalent atoms (phosphorus, arsenic) which donate an extra free electron, making electrons the majority carriers. <strong>P-type</strong> doping uses trivalent atoms (boron, aluminium) which create extra holes, making holes the majority carriers. Even a doping level of 1 part per 10 million (10<sup>16</sup> cm<sup>−3</sup> in a 10<sup>22</sup> cm<sup>−3</sup> silicon lattice) changes conductivity by orders of magnitude.</p>
+        <p>The position of the <strong>Fermi level</strong> — the energy at which the probability of electron occupation is 50% — shifts toward the conduction band for n-type semiconductors and toward the valence band for p-type. LEDs exploit the band gap directly: when an electron drops from the conduction band to fill a hole in the valence band, it releases energy exactly equal to the band gap as a photon of light. By engineering semiconductors with different band gaps (using alloys like GaAs, GaN, InGaN), engineers produce LEDs of any wavelength from infrared to ultraviolet.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch21-semiconductors.js"></script>
+</body>
+</html>

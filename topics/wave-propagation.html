@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propagation of Electromagnetic Waves — Quantum Playground</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <span class="header__logo-icon">&#9883;</span>
+      <span>Quantum Playground</span>
+    </a>
+    <div class="header__search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" id="search-input" placeholder="Search topics..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+    <div class="header__actions">
+      <span class="badge badge--xp" id="header-xp">0 XP</span>
+      <span class="badge badge--level" id="header-level">🔰 Rookie</span>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" title="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay"></div>
+  <aside id="sidebar" class="sidebar">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main" data-topic-slug="wave-propagation">
+    <div class="topic-content">
+      <div class="topic-hero">
+        <div class="topic-hero__breadcrumb">
+          <a href="../index.html">Home</a> /
+          <span>Communication Systems</span> /
+          <span>Propagation of EM Waves</span>
+        </div>
+        <h1 class="topic-hero__title">Propagation of EM Waves</h1>
+        <p class="topic-hero__subtitle">Ground waves, sky waves, and space waves — the three paths that radio signals take to reach their destination.</p>
+      </div>
+
+      <section class="theory-section" id="theory">
+        <h3>Theory</h3>
+        <p>Radio waves propagate from transmitter to receiver in three distinct modes depending on frequency. <strong>Ground waves</strong> (surface waves) travel along Earth's surface, following its curvature. They are effective at low frequencies (below ~2 MHz, including AM broadcast) because long wavelengths diffract around hills and buildings. However, ground conductivity attenuates them progressively — high frequencies are absorbed too rapidly to be useful.</p>
+        <p><strong>Sky waves</strong> reflect off the <strong>ionosphere</strong> — a layer of ionised gases at 70–400 km altitude created by solar UV radiation. Shortwave frequencies (HF, 3–30 MHz) bounce between the ionosphere and Earth's surface, enabling stations to reach thousands of kilometres — the basis of international shortwave broadcasting (BBC World Service, All India Radio World Service). The <strong>skip zone</strong> is the dead region between the end of the ground wave and the first sky-wave arrival point. Above ~30 MHz, waves penetrate the ionosphere rather than reflecting, so sky-wave propagation fails.</p>
+        <p><strong>Space waves</strong> travel in straight lines (line-of-sight) at VHF and above. The maximum range is: <span class="equation">d_T = √(2Rh_T)</span>, where R = 6400 km is Earth's radius and h_T is the transmitter antenna height. For a receiving antenna of height h_R, total range = √(2Rh_T) + √(2Rh_R). TV and FM towers are deliberately built tall to extend coverage. <strong>Satellite communication</strong> uses a space wave to a geostationary satellite at 36,000 km altitude (orbital period exactly 24 h), which relays it to another ground station — enabling global coverage. India's INSAT satellites use this system.</p>
+      </section>
+
+      <section id="simulation">
+        <h3 style="margin-bottom: var(--space-md);">Interactive Simulation</h3>
+        <div class="sim-wrapper">
+          <div class="sim-canvas-container" id="sim-canvas"></div>
+          <div class="sim-controls" id="sim-controls"></div>
+        </div>
+        <div id="sim-graph"></div>
+      </section>
+
+      <section id="fun-facts" class="mt-xl">
+        <h3 style="margin-bottom: var(--space-md);">Did You Know?</h3>
+        <div id="facts-container"></div>
+      </section>
+
+      <section class="quiz-container" id="quiz-section">
+        <h3 style="margin-bottom: var(--space-md);">Test Your Knowledge</h3>
+        <div id="quiz-container"></div>
+      </section>
+
+      <div class="topic-nav" id="topic-nav"></div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="../libs/p5.min.js"></script>
+  <script src="../libs/matter.min.js"></script>
+  <script type="module" src="../js/app.js"></script>
+  <script type="module" src="../js/topics/ch22-wave-propagation.js"></script>
+</body>
+</html>
