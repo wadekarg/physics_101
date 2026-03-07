@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Physics 101</title>
+  <meta name="description" content="About Physics 101 — an open-source, free interactive physics learning platform.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .about-page { max-width: 720px; margin: 0 auto; padding: var(--space-xl) var(--space-md); }
+    .about-page h1 { font-size: var(--fs-2xl); margin-bottom: var(--space-xs); }
+    .about-page h2 { font-size: var(--fs-lg); margin: var(--space-xl) 0 var(--space-sm); color: var(--accent); }
+    .about-page p, .about-page li { color: var(--text-secondary); line-height: 1.7; }
+    .about-page ul { padding-left: var(--space-lg); margin-top: var(--space-xs); }
+    .about-page li { margin-bottom: var(--space-xs); }
+    .about-divider { border: none; border-top: 1px solid var(--border); margin: var(--space-xl) 0; }
+    .contact-card {
+      display: flex; flex-direction: column; gap: var(--space-sm);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: var(--space-lg);
+      margin-top: var(--space-md);
+    }
+    .contact-card a {
+      display: inline-flex; align-items: center; gap: var(--space-sm);
+      color: var(--accent); text-decoration: none; font-weight: 500;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+    .disclaimer-box {
+      background: var(--surface); border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--space-md) var(--space-lg);
+      margin-top: var(--space-md);
+    }
+    .disclaimer-box p { margin: 0; font-size: var(--fs-sm); }
+    .oss-badge {
+      display: inline-flex; align-items: center; gap: var(--space-xs);
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-full); padding: 4px 14px;
+      font-size: var(--fs-sm); color: var(--text-secondary);
+      margin-top: var(--space-sm);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="header__logo">
+      <span class="header__logo-icon">&nbsp;&#9883;&nbsp;</span>
+      <span>Physics 101</span>
+    </a>
+    <div class="header__search search-wrapper">
+      <input
+        type="search"
+        id="search-input"
+        class="search-input"
+        placeholder="Search topics..."
+        autocomplete="off"
+        aria-label="Search topics"
+      >
+    </div>
+    <div class="header__actions">
+      <div class="badge badge--xp" id="header-xp-badge" title="Your XP">
+        <span id="header-xp-value">0</span> XP
+      </div>
+      <div class="badge badge--level" id="header-level-badge" title="Your level">
+        <span id="header-level-icon"></span>
+        <span id="header-level-name"></span>
+      </div>
+      <button class="btn btn--icon btn--ghost" data-action="toggle-theme" aria-label="Toggle theme" title="Toggle theme">
+        <span class="theme-icon"></span>
+      </button>
+      <button class="btn btn--icon btn--ghost sidebar-toggle" data-action="toggle-sidebar" aria-label="Toggle navigation" title="Menu">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+  <aside id="sidebar" class="sidebar" aria-label="Chapter navigation">
+    <nav class="nav-list"></nav>
+  </aside>
+
+  <main class="main">
+    <div class="container">
+      <div class="about-page">
+
+        <h1>⚛️ About Physics 101</h1>
+        <p>Physics 101 is a free, open-source, interactive learning platform covering the complete high-school and introductory university physics curriculum — built to make physics intuitive, visual, and actually fun.</p>
+
+        <span class="oss-badge">🔓 Open Source &nbsp;·&nbsp; MIT License &nbsp;·&nbsp; Free Forever</span>
+
+        <hr class="about-divider">
+
+        <h2>📚 Educational Purpose</h2>
+        <div class="disclaimer-box">
+          <p>This platform is created purely for <strong>educational purposes</strong>. All content — explanations, formulas, simulations, quiz questions, and worked examples — is intended to help students understand physics concepts. It is <strong>not a substitute</strong> for a qualified teacher, official textbook, or examination board syllabus.</p>
+        </div>
+        <p style="margin-top: var(--space-md);">While every effort has been made to ensure accuracy, errors can slip through. If you find something incorrect, outdated, or misleading, please reach out — your correction helps every student who visits after you.</p>
+
+        <hr class="about-divider">
+
+        <h2>🐛 Found an Error?</h2>
+        <p>If any formula, explanation, quiz answer, or worked example seems wrong, please get in touch. All genuine corrections are welcome and appreciated.</p>
+
+        <div class="contact-card">
+          <a href="mailto:wadekar.gp@gmail.com">
+            <span>📧</span> wadekar.gp@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/gajananwadekar/" target="_blank" rel="noopener noreferrer">
+            <span>💼</span> linkedin.com/in/gajananwadekar
+          </a>
+        </div>
+
+        <hr class="about-divider">
+
+        <h2>🔓 Open Source</h2>
+        <p>Physics 101 is fully open source under the <strong>MIT License</strong>. You are free to use, fork, and adapt it for your own projects.</p>
+        <ul>
+          <li>Source code: <a href="https://github.com/wadekarg/physics_101" target="_blank" rel="noopener noreferrer">github.com/wadekarg/physics_101</a></li>
+          <li>Contributions, bug reports, and suggestions are welcome via GitHub Issues or the contact links above.</li>
+        </ul>
+
+        <hr class="about-divider">
+
+        <h2>🛠️ Built With</h2>
+        <ul>
+          <li>Vanilla JavaScript (ES Modules) — no framework, no bundler</li>
+          <li><a href="https://p5js.org/" target="_blank" rel="noopener noreferrer">p5.js</a> — canvas-based interactive simulations</li>
+          <li><a href="https://brm.io/matter-js/" target="_blank" rel="noopener noreferrer">Matter.js</a> — 2D rigid-body physics engine</li>
+          <li><a href="https://katex.org/" target="_blank" rel="noopener noreferrer">KaTeX</a> — fast LaTeX formula rendering</li>
+          <li>Plain CSS with custom properties — no CSS framework</li>
+          <li>All progress stored locally in your browser — no account, no server</li>
+        </ul>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="achievement-toasts" class="toast-container" aria-live="polite"></div>
+
+  <script src="libs/p5.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

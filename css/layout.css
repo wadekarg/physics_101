@@ -345,6 +345,28 @@ body::before {
   opacity: 1;
 }
 
+/* About link at sidebar bottom */
+.nav-about {
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-md);
+}
+
+.nav-about-link {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-about-link:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
 /* Sidebar overlay for mobile */
 #sidebar-overlay {
   position: fixed;

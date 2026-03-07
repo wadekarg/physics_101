@@ -125,6 +125,10 @@ function renderSidebar() {
     html += `</div>`;
   });
 
+  const isTopicPage = window.location.pathname.includes('/topics/');
+  const aboutHref = isTopicPage ? '../about.html' : 'about.html';
+  html += `<div class="nav-about"><a href="${aboutHref}" class="nav-about-link">ℹ️ About &amp; Contact</a></div>`;
+
   listEl.innerHTML = html;
 
   // Attach toggle handlers to chapter headers
