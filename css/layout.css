@@ -321,7 +321,7 @@ body::before {
 .topic-check {
   flex-shrink: 0;
   margin-left: var(--space-xs);
-  font-size: 1em;
+  font-size: 1.2em;
   color: var(--success, #00ff88);
   opacity: 0;
   transition: opacity var(--transition-fast);
