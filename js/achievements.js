@@ -1,4 +1,4 @@
-// achievements.js — Achievement / badge system for Quantum Playground
+// achievements.js — Achievement / badge system for Physics 101
 // Loads definitions from achievements.json, checks conditions after
 // XP / topic / quiz events, and shows a toast notification on unlock.
 

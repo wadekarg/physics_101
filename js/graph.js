@@ -1,4 +1,4 @@
-// graph.js — Real-time graph renderer using Canvas 2D for Quantum Playground
+// graph.js — Real-time graph renderer using Canvas 2D for Physics 101
 // Draws axes, labels, grid lines, and line plots with neon colors on dark bg.
 
 /**

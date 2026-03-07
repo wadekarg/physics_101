@@ -1,4 +1,4 @@
-// theme.js — Dark/light theme toggle for Quantum Playground
+// theme.js — Dark/light theme toggle for Physics 101
 // Reads/saves to localStorage key "qp-theme". Default is "dark".
 // Sets data-theme attribute on <html>.
 

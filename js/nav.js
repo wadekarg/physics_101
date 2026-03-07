@@ -1,4 +1,4 @@
-// nav.js — Sidebar navigation for Quantum Playground
+// nav.js — Sidebar navigation for Physics 101
 // Renders collapsible chapters with topic links, highlights the current topic,
 // and handles mobile sidebar toggle.
 

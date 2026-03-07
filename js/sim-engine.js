@@ -1,4 +1,4 @@
-// sim-engine.js — Core simulation engine wrapping p5.js for Quantum Playground
+// sim-engine.js — Core simulation engine wrapping p5.js for Physics 101
 // Creates a p5 instance in a container, provides play/pause/reset/speed controls.
 
 /**

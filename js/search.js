@@ -1,4 +1,4 @@
-// search.js — Topic search for Quantum Playground
+// search.js — Topic search for Physics 101
 // Filters topics by name from the chapters array, shows dropdown results,
 // and navigates to the selected topic.
 

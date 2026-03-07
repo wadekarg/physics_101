@@ -1,4 +1,4 @@
-// progress.js — XP, levels, badges, and streaks for Quantum Playground
+// progress.js — XP, levels, badges, and streaks for Physics 101
 // All data stored in localStorage under key "qp-progress".
 
 const STORAGE_KEY = 'qp-progress';

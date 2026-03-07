@@ -1,4 +1,4 @@
-// quiz.js — Quiz engine for Quantum Playground
+// quiz.js — Quiz engine for Physics 101
 // Shows one question at a time with Prev/Next navigation.
 // Next is locked until the current question is answered.
 // Prev lets you review already-answered questions.

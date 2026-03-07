@@ -1,5 +1,5 @@
 // sim-controls.js — Auto-generates simulation control UI from parameter config
-// for Quantum Playground.
+// for Physics 101.
 
 /**
  * Render simulation controls (play/pause, reset, speed, parameter sliders)

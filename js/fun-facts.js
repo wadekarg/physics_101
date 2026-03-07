@@ -1,4 +1,4 @@
-// fun-facts.js — Renders fun-fact callout cards for Quantum Playground
+// fun-facts.js — Renders fun-fact callout cards for Physics 101
 
 /**
  * Render fun-fact cards inside the given container.

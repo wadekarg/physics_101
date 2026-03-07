@@ -1,4 +1,4 @@
-// app.js — Main application entry point for Quantum Playground
+// app.js — Main application entry point for Physics 101
 // Loaded as type="module" by every HTML page (index.html and topics/*.html).
 // Fetches chapters.json, initialises all modules, and renders the landing page
 // or wires up topic-page navigation depending on which page we're on.
