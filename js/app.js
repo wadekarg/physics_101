@@ -13,6 +13,7 @@ import { renderSimControls } from './sim-controls.js';
 import { renderQuiz } from './quiz.js';
 import { renderFunFacts } from './fun-facts.js';
 import { RealtimeGraph } from './graph.js';
+import { escapeHtml } from './utils.js';
 import { renderFormulaCard } from './formula-card.js';
 import { renderWorkedExamples } from './worked-examples.js';
 import { renderConceptConnections } from './concept-connections.js';
@@ -88,6 +89,13 @@ const extrasPath = isTopicPage ? '../data/topic-extras.json' : 'data/topic-extra
     renderStatsBar();
     renderLevelDisplay();
     renderChapterCards(chapters);
+    // Update landing-page stats on XP change (single listener, no leaks)
+    document.addEventListener('qp:xp', () => {
+      renderStatsBar();
+      renderLevelDisplay();
+    });
+    // Update chapter progress bars when a topic is completed
+    document.addEventListener('qp:topic-complete', () => renderChapterCards(chapters));
   }
 
   // 6. Expose global QP object for topic simulation scripts
@@ -282,10 +290,6 @@ function renderStatsBar() {
     </div>
   `;
 
-  // Re-render whenever XP changes
-  document.addEventListener('qp:xp', () => {
-    renderStatsBar();
-  });
 }
 
 /**
@@ -316,10 +320,6 @@ function renderLevelDisplay() {
     </div>
   `;
 
-  // Re-render on XP change
-  document.addEventListener('qp:xp', () => {
-    renderLevelDisplay();
-  });
 }
 
 /**
@@ -405,8 +405,3 @@ function updateHeaderBadges() {
   if (levelEl) levelEl.textContent = `${stats.level.icon} ${stats.level.name}`;
 }
 
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}

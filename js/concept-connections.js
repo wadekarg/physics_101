@@ -1,5 +1,7 @@
 // concept-connections.js — Prerequisite / leads-to / related topic links
 
+import { escapeHtml as _esc, hideSection } from './utils.js';
+
 /**
  * Render concept connection chips into containerEl.
  * @param {HTMLElement} containerEl
@@ -9,19 +11,18 @@
 export function renderConceptConnections(containerEl, extras, chapters) {
   if (!containerEl) return;
   const connections = extras.connections || {};
-  const { prerequisites = [], leadsTo = [], related = [] } = connections;
+  const { prerequisites = [] } = connections;
 
   if (!prerequisites.length) {
-    _hideSection(containerEl);
+    hideSection(containerEl);
     return;
   }
 
-  // Build slug → title lookup
+  // Build slug → title lookup (object index, O(1) per lookup)
   const topicMap = {};
   for (const chapter of chapters) {
     for (const topic of chapter.topics || []) {
-      const slug = topic.slug || topic.id;
-      topicMap[slug] = topic.title || slug;
+      topicMap[topic.slug || topic.id] = topic.title || topic.slug || topic.id;
     }
   }
 
@@ -38,18 +39,4 @@ export function renderConceptConnections(containerEl, extras, chapters) {
       </div>
     </div>
   `;
-}
-
-// ── helpers ──────────────────────────────────────────────────────────
-
-function _hideSection(el) {
-  const section = el.closest('.feature-section');
-  if (section) section.style.display = 'none';
-}
-
-function _esc(str) {
-  if (str == null) return '';
-  const d = document.createElement('div');
-  d.textContent = String(str);
-  return d.innerHTML;
 }

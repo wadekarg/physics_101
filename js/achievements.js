@@ -3,14 +3,18 @@
 // XP / topic / quiz events, and shows a toast notification on unlock.
 
 import { getProgress } from './progress.js';
+import { escapeHtml } from './utils.js';
 
 let definitions = []; // loaded from achievements.json
+let initialized = false;
 
 /**
  * Initialise the achievement system.
  * Fetches achievement definitions and subscribes to progress events.
  */
 export async function initAchievements() {
+  if (initialized) return;
+  initialized = true;
   try {
     const isTopicPage = window.location.pathname.includes('/topics/');
     const achievementsPath = isTopicPage ? '../data/achievements.json' : 'data/achievements.json';
@@ -42,11 +46,10 @@ export async function initAchievements() {
  */
 export function checkAchievements() {
   const progress = getProgress();
-  const unlocked = progress.achievements || [];
+  const unlockedSet = new Set(progress.achievements || []);
 
   definitions.forEach((ach) => {
-    if (unlocked.includes(ach.id)) return; // already earned
-
+    if (unlockedSet.has(ach.id)) return; // O(1) lookup
     if (evaluateCondition(ach, progress)) {
       unlock(ach, progress);
     }
@@ -135,14 +138,11 @@ function evaluateCondition(ach, progress) {
 
     case 'chaptersCompleted': {
       const chapterIds = cond.chapters || [];
+      const completedSet = new Set(progress.completedTopics || []);
       return chapterIds.every((chId) => {
-        // Check all topics in that chapter are completed
         const chapter = (window.QP?.chapters || []).find((c) => c.id === chId || c.id === `ch${chId}`);
         if (!chapter) return false;
-        return (chapter.topics || []).every((t) => {
-          const slug = t.slug || t.id;
-          return (progress.completedTopics || []).includes(slug);
-        });
+        return (chapter.topics || []).every((t) => completedSet.has(t.slug || t.id));
       });
     }
 
@@ -197,12 +197,6 @@ function ensureToastContainer() {
   container.id = 'achievement-toasts';
   container.className = 'achievement-toasts';
   document.body.appendChild(container);
-}
-
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
 }
 
 /**

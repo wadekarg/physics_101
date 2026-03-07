@@ -100,6 +100,19 @@ export function completeQuiz(topicId) {
 }
 
 /**
+ * Record a perfect quiz score for a topic (idempotent).
+ * @param {string} topicId
+ */
+export function recordPerfectQuiz(topicId) {
+  const progress = load();
+  if (!progress.perfectQuizzes) progress.perfectQuizzes = [];
+  if (!progress.perfectQuizzes.includes(topicId)) {
+    progress.perfectQuizzes.push(topicId);
+    save(progress);
+  }
+}
+
+/**
  * Check whether a topic has been completed.
  * @param {string} topicId
  * @returns {boolean}

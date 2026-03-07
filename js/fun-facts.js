@@ -1,5 +1,7 @@
 // fun-facts.js — Renders fun-fact callout cards for Physics 101
 
+import { escapeHtml } from './utils.js';
+
 /**
  * Render fun-fact cards inside the given container.
  *
@@ -15,7 +17,6 @@ export function renderFunFacts(containerEl, facts) {
   facts.forEach((fact, index) => {
     const card = document.createElement('div');
     card.className = 'fun-fact-card';
-    // Slight stagger for appearance animation
     card.style.animationDelay = `${index * 0.12}s`;
 
     card.innerHTML = `
@@ -29,12 +30,4 @@ export function renderFunFacts(containerEl, facts) {
 
     containerEl.appendChild(card);
   });
-}
-
-// ── internal helper ─────────────────────────────────────────────────
-
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
 }

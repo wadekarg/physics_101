@@ -1,5 +1,7 @@
 // worked-examples.js — One-at-a-time worked examples with Prev/Next navigation
 
+import { escapeHtml as _esc, attrEsc as _attr, hideSection, renderKaTeX } from './utils.js';
+
 /**
  * Render worked examples into containerEl.
  * Shows one example at a time; Prev/Next buttons navigate between them.
@@ -12,7 +14,7 @@ export function renderWorkedExamples(containerEl, extras) {
   if (!containerEl) return;
   const examples = extras.workedExamples || [];
   if (examples.length === 0) {
-    _hideSection(containerEl);
+    hideSection(containerEl);
     return;
   }
 
@@ -35,10 +37,10 @@ export function renderWorkedExamples(containerEl, extras) {
 
   containerEl.appendChild(wrapper);
 
-  const counterEl  = wrapper.querySelector('.worked-examples__counter');
-  const prevBtn    = wrapper.querySelector('.we-prev-btn');
-  const nextBtn    = wrapper.querySelector('.we-next-btn');
-  const bodyEl     = wrapper.querySelector('.worked-example__body');
+  const counterEl = wrapper.querySelector('.worked-examples__counter');
+  const prevBtn   = wrapper.querySelector('.we-prev-btn');
+  const nextBtn   = wrapper.querySelector('.we-next-btn');
+  const bodyEl    = wrapper.querySelector('.worked-example__body');
 
   // ── Render a single example ────────────────────────────────────
   function renderExample(idx) {
@@ -68,7 +70,7 @@ export function renderWorkedExamples(containerEl, extras) {
 
     // KaTeX for first visible step
     const firstStep = bodyEl.querySelector('.example-step:not(.hidden)');
-    if (firstStep) _renderKaTeX(firstStep);
+    if (firstStep) renderKaTeX(firstStep);
 
     // Wire step-reveal button
     const stepBtn = bodyEl.querySelector('.example-next-btn');
@@ -82,7 +84,7 @@ export function renderWorkedExamples(containerEl, extras) {
         const nextStepEl = bodyEl.querySelector(`[data-step="${next}"]`);
         if (nextStepEl) {
           nextStepEl.classList.remove('hidden');
-          _renderKaTeX(nextStepEl);
+          renderKaTeX(nextStepEl);
           nextStepEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
@@ -111,32 +113,4 @@ export function renderWorkedExamples(containerEl, extras) {
 
   // ── Initial render ─────────────────────────────────────────────
   renderExample(0);
-}
-
-// ── helpers ──────────────────────────────────────────────────────────
-
-function _renderKaTeX(el) {
-  if (!window.katex) return;
-  el.querySelectorAll('[data-latex]').forEach((node) => {
-    try {
-      const displayMode = !node.classList.contains('katex-inline');
-      window.katex.render(node.dataset.latex, node, { displayMode, throwOnError: false });
-    } catch (e) { /* silent */ }
-  });
-}
-
-function _hideSection(el) {
-  const section = el.closest('.feature-section');
-  if (section) section.style.display = 'none';
-}
-
-function _esc(str) {
-  if (str == null) return '';
-  const d = document.createElement('div');
-  d.textContent = String(str);
-  return d.innerHTML;
-}
-
-function _attr(str) {
-  return String(str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 }

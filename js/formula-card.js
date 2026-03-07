@@ -1,5 +1,7 @@
 // formula-card.js — Collapsible formula reference card with KaTeX rendering
 
+import { escapeHtml as _esc, attrEsc as _attr, hideSection, renderKaTeX } from './utils.js';
+
 /**
  * Render a collapsible formula card into containerEl.
  * @param {HTMLElement} containerEl
@@ -9,7 +11,7 @@ export function renderFormulaCard(containerEl, extras) {
   if (!containerEl) return;
   const formulas = extras.formulaCard || [];
   if (formulas.length === 0) {
-    _hideSection(containerEl);
+    hideSection(containerEl);
     return;
   }
 
@@ -36,7 +38,7 @@ export function renderFormulaCard(containerEl, extras) {
     body.classList.toggle('collapsed', expanded);
   });
 
-  _renderKaTeX(containerEl);
+  renderKaTeX(containerEl);
 }
 
 // ── internals ────────────────────────────────────────────────────────
@@ -65,30 +67,4 @@ function _formulaItemHtml(formula) {
       ${tableHtml}
     </div>
   `;
-}
-
-function _renderKaTeX(el) {
-  if (!window.katex) return;
-  el.querySelectorAll('[data-latex]').forEach((node) => {
-    try {
-      const displayMode = !node.classList.contains('katex-inline');
-      window.katex.render(node.dataset.latex, node, { displayMode, throwOnError: false });
-    } catch (e) { /* silent */ }
-  });
-}
-
-function _hideSection(el) {
-  const section = el.closest('.feature-section');
-  if (section) section.style.display = 'none';
-}
-
-function _esc(str) {
-  if (str == null) return '';
-  const d = document.createElement('div');
-  d.textContent = String(str);
-  return d.innerHTML;
-}
-
-function _attr(str) {
-  return String(str || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 }

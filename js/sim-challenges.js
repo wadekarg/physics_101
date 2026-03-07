@@ -1,7 +1,9 @@
-// sim-challenges.js — Simulation challenge card with honor-system completion
+// sim-challenges.js — Challenge Lab card with honor-system completion
+
+import { escapeHtml as _esc, hideSection } from './utils.js';
 
 /**
- * Render the simulation challenge card into containerEl.
+ * Render the challenge lab card into containerEl.
  * @param {HTMLElement} containerEl
  * @param {Object} extras — topic extras data
  * @param {Function} addXP — XP award function
@@ -10,7 +12,7 @@ export function renderChallenges(containerEl, extras, addXP) {
   if (!containerEl) return;
   const challenge = extras.challenge;
   if (!challenge) {
-    _hideSection(containerEl);
+    hideSection(containerEl);
     return;
   }
 
@@ -38,7 +40,7 @@ export function renderChallenges(containerEl, extras, addXP) {
 
   // ── Hint toggle ────────────────────────────────────────────────
   const hintToggle = containerEl.querySelector('.challenge-hint__toggle');
-  const hintBody = containerEl.querySelector('.challenge-hint__body');
+  const hintBody   = containerEl.querySelector('.challenge-hint__body');
   hintToggle.addEventListener('click', () => {
     const open = !hintBody.classList.contains('collapsed');
     hintBody.classList.toggle('collapsed', open);
@@ -70,16 +72,4 @@ export function renderChallenges(containerEl, extras, addXP) {
 function _getCurrentSlug() {
   const el = document.querySelector('[data-topic-slug]');
   return el ? el.getAttribute('data-topic-slug') : 'unknown';
-}
-
-function _hideSection(el) {
-  const section = el.closest('.feature-section');
-  if (section) section.style.display = 'none';
-}
-
-function _esc(str) {
-  if (str == null) return '';
-  const d = document.createElement('div');
-  d.textContent = String(str);
-  return d.innerHTML;
 }

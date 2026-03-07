@@ -2,7 +2,9 @@
 // Filters topics by name from the chapters array, shows dropdown results,
 // and navigates to the selected topic.
 
-let allTopics = []; // flat list: { slug, title, chapterTitle }
+import { escapeHtml } from './utils.js';
+
+let allTopics = []; // flat list: { slug, title, titleLower, chapterTitle, chapterTitleLower }
 let searchInput = null;
 let dropdownEl = null;
 let selectedIndex = -1;
@@ -19,7 +21,9 @@ export function initSearch(chapters) {
       allTopics.push({
         slug: topic.slug || topic.id,
         title: topic.title,
+        titleLower: topic.title.toLowerCase(),
         chapterTitle: chapter.title,
+        chapterTitleLower: chapter.title.toLowerCase(),
         chapterIcon: chapter.icon || '\uD83D\uDCD6',
       });
     });
@@ -60,12 +64,7 @@ export function initSearch(chapters) {
 
 function filterTopics(query) {
   const q = query.toLowerCase();
-  return allTopics.filter((t) => {
-    return (
-      t.title.toLowerCase().includes(q) ||
-      t.chapterTitle.toLowerCase().includes(q)
-    );
-  });
+  return allTopics.filter((t) => t.titleLower.includes(q) || t.chapterTitleLower.includes(q));
 }
 
 function onInput() {
@@ -167,8 +166,3 @@ function highlightMatch(text, query) {
   return escapeHtml(before) + '<mark>' + escapeHtml(match) + '</mark>' + escapeHtml(after);
 }
 
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}

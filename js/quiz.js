@@ -3,7 +3,8 @@
 // Next is locked until the current question is answered.
 // Prev lets you review already-answered questions.
 
-import { addXP, completeQuiz } from './progress.js';
+import { addXP, completeQuiz, recordPerfectQuiz } from './progress.js';
+import { escapeHtml } from './utils.js';
 
 const XP_PER_CORRECT = 25;
 
@@ -162,23 +163,3 @@ function showResults(containerEl, correct, total, topicId) {
     .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ── Helpers ───────────────────────────────────────────────────────
-
-function recordPerfectQuiz(topicId) {
-  try {
-    const raw = localStorage.getItem('qp-progress');
-    if (!raw) return;
-    const progress = JSON.parse(raw);
-    if (!progress.perfectQuizzes) progress.perfectQuizzes = [];
-    if (!progress.perfectQuizzes.includes(topicId)) {
-      progress.perfectQuizzes.push(topicId);
-      localStorage.setItem('qp-progress', JSON.stringify(progress));
-    }
-  } catch { /* ignore */ }
-}
-
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}

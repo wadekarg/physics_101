@@ -3,6 +3,7 @@
 // and handles mobile sidebar toggle.
 
 import { getProgress } from './progress.js';
+import { escapeHtml } from './utils.js';
 
 let chaptersCache = [];
 let activeSlug = null;
@@ -162,8 +163,3 @@ function updateTopicCheckmark(slug) {
   if (allDone) chapterEl.classList.add('nav-chapter--complete');
 }
 
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
