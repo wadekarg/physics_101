@@ -15,9 +15,7 @@ import { renderFunFacts } from './fun-facts.js';
 import { RealtimeGraph } from './graph.js';
 import { renderFormulaCard } from './formula-card.js';
 import { renderWorkedExamples } from './worked-examples.js';
-import { renderPracticeProblems } from './practice-problems.js';
 import { renderConceptConnections } from './concept-connections.js';
-import { renderSpotTheMistake } from './spot-mistake.js';
 import { renderChallenges } from './sim-challenges.js';
 import { initSummaryCard } from './summary-card.js';
 
@@ -78,9 +76,7 @@ const extrasPath = isTopicPage ? '../data/topic-extras.json' : 'data/topic-extra
     // Render all feature modules
     renderFormulaCard(document.getElementById('formula-card'), topicExtras);
     renderWorkedExamples(document.getElementById('worked-examples'), topicExtras);
-    renderPracticeProblems(document.getElementById('practice-problems'), topicExtras, addXP);
     renderConceptConnections(document.getElementById('concept-connections'), topicExtras, chapters);
-    renderSpotTheMistake(document.getElementById('spot-mistake'), topicExtras, addXP);
     renderChallenges(document.getElementById('sim-challenges'), topicExtras, addXP);
     initSummaryCard(document.getElementById('summary-card'), topicData, topicExtras);
     renderChapterNav(slug, chapters);
@@ -103,9 +99,7 @@ const extrasPath = isTopicPage ? '../data/topic-extras.json' : 'data/topic-extra
     RealtimeGraph,
     renderFormulaCard,
     renderWorkedExamples,
-    renderPracticeProblems,
     renderConceptConnections,
-    renderSpotTheMistake,
     renderChallenges,
     initSummaryCard,
   };
@@ -157,12 +151,9 @@ function injectFeatureSections() {
     sim.insertAdjacentElement('afterend', makeSection('sim-challenges', '🧪 Challenge Lab'));
   }
 
-  // After #quiz-section (in order): Practice Problems → Spot the Mistake →
-  //   Summary Card → Concept Connections
+  // After #quiz-section: Summary Card → Concept Connections
   if (quiz) {
     const order = [
-      ['practice-problems', '🔢 Practice Problems'],
-      ['spot-mistake', '🔍 Spot the Mistake'],
       ['summary-card', ''],
       ['concept-connections', '🔗 Concept Connections'],
     ];
