@@ -93,7 +93,10 @@ function renderSidebar() {
   const completedSet = new Set(completedTopics);
 
   // Build HTML
-  let html = '';
+  const isTopicPage = window.location.pathname.includes('/topics/');
+  const aboutHref = isTopicPage ? '../about.html' : 'about.html';
+  let html = `<div class="nav-about"><a href="${aboutHref}" class="nav-about-link">ℹ️ About &amp; Contact</a></div>`;
+
   chaptersCache.forEach((chapter) => {
     const chapterIcon = chapter.icon || '\uD83D\uDCD6';
     const topics = chapter.topics || [];
@@ -124,10 +127,6 @@ function renderSidebar() {
     html += `  </ul>`;
     html += `</div>`;
   });
-
-  const isTopicPage = window.location.pathname.includes('/topics/');
-  const aboutHref = isTopicPage ? '../about.html' : 'about.html';
-  html += `<div class="nav-about"><a href="${aboutHref}" class="nav-about-link">ℹ️ About &amp; Contact</a></div>`;
 
   listEl.innerHTML = html;
 

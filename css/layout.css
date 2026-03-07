@@ -347,9 +347,9 @@ body::before {
 
 /* About link at sidebar bottom */
 .nav-about {
-  padding: var(--space-md) var(--space-md) var(--space-sm);
-  border-top: 1px solid var(--border);
-  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-sm);
 }
 
 .nav-about-link {
