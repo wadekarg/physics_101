@@ -3,7 +3,7 @@
 // Sets data-theme attribute on <html>.
 
 const STORAGE_KEY = 'qp-theme';
-const DEFAULT_THEME = 'dark';
+const DEFAULT_THEME = 'light';
 
 /**
  * Initialise the theme from localStorage (or default to "dark").
