@@ -151,7 +151,7 @@ function createSliderRow(cfg, engine) {
 
 function createRadioRow(cfg, engine) {
   const row = document.createElement('div');
-  row.className = 'sim-param-row';
+  row.className = 'sim-param-row sim-param-row--radio';
   row.dataset.param = cfg.name;
 
   const label = document.createElement('label');

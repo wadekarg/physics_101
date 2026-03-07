@@ -415,14 +415,19 @@
   flex-wrap: wrap;
 }
 
+.sim-param-row--radio {
+  grid-column: 1 / -1;
+}
+
 .sim-radio-btn {
-  padding: 3px 12px;
+  padding: 4px 14px;
   font-size: var(--fs-xs);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   background: transparent;
   color: var(--text-secondary);
   cursor: pointer;
+  white-space: nowrap;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
