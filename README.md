@@ -2,7 +2,9 @@
 
 **An interactive, gamified physics learning platform covering the entire high-school and introductory university physics curriculum.**
 
-Explore 73 topics across 23 chapters — each with an interactive simulation, formula card, worked examples, a knowledge check quiz, a challenge lab, and XP rewards. No login, no server, no build step. Open `index.html` and learn.
+🌐 **Live:** [https://wadekarg.github.io/physics_101/](https://wadekarg.github.io/physics_101/)
+
+Explore 73 topics across 23 chapters — each with an interactive simulation, formula card, worked examples, a knowledge check quiz, a challenge lab, and XP rewards. No login, no server, no build step.
 
 ---
 
@@ -150,7 +152,10 @@ physics_101/
 
 ## 🚀 Getting Started
 
-**No install, no build step.** This is a zero-dependency static site.
+**Option 1 — Use the live site (no setup):**
+Visit [https://wadekarg.github.io/physics_101/](https://wadekarg.github.io/physics_101/) in any browser.
+
+**Option 2 — Run locally:**
 
 > Some browsers block `fetch()` on `file://` URLs (needed to load JSON data files).
 > Use a local server if the chapter cards don't appear.
@@ -211,4 +216,4 @@ Milestone badges, chapter-completion awards, XP rank badges, streak rewards, and
 
 ## 📄 License
 
-This project is currently private. All rights reserved.
+MIT — open source, free to use and adapt.
