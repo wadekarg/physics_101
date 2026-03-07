@@ -289,7 +289,8 @@ body::before {
 }
 
 .nav-topic {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: var(--space-xs) var(--space-md) var(--space-xs) calc(var(--space-md) + 1.6em);
   font-size: var(--fs-sm);
   color: var(--text-secondary);
@@ -308,6 +309,40 @@ body::before {
   background: var(--accent-dim);
   color: var(--accent);
   font-weight: var(--fw-medium);
+}
+
+.topic-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topic-check {
+  flex-shrink: 0;
+  margin-left: var(--space-xs);
+  font-size: 0.75em;
+  color: var(--success, #00ff88);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.nav-topic.completed .topic-check {
+  opacity: 1;
+}
+
+/* Chapter completion badge (shown when all topics in chapter are done) */
+.chapter-complete-badge {
+  flex-shrink: 0;
+  font-size: 0.7em;
+  color: var(--success, #00ff88);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  margin-right: var(--space-xs);
+}
+
+.nav-chapter--complete .chapter-complete-badge {
+  opacity: 1;
 }
 
 /* Sidebar overlay for mobile */

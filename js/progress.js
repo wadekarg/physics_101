@@ -88,14 +88,15 @@ export function completeTopic(topicId) {
  */
 export function completeQuiz(topicId) {
   const progress = load();
-  if (progress.completedQuizzes.includes(topicId)) return;
-
-  progress.completedQuizzes.push(topicId);
-  save(progress);
-
-  document.dispatchEvent(
-    new CustomEvent('qp:quiz-complete', { detail: { topicId } })
-  );
+  if (!progress.completedQuizzes.includes(topicId)) {
+    progress.completedQuizzes.push(topicId);
+    save(progress);
+    document.dispatchEvent(
+      new CustomEvent('qp:quiz-complete', { detail: { topicId } })
+    );
+  }
+  // Also mark the topic as complete so landing-page progress bars update
+  completeTopic(topicId);
 }
 
 /**

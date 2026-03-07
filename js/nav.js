@@ -2,6 +2,8 @@
 // Renders collapsible chapters with topic links, highlights the current topic,
 // and handles mobile sidebar toggle.
 
+import { getProgress } from './progress.js';
+
 let chaptersCache = [];
 let activeSlug = null;
 let sidebarEl = null;
@@ -17,6 +19,11 @@ export function initNav(chapters) {
   if (!sidebarEl) return;
 
   renderSidebar();
+
+  // Update checkmark when a topic is completed
+  document.addEventListener('qp:topic-complete', (e) => {
+    updateTopicCheckmark(e.detail.topicId);
+  });
 
   // Close sidebar on overlay click (mobile)
   const overlay = document.getElementById('sidebar-overlay');
@@ -81,27 +88,34 @@ function closeSidebar() {
 
 function renderSidebar() {
   const listEl = sidebarEl.querySelector('.nav-list') || sidebarEl;
+  const { completedTopics = [] } = getProgress();
+  const completedSet = new Set(completedTopics);
 
   // Build HTML
   let html = '';
   chaptersCache.forEach((chapter) => {
     const chapterIcon = chapter.icon || '\uD83D\uDCD6';
-    html += `<div class="nav-chapter" data-chapter="${chapter.id}">`;
+    const topics = chapter.topics || [];
+    const allDone = topics.length > 0 && topics.every((t) => completedSet.has(t.slug || t.id));
+    html += `<div class="nav-chapter${allDone ? ' nav-chapter--complete' : ''}" data-chapter="${chapter.id}">`;
     html += `  <button class="nav-chapter-toggle" aria-expanded="false">`;
     html += `    <span class="chapter-icon">${chapterIcon}</span>`;
     html += `    <span class="chapter-title">${escapeHtml(chapter.title)}</span>`;
+    html += `    <span class="chapter-complete-badge" title="Chapter complete">✓</span>`;
     html += `    <span class="chapter-arrow">\u25B6</span>`;
     html += `  </button>`;
     html += `  <ul class="nav-topics">`;
 
-    (chapter.topics || []).forEach((topic) => {
+    topics.forEach((topic) => {
       const slug = topic.slug || topic.id;
       const activeClass = slug === activeSlug ? ' active' : '';
+      const doneClass = completedSet.has(slug) ? ' completed' : '';
       const isTopicPage = window.location.pathname.includes('/topics/');
       const topicHref = isTopicPage ? `${slug}.html` : `topics/${slug}.html`;
       html += `<li>`;
-      html += `  <a class="nav-topic${activeClass}" data-slug="${slug}" href="${topicHref}">`;
+      html += `  <a class="nav-topic${activeClass}${doneClass}" data-slug="${slug}" href="${topicHref}">`;
       html += `    <span class="topic-title">${escapeHtml(topic.title)}</span>`;
+      html += `    <span class="topic-check" aria-hidden="true">✓</span>`;
       html += `  </a>`;
       html += `</li>`;
     });
@@ -131,6 +145,21 @@ function renderSidebar() {
       }
     });
   });
+}
+
+function updateTopicCheckmark(slug) {
+  if (!sidebarEl) return;
+  const link = sidebarEl.querySelector(`.nav-topic[data-slug="${slug}"]`);
+  if (!link) return;
+  link.classList.add('completed');
+
+  // Mark chapter complete if every topic in it is now done
+  const chapterEl = link.closest('.nav-chapter');
+  if (!chapterEl) return;
+  const allDone = [...chapterEl.querySelectorAll('.nav-topic')].every((l) =>
+    l.classList.contains('completed')
+  );
+  if (allDone) chapterEl.classList.add('nav-chapter--complete');
 }
 
 function escapeHtml(str) {

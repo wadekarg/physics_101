@@ -32,6 +32,8 @@ const extrasPath = isTopicPage ? '../data/topic-extras.json' : 'data/topic-extra
 
   // 2. Progress system (localStorage-only, no fetch needed)
   initProgress();
+  updateHeaderBadges();
+  document.addEventListener('qp:xp', updateHeaderBadges);
 
   // 3. Fetch chapter data
   let chapters = [];
@@ -394,6 +396,14 @@ function renderChapterCards(chapters) {
 }
 
 // ── Helpers ──────────────────────────────────────────────────────────
+
+function updateHeaderBadges() {
+  const stats = getStats();
+  const xpEl = document.getElementById('header-xp');
+  const levelEl = document.getElementById('header-level');
+  if (xpEl) xpEl.textContent = `${stats.xp.toLocaleString()} XP`;
+  if (levelEl) levelEl.textContent = `${stats.level.icon} ${stats.level.name}`;
+}
 
 function escapeHtml(str) {
   const div = document.createElement('div');
