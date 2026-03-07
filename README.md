@@ -1,8 +1,8 @@
-# ⚛️ Quantum Playground
+# 🔬 Physics 101
 
 **An interactive, gamified physics learning platform covering the entire high-school and introductory university physics curriculum.**
 
-Explore 67 topics across 21 chapters — each with an interactive simulation, a short quiz, fun facts, and XP rewards. No login, no server, no build step. Open `index.html` and learn.
+Explore 73 topics across 23 chapters — each with an interactive simulation, formula card, worked examples, a knowledge check quiz, a challenge lab, and XP rewards. No login, no server, no build step. Open `index.html` and learn.
 
 ---
 
@@ -10,13 +10,19 @@ Explore 67 topics across 21 chapters — each with an interactive simulation, a 
 
 | Feature | Description |
 |---|---|
-| 🎮 **Gamification** | Earn XP for every topic and quiz you complete. Level up from *Physics Rookie* → *Quantum Wizard* |
+| 🎮 **Gamification** | Earn XP for every quiz you complete and challenge you finish. Level up from *Physics Rookie* → *Quantum Wizard* |
 | 🏆 **Achievements** | 22 unlockable badges for milestones, streaks, and chapter completions |
 | 🔥 **Daily Streak** | Track consecutive-day visits to build study momentum |
 | 🧪 **Simulations** | Interactive p5.js and Matter.js simulations on every topic page |
-| 🧠 **Quizzes** | 3 multiple-choice questions per topic with instant feedback and explanations |
+| 📐 **Formula Card** | Collapsible KaTeX-rendered formula sheet with variable tables on every topic |
+| ✏️ **Worked Examples** | Step-by-step accordion examples — reveal each step at your own pace |
+| 🧠 **Knowledge Check** | 6 MCQ per topic with one-at-a-time Prev/Next navigation, instant feedback, and explanations |
+| 🧪 **Challenge Lab** | Real-world multi-part application problems with hints per topic |
+| 🗂️ **Summary Card** | Auto-appears after quiz completion showing key formula and score |
+| 🔗 **Concept Connections** | Links to prerequisite topics so you never get lost |
+| ✅ **Progress Tracking** | Completed topics show a ✓ in the sidebar; chapters badge when fully done |
 | 💡 **Fun Facts** | 3 curated real-world facts on every topic |
-| 🔍 **Search** | Instant full-text search across all 67 topics |
+| 🔍 **Search** | Instant full-text search across all 73 topics |
 | 🌙 **Dark / Light Theme** | Toggleable theme, persisted across sessions |
 | 📱 **Responsive** | Works on desktop and mobile; collapsible sidebar on small screens |
 | 💾 **Offline-ready** | All progress stored in `localStorage` — no account or network required |
@@ -53,7 +59,7 @@ Explore 67 topics across 21 chapters — each with an interactive simulation, a 
 `Springs & Hooke's Law` · `Pendulums` · `Resonance`
 
 ### Chapter 9 — Waves & Sound
-`Wave Properties` · `Standing Waves` · `Superposition` · `Doppler Effect`
+`Wave Properties` · `Superposition` · `Standing Waves` · `Doppler Effect`
 
 ### Chapter 10 — Fluid Mechanics
 `Pressure & Pascal's Law` · `Buoyancy` · `Bernoulli's Principle`
@@ -71,7 +77,7 @@ Explore 67 topics across 21 chapters — each with an interactive simulation, a 
 `Magnetic Fields` · `Magnetic Force on Charges` · `Electromagnets`
 
 ### Chapter 15 — Electromagnetic Induction
-`Faraday's Law` · `Generators & Transformers` · `AC Circuits`
+`Faraday's Law` · `Generators & Transformers` · `AC Circuits` · `Motors & Generators`
 
 ### Chapter 16 — Electromagnetic Waves
 `Maxwell's Equations` · `The EM Spectrum`
@@ -83,53 +89,61 @@ Explore 67 topics across 21 chapters — each with an interactive simulation, a 
 `Time Dilation` · `Length Contraction` · `E = mc²`
 
 ### Chapter 19 — Quantum Mechanics
-`Photoelectric Effect` · `Wave-Particle Duality` · `Energy Levels`
+`Photoelectric Effect` · `Wave-Particle Duality` · `Energy Levels` · `Atomic Models`
 
 ### Chapter 20 — Nuclear & Particle Physics
-`Radioactive Decay` · `Fission & Fusion` · `The Standard Model`
+`Radioactive Decay` · `Fission & Fusion` · `The Standard Model` · `Nuclear Physics`
+
+### Chapter 21 — Semiconductors & Electronics
+`Semiconductors` · `P-N Junction` · `Transistors`
+
+### Chapter 22 — Communication Technology
+`Modulation` · `Wave Propagation` · `Digital Communication`
 
 ---
 
 ## 🏗️ Project Structure
 
 ```
-QuantumPlayground/
-├── index.html              # Landing page — chapter grid
+physics_101/
+├── index.html                  # Landing page — chapter grid
 ├── assets/
 │   └── favicon.svg
 ├── css/
-│   ├── main.css            # Root stylesheet (imports all partials)
-│   ├── variables.css       # CSS custom properties & theming
+│   ├── main.css                # Root stylesheet (imports all partials)
+│   ├── variables.css           # CSS custom properties & theming
 │   ├── reset.css
 │   ├── layout.css
 │   ├── components.css
+│   ├── features.css            # Formula card, worked examples, challenge lab, summary card
 │   ├── simulation.css
 │   └── print.css
 ├── data/
-│   ├── chapters.json       # Full curriculum: titles, slugs, fun facts, quizzes, XP
-│   └── achievements.json   # Achievement definitions
+│   ├── chapters.json           # Curriculum: titles, slugs, fun facts, quizzes (6 per topic)
+│   ├── topic-extras.json       # Formula cards, worked examples, challenge labs, connections
+│   └── achievements.json       # Achievement definitions
 ├── js/
-│   ├── app.js              # Boot: fetches data, initialises all modules
-│   ├── progress.js         # XP, levels, streaks — localStorage
-│   ├── achievements.js     # Achievement unlock logic + toast notifications
-│   ├── nav.js              # Sidebar navigation
-│   ├── search.js           # Full-text topic search
-│   ├── quiz.js             # Quiz renderer + answer scoring
-│   ├── fun-facts.js        # Fun-fact card renderer
-│   ├── sim-engine.js       # p5.js simulation runner
-│   ├── sim-controls.js     # Simulation parameter controls
-│   ├── graph.js            # Real-time data graph
-│   ├── theme.js            # Dark/light theme toggle
-│   └── topics/             # One JS file per topic (ch0-… through ch20-…)
-│       ├── ch0-scientific-method.js
-│       ├── ch1-free-fall.js
-│       └── …  (67 files total)
-├── topics/                 # One HTML page per topic
-│   ├── projectile-motion.html
-│   └── …  (67 files total)
+│   ├── app.js                  # Boot: fetches data, initialises modules, injects feature sections
+│   ├── progress.js             # XP, levels, streaks — localStorage
+│   ├── achievements.js         # Achievement unlock logic + toast notifications
+│   ├── nav.js                  # Sidebar navigation with completion checkmarks
+│   ├── search.js               # Full-text topic search
+│   ├── quiz.js                 # One-at-a-time quiz with Prev/Next navigation
+│   ├── fun-facts.js            # Fun-fact card renderer
+│   ├── formula-card.js         # Collapsible KaTeX formula sheet
+│   ├── worked-examples.js      # Step-by-step accordion examples
+│   ├── concept-connections.js  # Prerequisite topic links
+│   ├── sim-challenges.js       # Challenge lab (honor-system completion + XP)
+│   ├── summary-card.js         # Post-quiz summary card
+│   ├── sim-engine.js           # p5.js simulation runner
+│   ├── sim-controls.js         # Simulation parameter controls
+│   ├── graph.js                # Real-time data graph
+│   ├── theme.js                # Dark/light theme toggle
+│   └── topics/                 # One JS file per topic (73 files)
+├── topics/                     # One HTML page per topic (73 files)
 └── libs/
-    ├── p5.min.js           # p5.js v1 — canvas-based simulations
-    └── matter.min.js       # Matter.js — 2D rigid-body physics engine
+    ├── p5.min.js               # p5.js v1 — canvas-based simulations
+    └── matter.min.js           # Matter.js — 2D rigid-body physics engine
 ```
 
 ---
@@ -138,26 +152,21 @@ QuantumPlayground/
 
 **No install, no build step.** This is a zero-dependency static site.
 
-### Option 1 — Open directly in a browser
+> Some browsers block `fetch()` on `file://` URLs (needed to load JSON data files).
+> Use a local server if the chapter cards don't appear.
 
-> Some browsers block `fetch()` on `file://` URLs (needed to load `chapters.json`).
-> Use Option 2 if the chapter cards don't appear.
-
-### Option 2 — Local development server (recommended)
-
-Using Python (built into macOS / Linux):
+**Python (built into macOS / Linux):**
 ```bash
-cd QuantumPlayground
 python3 -m http.server 8080
 # Open http://localhost:8080
 ```
 
-Using Node.js:
+**Node.js:**
 ```bash
 npx serve .
 ```
 
-Using VS Code: install the **Live Server** extension and click "Go Live".
+**VS Code:** install the **Live Server** extension and click "Go Live".
 
 ---
 
@@ -170,7 +179,8 @@ Using VS Code: install the **Live Server** extension and click "Go Live".
 | Scripting | Vanilla JavaScript (ES modules, no bundler) |
 | Simulations | [p5.js](https://p5js.org/) — creative coding / canvas |
 | Physics engine | [Matter.js](https://brm.io/matter-js/) — rigid-body simulation |
-| Storage | `localStorage` (progress) · `sessionStorage` n/a |
+| Formula rendering | [KaTeX](https://katex.org/) — loaded dynamically on topic pages |
+| Storage | `localStorage` — all progress persisted client-side |
 | Fonts | Google Fonts — Inter + JetBrains Mono |
 
 ---
@@ -186,9 +196,10 @@ Using VS Code: install the **Live Server** extension and click "Go Live".
 | Quantum Wizard | 5,000 | 🧙 |
 
 **XP sources:**
-- Complete a topic simulation: **50 XP**
-- Answer a quiz question correctly: **XP varies per topic**
-- Unlock an achievement: **bonus XP** (50 – 2,000 depending on achievement)
+- Answer a quiz question correctly: **25 XP**
+- Complete a topic (finish the quiz): **50 XP bonus**
+- Complete a Challenge Lab: **75 XP** (varies per topic)
+- Unlock an achievement: **50 – 2,000 XP** depending on the badge
 
 ---
 
