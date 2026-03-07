@@ -6,17 +6,25 @@
 import { initTheme } from './theme.js';
 import { initNav, setActiveTopic } from './nav.js';
 import { initSearch } from './search.js';
-import { initProgress, getStats, getLevel, getProgress } from './progress.js';
+import { initProgress, getStats, getLevel, getProgress, addXP } from './progress.js';
 import { initAchievements } from './achievements.js';
 import { SimEngine } from './sim-engine.js';
 import { renderSimControls } from './sim-controls.js';
 import { renderQuiz } from './quiz.js';
 import { renderFunFacts } from './fun-facts.js';
 import { RealtimeGraph } from './graph.js';
+import { renderFormulaCard } from './formula-card.js';
+import { renderWorkedExamples } from './worked-examples.js';
+import { renderPracticeProblems } from './practice-problems.js';
+import { renderConceptConnections } from './concept-connections.js';
+import { renderSpotTheMistake } from './spot-mistake.js';
+import { renderChallenges } from './sim-challenges.js';
+import { initSummaryCard } from './summary-card.js';
 
 // ── Determine data path (root vs topics/ subdirectory) ──────────────
 const isTopicPage = window.location.pathname.includes('/topics/');
 const dataPath = isTopicPage ? '../data/chapters.json' : 'data/chapters.json';
+const extrasPath = isTopicPage ? '../data/topic-extras.json' : 'data/topic-extras.json';
 
 // ── Boot ─────────────────────────────────────────────────────────────
 
@@ -49,6 +57,34 @@ const dataPath = isTopicPage ? '../data/chapters.json' : 'data/chapters.json';
     // ── Topic page ──────────────────────────────────────────────
     const slug = topicEl.getAttribute('data-topic-slug');
     setActiveTopic(slug);
+
+    // Load topic extras
+    let allExtras = {};
+    try {
+      const extrasRes = await fetch(extrasPath);
+      if (extrasRes.ok) allExtras = await extrasRes.json();
+    } catch (e) {
+      console.warn('[app] Could not load topic-extras:', e);
+    }
+    const topicExtras = allExtras[slug] || {};
+    const topicData = findTopicBySlug(chapters, slug);
+
+    // Load KaTeX for formula rendering
+    await loadKaTeX();
+
+    // Inject feature section containers into DOM
+    injectFeatureSections();
+
+    // Render all feature modules
+    renderFormulaCard(document.getElementById('formula-card'), topicExtras);
+    renderWorkedExamples(document.getElementById('worked-examples'), topicExtras);
+    renderPracticeProblems(document.getElementById('practice-problems'), topicExtras, addXP);
+    renderConceptConnections(document.getElementById('concept-connections'), topicExtras, chapters);
+    renderSpotTheMistake(document.getElementById('spot-mistake'), topicExtras, addXP);
+    renderChallenges(document.getElementById('sim-challenges'), topicExtras, addXP);
+    initSummaryCard(document.getElementById('summary-card'), topicData, topicExtras);
+    renderChapterNav(slug, chapters);
+
   } else if (document.getElementById('chapters-grid')) {
     // ── Landing page ────────────────────────────────────────────
     renderStatsBar();
@@ -65,8 +101,161 @@ const dataPath = isTopicPage ? '../data/chapters.json' : 'data/chapters.json';
     renderQuiz,
     renderFunFacts,
     RealtimeGraph,
+    renderFormulaCard,
+    renderWorkedExamples,
+    renderPracticeProblems,
+    renderConceptConnections,
+    renderSpotTheMistake,
+    renderChallenges,
+    initSummaryCard,
   };
 })();
+
+// ── Topic-page helpers ────────────────────────────────────────────────
+
+/**
+ * Dynamically load KaTeX from CDN if not already loaded.
+ */
+function loadKaTeX() {
+  if (window.katex) return Promise.resolve();
+  return new Promise((resolve) => {
+    // CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';
+    document.head.appendChild(link);
+
+    // JS
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';
+    script.onload = resolve;
+    script.onerror = () => {
+      console.warn('[app] KaTeX failed to load; formulas will show as raw LaTeX');
+      resolve();
+    };
+    document.head.appendChild(script);
+  });
+}
+
+/**
+ * Inject feature section containers into .topic-content at the right positions.
+ * No HTML files are modified — this runs after the DOM is ready.
+ */
+function injectFeatureSections() {
+  const theory = document.getElementById('theory');
+  const sim = document.getElementById('simulation');
+  const quiz = document.getElementById('quiz-section');
+
+  // After #theory: Formula Card → Worked Examples
+  if (theory) {
+    theory.insertAdjacentElement('afterend', makeSection('worked-examples', '✏️ Worked Examples'));
+    theory.insertAdjacentElement('afterend', makeSection('formula-card', '📐 Formula Card'));
+  }
+
+  // After #simulation: Simulation Challenge
+  if (sim) {
+    sim.insertAdjacentElement('afterend', makeSection('sim-challenges', '🧪 Challenge Lab'));
+  }
+
+  // After #quiz-section (in order): Practice Problems → Spot the Mistake →
+  //   Summary Card → Concept Connections
+  if (quiz) {
+    const order = [
+      ['practice-problems', '🔢 Practice Problems'],
+      ['spot-mistake', '🔍 Spot the Mistake'],
+      ['summary-card', ''],
+      ['concept-connections', '🔗 Concept Connections'],
+    ];
+    let anchor = quiz;
+    for (const [id, title] of order) {
+      const section = makeSection(id, title);
+      anchor.insertAdjacentElement('afterend', section);
+      anchor = section;
+    }
+  }
+}
+
+/**
+ * Create a feature section element containing a titled div.
+ */
+function makeSection(id, title) {
+  const section = document.createElement('section');
+  section.className = 'feature-section';
+  section.style.marginTop = 'var(--space-xl)';
+  if (title) {
+    const h3 = document.createElement('h3');
+    h3.style.marginBottom = 'var(--space-md)';
+    h3.textContent = title;
+    section.appendChild(h3);
+  }
+  const div = document.createElement('div');
+  div.id = id;
+  section.appendChild(div);
+  return section;
+}
+
+/**
+ * Find a topic object by its slug across all chapters.
+ */
+function findTopicBySlug(chapters, slug) {
+  for (const chapter of chapters) {
+    for (const topic of chapter.topics || []) {
+      if ((topic.slug || topic.id) === slug) return topic;
+    }
+  }
+  return null;
+}
+
+/**
+ * Render Prev / Next chapter navigation at the bottom of the topic page.
+ * Appended directly to .topic-content (or <main> as fallback).
+ */
+function renderChapterNav(slug, chapters) {
+  // Find which chapter index contains this slug
+  let chapterIdx = -1;
+  for (let i = 0; i < chapters.length; i++) {
+    for (const topic of chapters[i].topics || []) {
+      if ((topic.slug || topic.id) === slug) { chapterIdx = i; break; }
+    }
+    if (chapterIdx !== -1) break;
+  }
+  if (chapterIdx === -1) return;
+
+  const prev = chapterIdx > 0 ? chapters[chapterIdx - 1] : null;
+  const next = chapterIdx < chapters.length - 1 ? chapters[chapterIdx + 1] : null;
+
+  const chapterHref = (ch) => {
+    const first = (ch.topics || [])[0];
+    return first ? `../topics/${first.slug || first.id}.html` : '#';
+  };
+
+  const prevHtml = prev
+    ? `<a href="${chapterHref(prev)}" class="chapter-nav__btn chapter-nav__btn--prev">
+         <span class="chapter-nav__arrow">←</span>
+         <span class="chapter-nav__text">
+           <span class="chapter-nav__label">Previous Chapter</span>
+           <span class="chapter-nav__title">${escapeHtml(prev.icon || '')} ${escapeHtml(prev.title)}</span>
+         </span>
+       </a>`
+    : `<span></span>`;
+
+  const nextHtml = next
+    ? `<a href="${chapterHref(next)}" class="chapter-nav__btn chapter-nav__btn--next">
+         <span class="chapter-nav__text">
+           <span class="chapter-nav__label">Next Chapter</span>
+           <span class="chapter-nav__title">${escapeHtml(next.icon || '')} ${escapeHtml(next.title)}</span>
+         </span>
+         <span class="chapter-nav__arrow">→</span>
+       </a>`
+    : `<span></span>`;
+
+  const nav = document.createElement('nav');
+  nav.className = 'chapter-nav';
+  nav.innerHTML = `${prevHtml}${nextHtml}`;
+
+  const container = document.querySelector('.topic-content') || document.querySelector('main');
+  if (container) container.appendChild(nav);
+}
 
 // ── Landing-page renderers ───────────────────────────────────────────
 
@@ -193,7 +382,7 @@ function renderChapterCards(chapters) {
     // Link to first topic page
     const firstTopic = topics[0];
     const href = firstTopic ? `topics/${firstTopic.slug || firstTopic.id}.html` : '#';
-    const chapterIcon = chapter.icon || '\uD83D\uDCD6';
+    const chapterIcon = chapter.icon || '📖';
     const chapterNum = chapter.id || idx + 1;
     const accent = accentColors[idx] || 'var(--accent)';
 

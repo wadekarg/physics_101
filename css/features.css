@@ -1,0 +1,775 @@
+/* ===== Quantum Playground — Feature Components ===== */
+/* Styles for: Formula Card, Worked Examples, Practice Problems,
+   Concept Connections, Spot the Mistake, Sim Challenges, Summary Card */
+
+/* ── Shared section wrapper ─────────────────────────────────────── */
+.feature-section {
+  margin-top: var(--space-xl);
+}
+
+.feature-section h3 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Shared helpers ──────────────────────────────────────────────── */
+.collapsed {
+  display: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.feedback--correct {
+  color: var(--success);
+  font-weight: var(--fw-medium);
+}
+
+.feedback--wrong {
+  color: var(--error);
+  font-weight: var(--fw-medium);
+}
+
+.feedback--warning {
+  color: var(--warning);
+}
+
+/* ── 1. Formula Card ─────────────────────────────────────────────── */
+.formula-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.formula-card__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-heading);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  transition: background var(--transition-fast);
+}
+
+.formula-card__toggle:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.formula-card__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.formula-card__chevron {
+  font-size: var(--fs-sm);
+  transition: transform var(--transition-base);
+  color: var(--text-secondary);
+}
+
+.formula-card__toggle[aria-expanded="false"] .formula-card__chevron {
+  transform: rotate(-90deg);
+}
+
+.formula-card__body {
+  padding: var(--space-md) var(--space-lg) var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.formula-card__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.formula-card__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.formula-card__formula {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+
+/* Variable table */
+.formula-var-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  margin-top: var(--space-xs);
+}
+
+.formula-var-table th {
+  text-align: left;
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--text-muted);
+  font-weight: var(--fw-medium);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.formula-var-table td {
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.formula-var-table__sym {
+  font-family: var(--font-mono);
+  color: var(--accent) !important;
+  font-weight: var(--fw-medium);
+}
+
+.formula-var-table__unit {
+  color: var(--text-muted) !important;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+}
+
+/* ── 2. Worked Examples ──────────────────────────────────────────── */
+.worked-examples {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Nav bar: counter on left, Prev/Next on right */
+.worked-examples__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(255,255,255,0.03);
+}
+
+.worked-examples__counter {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.worked-examples__nav-btns {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.we-prev-btn,
+.we-next-btn {
+  font-size: var(--fs-sm);
+  padding: var(--space-xs) var(--space-md);
+}
+
+/* Card body for the active example */
+.worked-example__body {
+  padding: var(--space-md) var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.worked-example__title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.example-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.example-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--border-color);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--bg-tertiary);
+  transition: border-color var(--transition-base), opacity var(--transition-slow);
+  animation: step-appear 0.3s ease;
+}
+
+.example-step--final {
+  border-left-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.example-step__text {
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.example-step__formula {
+  overflow-x: auto;
+  text-align: center;
+  padding: var(--space-sm);
+}
+
+.example-next-btn {
+  align-self: flex-start;
+  margin-top: var(--space-xs);
+}
+
+@keyframes step-appear {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 3. Practice Problems ────────────────────────────────────────── */
+.practice-problems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.practice-problem {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.practice-problem__header {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.practice-problem__statement {
+  color: var(--text-primary);
+  font-size: var(--fs-base);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.practice-problem__hint-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.practice-problem__hint-body {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  overflow-x: auto;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.practice-problem__input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.answer-input {
+  width: 140px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--fs-base);
+  font-family: var(--font-mono);
+  transition: border-color var(--transition-fast);
+  outline: none;
+}
+
+.answer-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim);
+}
+
+.answer-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.practice-problem__unit {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+
+.practice-problem__feedback {
+  font-size: var(--fs-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+}
+
+.practice-problem__solution {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-sm);
+  line-height: 1.7;
+}
+
+/* ── 4. Concept Connections ──────────────────────────────────────── */
+.concept-connections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.connection-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.connection-row__label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 120px;
+  padding-top: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.connection-row__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.connection-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.connection-chip:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+  text-decoration: none;
+}
+
+/* ── 5. Spot the Mistake ─────────────────────────────────────────── */
+.spot-mistake {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.spot-mistake__problem {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.spot-mistake__statement {
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  font-size: var(--fs-base);
+}
+
+.spot-mistake__steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.mistake-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+}
+
+.mistake-step:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mistake-step__num {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mistake-step__text {
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.mistake-step__formula {
+  overflow-x: auto;
+  display: block;
+  padding: var(--space-xs) 0;
+}
+
+/* Error step styling (revealed after correct click) */
+.mistake-step.selected-correct,
+.mistake-step.is-error[disabled] {
+  border-color: var(--success);
+  background: rgba(0, 255, 136, 0.08);
+}
+
+/* Wrong click animation */
+.mistake-step.selected-wrong {
+  border-color: var(--error);
+  background: rgba(255, 68, 102, 0.12);
+  animation: shake 0.4s ease;
+}
+
+.spot-mistake__feedback {
+  font-size: var(--fs-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  margin-top: var(--space-sm);
+}
+
+.spot-mistake__explanation {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  padding: var(--space-sm) var(--space-md);
+  border-left: 3px solid var(--success);
+  background: rgba(0, 255, 136, 0.05);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: var(--space-sm);
+  line-height: 1.6;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  60%       { transform: translateX(6px); }
+}
+
+/* ── 6. Simulation Challenge ─────────────────────────────────────── */
+.sim-challenge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sim-challenge__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sim-challenge__icon {
+  font-size: var(--fs-xl);
+}
+
+.sim-challenge__title {
+  flex: 1;
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.sim-challenge__xp {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--warning);
+  background: rgba(255, 170, 0, 0.12);
+  border: 1px solid rgba(255, 170, 0, 0.3);
+  border-radius: var(--radius-full);
+  padding: var(--space-xs) var(--space-md);
+  white-space: nowrap;
+}
+
+.sim-challenge__desc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: var(--fs-base);
+  margin: 0;
+}
+
+.challenge-hint {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.challenge-hint__toggle {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  padding: var(--space-xs) var(--space-md);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.challenge-hint__toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.challenge-hint__body {
+  color: var(--text-secondary);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.sim-challenge__complete-btn {
+  align-self: flex-start;
+}
+
+.sim-challenge__complete-btn.completed {
+  color: var(--success);
+  border-color: var(--success);
+  cursor: default;
+}
+
+/* ── 7. Summary Card ─────────────────────────────────────────────── */
+.summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-glow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.summary-card--animate {
+  animation: summary-slide-in 0.5s var(--transition-spring) both;
+}
+
+@keyframes summary-slide-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.summary-card__title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+  margin: 0;
+}
+
+.summary-formula {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.summary-formula__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--accent);
+}
+
+.summary-stats {
+  display: flex;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.summary-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.summary-stat__label {
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  font-weight: var(--fw-medium);
+}
+
+.summary-stat__value {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+
+.summary-card__print-btn {
+  align-self: flex-start;
+}
+
+/* ── Chapter Navigation ──────────────────────────────────────────── */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl, 3rem);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--border-color);
+}
+
+.chapter-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  flex: 1;
+  max-width: 48%;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.chapter-nav__btn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+  background: var(--accent-dim);
+  text-decoration: none;
+}
+
+.chapter-nav__btn--next {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.chapter-nav__arrow {
+  font-size: var(--fs-xl, 1.5rem);
+  color: var(--accent);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.chapter-nav__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chapter-nav__label {
+  font-size: var(--fs-xs, 0.75rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  font-weight: var(--fw-semibold);
+}
+
+.chapter-nav__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+}
+
+@media (max-width: 600px) {
+  .chapter-nav {
+    flex-direction: column;
+  }
+  .chapter-nav__btn {
+    max-width: 100%;
+  }
+  .chapter-nav__btn--next {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .chapter-nav__btn--next .chapter-nav__arrow {
+    order: -1;
+  }
+}
+
+/* ── Print overrides ─────────────────────────────────────────────── */
+@media print {
+  .formula-card__toggle,
+  .worked-examples__nav,
+  .example-next-btn,
+  .new-problem-btn,
+  .check-btn,
+  .challenge-hint__toggle,
+  .sim-challenge__complete-btn,
+  .summary-card__print-btn {
+    display: none !important;
+  }
+
+  .formula-card__body,
+  .worked-example__body,
+  .worked-example__title,
+  .example-step,
+  .practice-problem__hint-body,
+  .challenge-hint__body {
+    display: block !important;
+  }
+}
