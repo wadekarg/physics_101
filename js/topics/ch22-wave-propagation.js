@@ -40,7 +40,7 @@ function init() {
       const antHeight = engine.getParam('antennaHeight');
 
       // Earth curve
-      const earthCY = H + 220; // center of earth circle below canvas
+      const earthCY = H + 170; // center of earth circle below canvas
       const earthR = 270;
       const ionoR = earthR + 80;
 
@@ -83,10 +83,10 @@ function init() {
       p.endShape(p.CLOSE);
 
       // Transmitter tower (left side)
-      const txAngle = p.PI + 0.55;
+      const txAngle = p.PI + 0.75;
       const txBase = { x: W / 2 + earthR * Math.cos(txAngle), y: earthCY + earthR * Math.sin(txAngle) };
       const towerH = Math.min(60, 10 + antHeight / 10);
-      const txTop = { x: txBase.x - towerH * Math.sin(txAngle - p.PI), y: txBase.y + towerH * Math.cos(txAngle - p.PI) };
+      const txTop = { x: txBase.x + towerH * Math.cos(txAngle), y: txBase.y + towerH * Math.sin(txAngle) };
 
       p.stroke(200, 200, 100); p.strokeWeight(2);
       p.line(txBase.x, txBase.y, txTop.x, txTop.y);
@@ -98,9 +98,9 @@ function init() {
       p.text('TX', txTop.x, txTop.y - 10);
 
       // Receiver (right side)
-      const rxAngle = p.TWO_PI - 0.55;
+      const rxAngle = p.TWO_PI - 0.75;
       const rxBase = { x: W / 2 + earthR * Math.cos(rxAngle), y: earthCY + earthR * Math.sin(rxAngle) };
-      const rxTop = { x: rxBase.x - 20 * Math.sin(rxAngle - p.PI), y: rxBase.y + 20 * Math.cos(rxAngle - p.PI) };
+      const rxTop = { x: rxBase.x + 20 * Math.cos(rxAngle), y: rxBase.y + 20 * Math.sin(rxAngle) };
       p.stroke(100, 200, 255); p.strokeWeight(2);
       p.line(rxBase.x, rxBase.y, rxTop.x, rxTop.y);
       p.noStroke(); p.fill(100, 200, 255);
