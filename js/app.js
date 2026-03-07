@@ -376,7 +376,7 @@ function renderChapterCards(chapters) {
     const firstTopic = topics[0];
     const href = firstTopic ? `topics/${firstTopic.slug || firstTopic.id}.html` : '#';
     const chapterIcon = chapter.icon || '📖';
-    const chapterNum = chapter.id ?? idx;
+    const chapterNum = (chapter.id ?? idx) + 1;
     const accent = accentColors[idx] || 'var(--accent)';
 
     html += `
