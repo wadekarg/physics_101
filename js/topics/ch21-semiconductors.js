@@ -236,7 +236,8 @@ function init() {
   }, { dopingType: 0, temperature: 300, dopingConcentration: 5 });
 
   renderSimControls(document.getElementById('sim-controls'), engine, [
-    { name: 'dopingType', label: 'Type (0=Intrinsic, 1=N-type, 2=P-type)', min: 0, max: 2, step: 1, value: 0, unit: '' },
+    { name: 'dopingType', label: 'Semiconductor Type', type: 'radio', value: 0,
+      options: [{ value: 0, label: 'Intrinsic' }, { value: 1, label: 'N-type' }, { value: 2, label: 'P-type' }] },
     { name: 'temperature', label: 'Temperature', min: 100, max: 600, step: 10, value: 300, unit: 'K' },
     { name: 'dopingConcentration', label: 'Doping Level', min: 0, max: 10, step: 1, value: 5, unit: '\u00d710\u00b9\u2076/cm\u00b3' },
   ]);

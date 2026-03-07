@@ -88,7 +88,7 @@ export function renderSimControls(containerEl, engine, paramConfig) {
     slidersEl.className = 'sim-params';
 
     paramConfig.forEach((cfg) => {
-      const row = createSliderRow(cfg, engine);
+      const row = cfg.type === 'radio' ? createRadioRow(cfg, engine) : createSliderRow(cfg, engine);
       slidersEl.appendChild(row);
     });
 
@@ -149,17 +149,63 @@ function createSliderRow(cfg, engine) {
   return row;
 }
 
+function createRadioRow(cfg, engine) {
+  const row = document.createElement('div');
+  row.className = 'sim-param-row';
+  row.dataset.param = cfg.name;
+
+  const label = document.createElement('label');
+  label.className = 'sim-param-label';
+  label.textContent = cfg.label || cfg.name;
+
+  const btnGroup = document.createElement('div');
+  btnGroup.className = 'sim-radio-group';
+
+  const currentVal = cfg.value !== undefined ? cfg.value : (engine.getParam(cfg.name) || 0);
+  cfg.options.forEach((opt) => {
+    const btn = document.createElement('button');
+    btn.className = 'sim-radio-btn';
+    btn.textContent = opt.label;
+    btn.dataset.value = opt.value;
+    if (opt.value === currentVal) btn.classList.add('active');
+
+    btn.addEventListener('click', () => {
+      engine.setParam(cfg.name, opt.value);
+      btnGroup.querySelectorAll('.sim-radio-btn').forEach((b) => {
+        b.classList.toggle('active', b === btn);
+      });
+    });
+
+    btnGroup.appendChild(btn);
+  });
+
+  row.appendChild(label);
+  row.appendChild(btnGroup);
+  return row;
+}
+
 function resetSliders(containerEl, engine, paramConfig) {
   if (!paramConfig) return;
   paramConfig.forEach((cfg) => {
-    const slider = containerEl.querySelector(`#sim-param-${cfg.name}`);
-    if (slider) {
+    if (cfg.type === 'radio') {
       const initial = cfg.value !== undefined ? cfg.value : 0;
-      slider.value = initial;
       engine.setParam(cfg.name, initial);
-      const valueDisplay = slider.parentElement.querySelector('.sim-param-value');
-      if (valueDisplay) {
-        valueDisplay.textContent = formatValue(initial, cfg.unit);
+      const row = containerEl.querySelector(`[data-param="${cfg.name}"]`);
+      if (row) {
+        row.querySelectorAll('.sim-radio-btn').forEach((b) => {
+          b.classList.toggle('active', parseFloat(b.dataset.value) === initial);
+        });
+      }
+    } else {
+      const slider = containerEl.querySelector(`#sim-param-${cfg.name}`);
+      if (slider) {
+        const initial = cfg.value !== undefined ? cfg.value : 0;
+        slider.value = initial;
+        engine.setParam(cfg.name, initial);
+        const valueDisplay = slider.parentElement.querySelector('.sim-param-value');
+        if (valueDisplay) {
+          valueDisplay.textContent = formatValue(initial, cfg.unit);
+        }
       }
     }
   });

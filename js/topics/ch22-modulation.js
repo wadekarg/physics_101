@@ -121,7 +121,8 @@ function init() {
   }, { modulationType: 0, modulationIndex: 0.5, messageFrequency: 3, carrierFrequency: 40 });
 
   renderSimControls(document.getElementById('sim-controls'), engine, [
-    { name: 'modulationType', label: 'Mode (0=AM, 1=FM)', min: 0, max: 1, step: 1, value: 0, unit: '' },
+    { name: 'modulationType', label: 'Modulation Mode', type: 'radio', value: 0,
+      options: [{ value: 0, label: 'AM' }, { value: 1, label: 'FM' }] },
     { name: 'modulationIndex', label: 'Modulation Index (\u03bc / \u03b2)', min: 0.1, max: 2, step: 0.1, value: 0.5, unit: '' },
     { name: 'messageFrequency', label: 'Message Freq (fm)', min: 1, max: 10, step: 1, value: 3, unit: 'Hz' },
     { name: 'carrierFrequency', label: 'Carrier Freq (fc)', min: 20, max: 60, step: 5, value: 40, unit: 'Hz' },

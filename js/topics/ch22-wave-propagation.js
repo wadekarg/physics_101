@@ -168,7 +168,8 @@ function init() {
   }, { propagationMode: 0, antennaHeight: 100 });
 
   renderSimControls(document.getElementById('sim-controls'), engine, [
-    { name: 'propagationMode', label: 'Mode (0=Ground, 1=Sky, 2=Space)', min: 0, max: 2, step: 1, value: 0, unit: '' },
+    { name: 'propagationMode', label: 'Propagation Mode', type: 'radio', value: 0,
+      options: [{ value: 0, label: 'Ground Wave' }, { value: 1, label: 'Sky Wave' }, { value: 2, label: 'Space Wave' }] },
     { name: 'antennaHeight', label: 'Antenna Height', min: 10, max: 500, step: 10, value: 100, unit: 'm' },
   ]);
 
