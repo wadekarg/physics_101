@@ -46,12 +46,12 @@ export function getProgress() {
  * @param {number} amount
  */
 export function addXP(amount) {
-  if (typeof amount !== 'number' || amount <= 0) return;
+  if (typeof amount !== 'number' || amount === 0) return;
 
   const progress = load();
   const previousLevel = getLevelForXP(progress.xp).name;
 
-  progress.xp += amount;
+  progress.xp = Math.max(0, progress.xp + amount);
   save(progress);
 
   const newLevel = getLevelForXP(progress.xp).name;

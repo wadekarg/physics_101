@@ -30,9 +30,8 @@ export function renderChallenges(containerEl, extras, addXP) {
         <button class="challenge-hint__toggle">💡 Show Hint</button>
         <div class="challenge-hint__body collapsed">${_esc(challenge.hint)}</div>
       </div>
-      <button class="btn btn--primary sim-challenge__complete-btn${alreadyDone ? ' completed' : ''}"
-              ${alreadyDone ? 'disabled' : ''}>
-        ${alreadyDone ? '✓ Completed!' : 'Mark as Completed ✓'}
+      <button class="btn btn--primary sim-challenge__complete-btn${alreadyDone ? ' completed' : ''}">
+        ${alreadyDone ? '✓ Completed' : 'Mark as Completed ✓'}
       </button>
     </div>
   `;
@@ -46,17 +45,24 @@ export function renderChallenges(containerEl, extras, addXP) {
     hintToggle.textContent = open ? '💡 Show Hint' : '💡 Hide Hint';
   });
 
-  // ── Complete button ────────────────────────────────────────────
-  if (!alreadyDone) {
-    const completeBtn = containerEl.querySelector('.sim-challenge__complete-btn');
-    completeBtn.addEventListener('click', () => {
+  // ── Complete button (toggle) ───────────────────────────────────
+  const completeBtn = containerEl.querySelector('.sim-challenge__complete-btn');
+  const xpBonus = challenge.xpBonus || 75;
+
+  completeBtn.addEventListener('click', () => {
+    const done = localStorage.getItem(storageKey) === 'done';
+    if (done) {
+      localStorage.removeItem(storageKey);
+      completeBtn.textContent = 'Mark as Completed ✓';
+      completeBtn.classList.remove('completed');
+      addXP(-xpBonus);
+    } else {
       localStorage.setItem(storageKey, 'done');
-      completeBtn.textContent = '✓ Completed!';
+      completeBtn.textContent = '✓ Completed';
       completeBtn.classList.add('completed');
-      completeBtn.disabled = true;
-      addXP(challenge.xpBonus || 75);
-    });
-  }
+      addXP(xpBonus);
+    }
+  });
 }
 
 // ── helpers ──────────────────────────────────────────────────────────
