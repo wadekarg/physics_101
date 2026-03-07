@@ -1,6 +1,7 @@
 // quiz.js — Quiz engine for Quantum Playground
-// Renders multiple-choice questions, handles answer selection,
-// shows correct/incorrect with explanation, and awards XP.
+// Shows one question at a time with Prev/Next navigation.
+// Next is locked until the current question is answered.
+// Prev lets you review already-answered questions.
 
 import { addXP, completeQuiz } from './progress.js';
 
@@ -9,10 +10,10 @@ const XP_PER_CORRECT = 25;
 /**
  * Render a quiz inside the given container element.
  *
- * @param {HTMLElement} containerEl — element to render the quiz into
+ * @param {HTMLElement} containerEl
  * @param {Array} questions — array of question objects:
  *   { question: string, options: string[], correct: number, explanation: string }
- * @param {string} topicId — identifier of the topic this quiz belongs to
+ * @param {string} topicId
  */
 export function renderQuiz(containerEl, questions, topicId) {
   if (!containerEl || !questions || questions.length === 0) return;
@@ -20,151 +21,148 @@ export function renderQuiz(containerEl, questions, topicId) {
   containerEl.innerHTML = '';
   containerEl.classList.add('quiz-container');
 
-  const state = {
-    answered: 0,
-    correct: 0,
-    total: questions.length,
-  };
+  const total = questions.length;
 
-  // Quiz header
-  const header = document.createElement('div');
-  header.className = 'quiz-header';
-  header.innerHTML = `
-    <h3 class="quiz-title">\u2753 Knowledge Check</h3>
-    <div class="quiz-progress-text">
-      <span class="quiz-answered">0</span> / <span class="quiz-total">${state.total}</span> answered
+  // Per-question state
+  const answered  = new Array(total).fill(false);
+  const selected  = new Array(total).fill(-1);
+  const wasCorrect = new Array(total).fill(false);
+  let xpAwarded   = new Array(total).fill(false);
+  let correctCount = 0;
+  let current     = 0;
+
+  // ── Build shell ────────────────────────────────────────────────
+  containerEl.innerHTML = `
+    <div class="quiz-nav">
+      <button class="btn btn--ghost quiz-prev-btn" disabled>◀ Prev</button>
+      <span class="quiz-counter">Question 1 of ${total}</span>
+      <button class="btn btn--ghost quiz-next-btn" disabled>Next ▶</button>
     </div>
+    <div class="quiz-body"></div>
   `;
-  containerEl.appendChild(header);
 
-  // Render each question
-  questions.forEach((q, index) => {
-    const questionEl = createQuestionElement(q, index, state, containerEl, topicId);
-    containerEl.appendChild(questionEl);
-  });
-}
+  const prevBtn   = containerEl.querySelector('.quiz-prev-btn');
+  const nextBtn   = containerEl.querySelector('.quiz-next-btn');
+  const counterEl = containerEl.querySelector('.quiz-counter');
+  const bodyEl    = containerEl.querySelector('.quiz-body');
 
-// ── internal helpers ────────────────────────────────────────────────
+  // ── Render a single question ────────────────────────────────────
+  function renderQuestion(idx) {
+    const q          = questions[idx];
+    const isAnswered = answered[idx];
+    const chosenIdx  = selected[idx];
 
-function createQuestionElement(q, index, state, containerEl, topicId) {
-  const wrapper = document.createElement('div');
-  wrapper.className = 'quiz-question';
-  wrapper.dataset.index = index;
+    const optionsHtml = q.options.map((opt, oi) => {
+      let cls = 'quiz-option';
+      if (isAnswered) {
+        cls += ' disabled';
+        if (oi === q.correct)  cls += ' correct';
+        if (oi === chosenIdx && oi !== q.correct) cls += ' incorrect';
+      }
+      return `<button class="${cls}" data-oi="${oi}">${escapeHtml(opt)}</button>`;
+    }).join('');
 
-  // Question text
-  const questionText = document.createElement('div');
-  questionText.className = 'quiz-question-text';
-  questionText.innerHTML = `<span class="quiz-q-num">${index + 1}.</span> ${escapeHtml(q.question)}`;
-  wrapper.appendChild(questionText);
+    const explanationHtml = isAnswered && q.explanation
+      ? `<div class="quiz-explanation"><strong>Explanation:</strong> ${escapeHtml(q.explanation)}</div>`
+      : '';
 
-  // Options
-  const optionsEl = document.createElement('div');
-  optionsEl.className = 'quiz-options';
+    bodyEl.innerHTML = `
+      <div class="quiz-question" data-index="${idx}">
+        <div class="quiz-question-text">
+          <span class="quiz-q-num">${idx + 1}.</span> ${escapeHtml(q.question)}
+        </div>
+        <div class="quiz-options">${optionsHtml}</div>
+        ${explanationHtml}
+      </div>
+    `;
 
-  q.options.forEach((option, optIdx) => {
-    const btn = document.createElement('button');
-    btn.className = 'quiz-option';
-    btn.textContent = option;
-    btn.dataset.optionIndex = optIdx;
-
-    btn.addEventListener('click', () => {
-      // Ignore if already answered
-      if (wrapper.classList.contains('answered')) return;
-      handleAnswer(wrapper, btn, optionsEl, q, optIdx, state, containerEl, topicId);
-    });
-
-    optionsEl.appendChild(btn);
-  });
-
-  wrapper.appendChild(optionsEl);
-
-  // Explanation (hidden until answered)
-  const explanationEl = document.createElement('div');
-  explanationEl.className = 'quiz-explanation hidden';
-  explanationEl.innerHTML = `<strong>Explanation:</strong> ${escapeHtml(q.explanation || '')}`;
-  wrapper.appendChild(explanationEl);
-
-  return wrapper;
-}
-
-function handleAnswer(wrapper, clickedBtn, optionsEl, question, chosenIdx, state, containerEl, topicId) {
-  wrapper.classList.add('answered');
-
-  const isCorrect = chosenIdx === question.correct;
-
-  // Highlight all options
-  optionsEl.querySelectorAll('.quiz-option').forEach((btn) => {
-    const idx = parseInt(btn.dataset.optionIndex, 10);
-    btn.disabled = true;
-
-    if (idx === question.correct) {
-      btn.classList.add('correct');
+    // Wire option clicks if not yet answered
+    if (!isAnswered) {
+      bodyEl.querySelectorAll('.quiz-option').forEach(btn => {
+        btn.addEventListener('click', () => handleAnswer(idx, parseInt(btn.dataset.oi, 10)));
+      });
     }
-    if (idx === chosenIdx && !isCorrect) {
-      btn.classList.add('incorrect');
+
+    // Update nav
+    counterEl.textContent = `Question ${idx + 1} of ${total}`;
+    prevBtn.disabled = idx === 0;
+    // Next: enabled if answered (or if it's the last question and all answered)
+    nextBtn.disabled = !isAnswered;
+    nextBtn.textContent = (idx === total - 1) ? 'Finish ✓' : 'Next ▶';
+  }
+
+  // ── Handle answer selection ─────────────────────────────────────
+  function handleAnswer(idx, chosenIdx) {
+    if (answered[idx]) return;
+
+    answered[idx]  = true;
+    selected[idx]  = chosenIdx;
+    const correct  = chosenIdx === questions[idx].correct;
+    wasCorrect[idx] = correct;
+
+    if (correct && !xpAwarded[idx]) {
+      xpAwarded[idx] = true;
+      correctCount++;
+      addXP(XP_PER_CORRECT);
+    }
+
+    // Re-render with answered state
+    renderQuestion(idx);
+  }
+
+  // ── Prev / Next ─────────────────────────────────────────────────
+  prevBtn.addEventListener('click', () => {
+    if (current > 0) renderQuestion(--current);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (current < total - 1) {
+      renderQuestion(++current);
+    } else {
+      // All questions done — show results
+      showResults(containerEl, correctCount, total, topicId);
     }
   });
 
-  // Show explanation
-  const explanationEl = wrapper.querySelector('.quiz-explanation');
-  if (explanationEl && question.explanation) {
-    explanationEl.classList.remove('hidden');
-  }
-
-  // Update state
-  state.answered += 1;
-  if (isCorrect) {
-    state.correct += 1;
-    addXP(XP_PER_CORRECT);
-  }
-
-  // Update progress text
-  const answeredSpan = containerEl.querySelector('.quiz-answered');
-  if (answeredSpan) answeredSpan.textContent = state.answered;
-
-  // If all questions answered, show final score
-  if (state.answered === state.total) {
-    showResults(containerEl, state, topicId);
-  }
+  // ── Initial render ──────────────────────────────────────────────
+  renderQuestion(0);
 }
 
-function showResults(containerEl, state, topicId) {
-  // Mark quiz complete for this topic
+// ── Results ───────────────────────────────────────────────────────
+
+function showResults(containerEl, correct, total, topicId) {
   completeQuiz(topicId);
 
-  const pct = Math.round((state.correct / state.total) * 100);
-  const totalXP = state.correct * XP_PER_CORRECT;
+  const pct = Math.round((correct / total) * 100);
+  const totalXP = correct * XP_PER_CORRECT;
 
   let emoji, message;
   if (pct === 100) {
-    emoji = '\uD83C\uDF1F';
-    message = 'Perfect score! Outstanding!';
-    // Record perfect quiz for achievement checking
+    emoji = '🌟'; message = 'Perfect score! Outstanding!';
     recordPerfectQuiz(topicId);
   } else if (pct >= 75) {
-    emoji = '\uD83C\uDF89';
-    message = 'Great job!';
+    emoji = '🎉'; message = 'Great job!';
   } else if (pct >= 50) {
-    emoji = '\uD83D\uDC4D';
-    message = 'Good effort! Review the explanations to learn more.';
+    emoji = '👍'; message = 'Good effort! Review the explanations to learn more.';
   } else {
-    emoji = '\uD83D\uDCDA';
-    message = 'Keep studying! You\'ll get there.';
+    emoji = '📚'; message = "Keep studying! You'll get there.";
   }
 
-  const resultsEl = document.createElement('div');
-  resultsEl.className = 'quiz-results';
-  resultsEl.innerHTML = `
-    <div class="quiz-results-icon">${emoji}</div>
-    <div class="quiz-results-score">${state.correct} / ${state.total} correct (${pct}%)</div>
-    <div class="quiz-results-xp">+${totalXP} XP earned</div>
-    <div class="quiz-results-message">${message}</div>
+  // Replace nav + body with results
+  containerEl.innerHTML = `
+    <div class="quiz-results">
+      <div class="quiz-results-icon">${emoji}</div>
+      <div class="quiz-results-score">${correct} / ${total} correct (${pct}%)</div>
+      <div class="quiz-results-xp">+${totalXP} XP earned</div>
+      <div class="quiz-results-message">${message}</div>
+    </div>
   `;
-  containerEl.appendChild(resultsEl);
 
-  // Smooth-scroll results into view
-  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  containerEl.querySelector('.quiz-results')
+    .scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+// ── Helpers ───────────────────────────────────────────────────────
 
 function recordPerfectQuiz(topicId) {
   try {

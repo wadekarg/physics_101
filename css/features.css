@@ -670,6 +670,87 @@
   align-self: flex-start;
 }
 
+/* ── Quiz one-at-a-time navigation ──────────────────────────────── */
+.quiz-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.quiz-counter {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+  text-align: center;
+  flex: 1;
+}
+
+.quiz-body .quiz-question {
+  margin-bottom: 0;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.quiz-question-text {
+  font-size: var(--fs-md);
+  color: var(--text-heading);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+.quiz-q-num {
+  font-weight: var(--fw-bold);
+  color: var(--accent);
+  margin-right: var(--space-xs);
+}
+
+.quiz-option.disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.quiz-option.correct.disabled {
+  border-color: var(--success);
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--success);
+}
+
+.quiz-option.incorrect.disabled {
+  border-color: var(--error);
+  background: rgba(255, 68, 102, 0.1);
+  color: var(--error);
+}
+
+/* Override components.css default display:none for explanation */
+.quiz-explanation {
+  display: block !important;
+  padding: var(--space-md);
+  background: var(--accent-dim);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-top: var(--space-md);
+  border-left: 3px solid var(--accent);
+}
+
+.quiz-results {
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.quiz-results-icon   { font-size: 3rem; margin-bottom: var(--space-md); }
+.quiz-results-score  { font-size: var(--fs-xl); font-weight: var(--fw-bold); color: var(--accent); margin-bottom: var(--space-sm); }
+.quiz-results-xp     { font-size: var(--fs-md); color: var(--text-secondary); margin-bottom: var(--space-sm); }
+.quiz-results-message{ font-size: var(--fs-sm); color: var(--text-muted); }
+
 /* ── Chapter Navigation ──────────────────────────────────────────── */
 .chapter-nav {
   display: flex;

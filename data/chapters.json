@@ -1,4 +1,3 @@
-
 {
   "chapters": [
     {
@@ -51,6 +50,39 @@
               ],
               "correct": 2,
               "explanation": "The independent variable is the one the experimenter deliberately changes. The dependent variable is what is measured in response, and control variables are kept constant to ensure a fair test."
+            },
+            {
+              "question": "What is the key difference between a scientific hypothesis and a theory?",
+              "options": [
+                "A hypothesis is always correct; a theory may be wrong",
+                "A theory is a well-tested explanation supported by extensive evidence; a hypothesis is an initial testable prediction",
+                "A theory is tested once; a hypothesis is tested many times",
+                "They mean the same thing in science"
+              ],
+              "correct": 1,
+              "explanation": "A hypothesis is an initial, testable prediction. A theory is a well-substantiated explanation supported by repeated testing and a large body of evidence."
+            },
+            {
+              "question": "A student's experiment gives results that differ from the expected values by the same amount each time. This is most likely a:",
+              "options": [
+                "Random error",
+                "Systematic error",
+                "Human error",
+                "Parallax error"
+              ],
+              "correct": 1,
+              "explanation": "A systematic error consistently shifts all measurements in the same direction by the same amount, unlike random errors which vary unpredictably."
+            },
+            {
+              "question": "Why is a control group important in a scientific experiment?",
+              "options": [
+                "It makes the experiment faster",
+                "It provides a baseline for comparison with the experimental group",
+                "It controls the independent variable",
+                "It eliminates all sources of error"
+              ],
+              "correct": 1,
+              "explanation": "A control group undergoes the same procedure as the experimental group but without the variable being tested, providing a baseline to measure the effect against."
             }
           ],
           "xpReward": 100
@@ -98,6 +130,39 @@
               ],
               "correct": 1,
               "explanation": "Dimensional analysis is a technique used to verify that the units on both sides of an equation are consistent. It can also help derive relationships between physical quantities and catch errors in calculations."
+            },
+            {
+              "question": "How many significant figures are in the measurement 0.02500 kg?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "6"
+              ],
+              "correct": 2,
+              "explanation": "Leading zeros are not significant. The digits 2, 5, 0, 0 are significant — the trailing zeros after the decimal point indicate precision. Total: 4 significant figures."
+            },
+            {
+              "question": "The prefix 'nano' (n) represents:",
+              "options": [
+                "10⁻⁶",
+                "10⁻⁹",
+                "10⁻¹²",
+                "10⁻³"
+              ],
+              "correct": 1,
+              "explanation": "Nano represents 10⁻⁹. For example, 1 nanometre = 10⁻⁹ m. Micro = 10⁻⁶, pico = 10⁻¹², milli = 10⁻³."
+            },
+            {
+              "question": "A speed of 72 km/h is equal to how many m/s?",
+              "options": [
+                "72 m/s",
+                "25.9 m/s",
+                "20 m/s",
+                "7.2 m/s"
+              ],
+              "correct": 2,
+              "explanation": "To convert km/h to m/s, divide by 3.6. 72 ÷ 3.6 = 20 m/s."
             }
           ],
           "xpReward": 100
@@ -145,6 +210,39 @@
               ],
               "correct": 2,
               "explanation": "The dot product is A-dot-B = |A||B|cos(theta). When two vectors are perpendicular, theta = 90 degrees and cos(90) = 0, so the dot product is zero."
+            },
+            {
+              "question": "Two forces act on an object: 6 N north and 8 N east. What is the magnitude of the resultant force?",
+              "options": [
+                "14 N",
+                "2 N",
+                "10 N",
+                "7 N"
+              ],
+              "correct": 2,
+              "explanation": "Using Pythagoras: resultant = √(6² + 8²) = √(36 + 64) = √100 = 10 N."
+            },
+            {
+              "question": "Vector subtraction A − B is equivalent to:",
+              "options": [
+                "A + B",
+                "A + (−B)",
+                "−A + B",
+                "B − A"
+              ],
+              "correct": 1,
+              "explanation": "Subtracting vector B is the same as adding the negative of B. So A − B = A + (−B), where −B has the same magnitude as B but opposite direction."
+            },
+            {
+              "question": "A force of 50 N acts at 30° to the horizontal. What is its horizontal component?",
+              "options": [
+                "25 N",
+                "43.3 N",
+                "50 N",
+                "28.9 N"
+              ],
+              "correct": 1,
+              "explanation": "Horizontal component = F cos θ = 50 × cos 30° = 50 × 0.866 = 43.3 N."
             }
           ],
           "xpReward": 100
@@ -201,6 +299,39 @@
               ],
               "correct": 2,
               "explanation": "If velocity is constant (both speed and direction are unchanged), then there is no change in velocity over time, which means the acceleration is zero by definition."
+            },
+            {
+              "question": "On a position-time graph, what does the slope of the line represent?",
+              "options": [
+                "Acceleration",
+                "Velocity",
+                "Displacement",
+                "Distance"
+              ],
+              "correct": 1,
+              "explanation": "The slope (gradient) of a position-time graph equals Δx/Δt, which is velocity."
+            },
+            {
+              "question": "A car travels 60 km east, then 80 km north. What is its displacement from the start?",
+              "options": [
+                "140 km",
+                "20 km",
+                "100 km",
+                "70 km"
+              ],
+              "correct": 2,
+              "explanation": "Displacement is a straight-line distance from start to finish. Using Pythagoras: √(60² + 80²) = √(3600 + 6400) = √10000 = 100 km."
+            },
+            {
+              "question": "What does a negative slope on a position-time graph indicate?",
+              "options": [
+                "The object is decelerating",
+                "The object is moving in the negative direction (backwards)",
+                "The object has stopped",
+                "The object has negative acceleration"
+              ],
+              "correct": 1,
+              "explanation": "A negative slope on a position-time graph means position is decreasing with time — the object is moving in the negative direction (backwards toward the origin)."
             }
           ],
           "xpReward": 100
@@ -248,6 +379,39 @@
               ],
               "correct": 2,
               "explanation": "Using v = v0 + at, with v = 0, v0 = 10 m/s, and a = -2 m/s^2: 0 = 10 + (-2)t, so t = 10/2 = 5 s."
+            },
+            {
+              "question": "A ball is thrown upward at 20 m/s. How long does it take to reach maximum height? (g = 10 m/s²)",
+              "options": [
+                "1 s",
+                "2 s",
+                "4 s",
+                "0.5 s"
+              ],
+              "correct": 1,
+              "explanation": "At max height, v = 0. Using v = u − gt: 0 = 20 − 10t → t = 2 s."
+            },
+            {
+              "question": "Which kinematic equation is most useful when time is not known?",
+              "options": [
+                "v = u + at",
+                "s = ut + ½at²",
+                "v² = u² + 2as",
+                "s = ½(u + v)t"
+              ],
+              "correct": 2,
+              "explanation": "v² = u² + 2as relates initial velocity, final velocity, acceleration, and displacement — with no time variable."
+            },
+            {
+              "question": "A train decelerates uniformly from 30 m/s to rest over 150 m. What is the magnitude of deceleration?",
+              "options": [
+                "1 m/s²",
+                "2 m/s²",
+                "3 m/s²",
+                "5 m/s²"
+              ],
+              "correct": 2,
+              "explanation": "Using v² = u² + 2as: 0 = 30² + 2a(150) → a = −900/300 = −3 m/s². Magnitude = 3 m/s²."
             }
           ],
           "xpReward": 100
@@ -295,6 +459,39 @@
               ],
               "correct": 1,
               "explanation": "In the absence of air resistance, all objects near Earth's surface accelerate downward at the same rate (approximately 9.8 m/s^2), regardless of their mass. This was first demonstrated by Galileo."
+            },
+            {
+              "question": "An object is dropped from rest. Approximately how far does it fall in 3 s? (g = 10 m/s²)",
+              "options": [
+                "15 m",
+                "30 m",
+                "45 m",
+                "90 m"
+              ],
+              "correct": 2,
+              "explanation": "Using h = ½gt²: h = ½ × 10 × 9 = 45 m."
+            },
+            {
+              "question": "A ball is thrown vertically upward. At its highest point:",
+              "options": [
+                "Both velocity and acceleration are zero",
+                "Velocity is zero but acceleration is 9.8 m/s² downward",
+                "Velocity is maximum and acceleration is zero",
+                "Both velocity and acceleration are at maximum"
+              ],
+              "correct": 1,
+              "explanation": "At the highest point the ball momentarily stops (v = 0), but gravity still acts, giving a downward acceleration of 9.8 m/s². Acceleration never becomes zero during free fall."
+            },
+            {
+              "question": "Two balls of different masses are dropped simultaneously from the same height in a vacuum. Which hits the ground first?",
+              "options": [
+                "The heavier ball",
+                "The lighter ball",
+                "They hit at the same time",
+                "It depends on their shapes"
+              ],
+              "correct": 2,
+              "explanation": "In the absence of air resistance, all objects experience the same gravitational acceleration g regardless of mass. Both balls hit simultaneously."
             }
           ],
           "xpReward": 100
@@ -342,6 +539,39 @@
               ],
               "correct": 1,
               "explanation": "A horizontal line on a velocity-time graph means the velocity is not changing with time, which is constant velocity. Note: the object is not necessarily stationary -- that would only be true if the horizontal line is at v = 0."
+            },
+            {
+              "question": "What does a steep upward slope on a velocity-time graph represent?",
+              "options": [
+                "High velocity",
+                "Large positive acceleration",
+                "Large displacement",
+                "High speed"
+              ],
+              "correct": 1,
+              "explanation": "The slope of a v-t graph equals acceleration (Δv/Δt). A steep positive slope means velocity is increasing rapidly — large positive acceleration."
+            },
+            {
+              "question": "An object's velocity-time graph shows a straight line with a negative slope. The object is:",
+              "options": [
+                "Moving in the negative direction",
+                "Moving backward",
+                "Decelerating (slowing down or speeding up in negative direction)",
+                "Stationary"
+              ],
+              "correct": 2,
+              "explanation": "A negative slope means negative acceleration (deceleration if moving forward, or speeding up in the negative direction). The sign of velocity tells direction; the slope tells acceleration."
+            },
+            {
+              "question": "On a displacement-time graph, a curved line (not straight) indicates:",
+              "options": [
+                "Constant velocity",
+                "Non-zero acceleration (changing velocity)",
+                "Zero displacement",
+                "Constant speed"
+              ],
+              "correct": 1,
+              "explanation": "A straight line on a displacement-time graph = constant velocity. A curve means the slope (velocity) is changing, i.e., there is acceleration."
             }
           ],
           "xpReward": 100
@@ -398,6 +628,39 @@
               ],
               "correct": 2,
               "explanation": "The time in the air depends only on the vertical motion. Since the ball was kicked horizontally, the initial vertical velocity is zero. The fall time depends only on the height of the cliff and gravitational acceleration: h = (1/2)g*t^2."
+            },
+            {
+              "question": "A ball is thrown horizontally from the top of a building. Which statement is correct?",
+              "options": [
+                "The horizontal and vertical motions affect each other",
+                "The horizontal velocity increases due to gravity",
+                "The horizontal and vertical motions are independent",
+                "The ball falls more slowly than a dropped ball"
+              ],
+              "correct": 2,
+              "explanation": "In projectile motion (no air resistance), horizontal and vertical motions are independent. Gravity only affects vertical motion; horizontal velocity remains constant."
+            },
+            {
+              "question": "At what point in its trajectory is the speed of a projectile launched at an angle at its minimum?",
+              "options": [
+                "At launch",
+                "At the highest point",
+                "At landing",
+                "Halfway up"
+              ],
+              "correct": 1,
+              "explanation": "At the highest point, the vertical component of velocity is zero. Only the horizontal component remains, making this the point of minimum speed."
+            },
+            {
+              "question": "Two projectiles are launched with the same speed — one at 30° and one at 60°. Which statement is correct?",
+              "options": [
+                "The 30° projectile travels farther",
+                "They have the same range",
+                "The 60° projectile has a longer time of flight",
+                "The 30° projectile has a longer time of flight"
+              ],
+              "correct": 2,
+              "explanation": "Complementary angles (30° and 60°) give the same range. The 60° projectile has a larger vertical component, so it goes higher and stays in the air longer."
             }
           ],
           "xpReward": 100
@@ -445,6 +708,39 @@
               ],
               "correct": 2,
               "explanation": "For a satellite in orbit, gravity is the centripetal force that curves its path into a circle (or ellipse). The gravitational pull of Earth continuously accelerates the satellite toward the center, keeping it in orbit."
+            },
+            {
+              "question": "A 0.5 kg object moves in a circle of radius 2 m at 4 m/s. What is the centripetal force?",
+              "options": [
+                "1 N",
+                "2 N",
+                "4 N",
+                "8 N"
+              ],
+              "correct": 2,
+              "explanation": "F = mv²/r = 0.5 × 16 / 2 = 4 N."
+            },
+            {
+              "question": "If the speed of an object in circular motion is halved while the radius stays the same, the centripetal acceleration:",
+              "options": [
+                "Halves",
+                "Doubles",
+                "Decreases to one-quarter",
+                "Stays the same"
+              ],
+              "correct": 2,
+              "explanation": "Centripetal acceleration a = v²/r. Halving v gives (v/2)²/r = v²/(4r) — one-quarter of the original."
+            },
+            {
+              "question": "What happens to the tension in a string when a ball is swung faster in a horizontal circle of constant radius?",
+              "options": [
+                "Decreases",
+                "Stays the same",
+                "Increases",
+                "Becomes zero"
+              ],
+              "correct": 2,
+              "explanation": "The tension provides the centripetal force T = mv²/r. Increasing v increases v², so tension increases."
             }
           ],
           "xpReward": 100
@@ -492,6 +788,39 @@
               ],
               "correct": 1,
               "explanation": "The boat's velocity across the river and the current's velocity downstream are perpendicular. Using the Pythagorean theorem: speed = sqrt(4^2 + 3^2) = sqrt(16 + 9) = sqrt(25) = 5 m/s."
+            },
+            {
+              "question": "A passenger walks at 1.5 m/s toward the front of a train moving at 20 m/s relative to the ground. What is the passenger's speed relative to the ground?",
+              "options": [
+                "18.5 m/s",
+                "20 m/s",
+                "21.5 m/s",
+                "1.5 m/s"
+              ],
+              "correct": 2,
+              "explanation": "When moving in the same direction, relative velocities add: 20 + 1.5 = 21.5 m/s relative to the ground."
+            },
+            {
+              "question": "Which of the following is an inertial reference frame?",
+              "options": [
+                "A car accelerating from a traffic light",
+                "A spinning merry-go-round",
+                "A train moving at constant velocity on a straight track",
+                "A falling lift"
+              ],
+              "correct": 2,
+              "explanation": "An inertial frame moves at constant velocity (no acceleration). A train at constant velocity is an inertial frame; accelerating, rotating, or falling frames are non-inertial."
+            },
+            {
+              "question": "An observer on the ground sees rain falling vertically. A person cycling forward sees the rain falling:",
+              "options": [
+                "Vertically downward",
+                "At an angle forward (toward the cyclist)",
+                "At an angle backward",
+                "Horizontally"
+              ],
+              "correct": 2,
+              "explanation": "In the cyclist's frame, the rain has a backward horizontal component equal to the cycling speed. The rain appears to fall at an angle backward (toward them as they move forward)."
             }
           ],
           "xpReward": 100
@@ -548,6 +877,39 @@
               ],
               "correct": 2,
               "explanation": "Two forces act on the book -- gravity downward and the normal force upward. These are equal in magnitude and opposite in direction, so the net force is zero. By Newton's first law, the book remains at rest."
+            },
+            {
+              "question": "A box is pushed across a floor at constant velocity. What can you conclude about friction?",
+              "options": [
+                "There is no friction",
+                "Friction equals the applied force",
+                "Friction is greater than the applied force",
+                "Friction is less than applied force"
+              ],
+              "correct": 1,
+              "explanation": "Constant velocity means zero net force. Therefore the applied force and friction force must be equal and opposite."
+            },
+            {
+              "question": "Why does a passenger lurch forward when a bus brakes suddenly?",
+              "options": [
+                "The seat pushes them forward",
+                "The passenger's inertia keeps them moving forward while the bus decelerates",
+                "Friction on the seat acts forward",
+                "The bus pushes the passenger forward"
+              ],
+              "correct": 1,
+              "explanation": "Newton's first law: the passenger tends to continue moving at the original speed (inertia). The bus decelerates beneath them, so they lurch forward relative to the bus."
+            },
+            {
+              "question": "A ball is rolling on a perfectly frictionless surface. According to Newton's first law:",
+              "options": [
+                "It gradually slows down",
+                "It speeds up steadily",
+                "It continues rolling at constant velocity forever",
+                "It stops immediately"
+              ],
+              "correct": 2,
+              "explanation": "With no net force (no friction, no air resistance), Newton's first law says the ball maintains constant velocity indefinitely."
             }
           ],
           "xpReward": 100
@@ -595,6 +957,39 @@
               ],
               "correct": 2,
               "explanation": "The newton (N) is the SI unit of force. One newton is defined as the force required to accelerate a 1 kg mass at 1 m/s^2 (1 N = 1 kg-m/s^2)."
+            },
+            {
+              "question": "A net force of 30 N acts on a 5 kg object for 3 seconds. If it starts from rest, what is the final velocity?",
+              "options": [
+                "6 m/s",
+                "9 m/s",
+                "18 m/s",
+                "90 m/s"
+              ],
+              "correct": 2,
+              "explanation": "a = F/m = 30/5 = 6 m/s². Then v = u + at = 0 + 6 × 3 = 18 m/s."
+            },
+            {
+              "question": "A 60 kg person stands on a scale in a lift that is accelerating upward at 2 m/s². What does the scale read? (g = 10 m/s²)",
+              "options": [
+                "480 N",
+                "600 N",
+                "720 N",
+                "60 N"
+              ],
+              "correct": 2,
+              "explanation": "N − mg = ma → N = m(g + a) = 60 × (10 + 2) = 720 N."
+            },
+            {
+              "question": "The weight of an object on Earth is 196 N. What is its mass? (g = 9.8 m/s²)",
+              "options": [
+                "196 kg",
+                "20 kg",
+                "19.6 kg",
+                "2 kg"
+              ],
+              "correct": 1,
+              "explanation": "W = mg → m = W/g = 196/9.8 = 20 kg."
             }
           ],
           "xpReward": 100
@@ -642,6 +1037,39 @@
               ],
               "correct": 2,
               "explanation": "Action-reaction pairs act on different objects, so they never cancel each other out on a single object. An object accelerates when the sum of all forces on that particular object is nonzero."
+            },
+            {
+              "question": "When a gun fires a bullet, the gun recoils backward. This is because:",
+              "options": [
+                "The explosion pushes both forward and backward",
+                "The bullet pushes back on the gun with equal and opposite force (Newton's 3rd law)",
+                "Friction from the shooter's hands causes recoil",
+                "The barrel deflects the gases"
+              ],
+              "correct": 1,
+              "explanation": "By Newton's third law, the gun exerts a force on the bullet forward; the bullet exerts an equal and opposite force on the gun backward — causing recoil."
+            },
+            {
+              "question": "A rocket in outer space fires its engines. What makes it accelerate?",
+              "options": [
+                "The exhaust gases push against the atmosphere",
+                "The exhaust gases push against the ground below",
+                "The rocket pushes exhaust gas backward; the gas pushes the rocket forward",
+                "Gravity pulls the rocket forward"
+              ],
+              "correct": 2,
+              "explanation": "By Newton's third law, the rocket exerts a force on exhaust gases backward; the gases exert an equal and opposite force on the rocket forward. No medium is needed."
+            },
+            {
+              "question": "A horse pulls a cart forward. By Newton's third law, the cart pulls the horse backward with the same force. Why does the horse-cart system still accelerate forward?",
+              "options": [
+                "The horse's force is actually larger than the cart's",
+                "The action-reaction pair acts on the same object",
+                "The ground pushes the horse forward with a force greater than the cart's pull",
+                "The cart's wheels provide extra forward force"
+              ],
+              "correct": 2,
+              "explanation": "The ground pushes the horse's hooves forward (reaction to horse pushing ground back). This ground reaction force acts on the system, providing net forward acceleration."
             }
           ],
           "xpReward": 100
@@ -689,6 +1117,39 @@
               ],
               "correct": 1,
               "explanation": "On a frictionless ramp, only two forces act on the box: gravity (pointing straight down) and the normal force (perpendicular to the ramp surface). There is no friction force and no applied force in this scenario."
+            },
+            {
+              "question": "A 10 kg box is on a surface and accelerating upward at 2 m/s². What is the normal force? (g = 10 m/s²)",
+              "options": [
+                "80 N",
+                "100 N",
+                "120 N",
+                "20 N"
+              ],
+              "correct": 2,
+              "explanation": "Net force = ma → N − mg = ma → N = m(g + a) = 10 × (10 + 2) = 120 N."
+            },
+            {
+              "question": "A block is in equilibrium on an inclined plane with friction. Which combination of forces acts on it?",
+              "options": [
+                "Weight only",
+                "Weight and normal force only",
+                "Weight, normal force, and friction",
+                "Weight and friction only"
+              ],
+              "correct": 2,
+              "explanation": "On an incline with friction, three forces act: weight (downward), normal force (perpendicular to surface), and friction (along the surface opposing potential motion)."
+            },
+            {
+              "question": "At the bottom of a swing, why does the tension in the rope exceed the weight of the pendulum bob?",
+              "options": [
+                "The rope stretches at the bottom",
+                "The net upward force provides centripetal acceleration toward the pivot",
+                "The bob speeds up at the bottom increasing its weight",
+                "Gravity decreases at the bottom of the swing"
+              ],
+              "correct": 1,
+              "explanation": "At the bottom, centripetal acceleration is directed upward (toward pivot). Net upward force = T − mg = mv²/r, so T = mg + mv²/r > mg."
             }
           ],
           "xpReward": 100
@@ -745,6 +1206,39 @@
               ],
               "correct": 2,
               "explanation": "Kinetic energy is proportional to v^2. If speed is tripled: KE_new = (1/2)m(3v)^2 = (1/2)m(9v^2) = 9 times the original KE."
+            },
+            {
+              "question": "A 5 kg object moving at 4 m/s is brought to rest by a net force over 10 m. What was the average net force?",
+              "options": [
+                "4 N",
+                "2 N",
+                "10 N",
+                "40 N"
+              ],
+              "correct": 0,
+              "explanation": "Work-energy theorem: W_net = ΔKE = 0 − ½mv² = −½ × 5 × 16 = −40 J. F = W/d = −40/10 = −4 N. Magnitude = 4 N."
+            },
+            {
+              "question": "A cyclist does 2400 J of work climbing a hill in 2 minutes. What is the power output?",
+              "options": [
+                "1200 W",
+                "20 W",
+                "4800 W",
+                "200 W"
+              ],
+              "correct": 1,
+              "explanation": "Power = Work/time = 2400 / 120 = 20 W."
+            },
+            {
+              "question": "Work done on an object equals zero when:",
+              "options": [
+                "The object moves very slowly",
+                "The force is perpendicular to the direction of displacement",
+                "The object is heavy",
+                "Friction is present"
+              ],
+              "correct": 1,
+              "explanation": "W = Fd cos θ. When the force is perpendicular to displacement (θ = 90°), cos 90° = 0, so W = 0. For example, the normal force does no work on a horizontally moving object."
             }
           ],
           "xpReward": 100
@@ -792,6 +1286,39 @@
               ],
               "correct": 0,
               "explanation": "Elastic potential energy = (1/2)kx^2 = (1/2)(200)(0.1)^2 = (1/2)(200)(0.01) = 1 J."
+            },
+            {
+              "question": "A 2 kg ball rolls down a frictionless ramp of height 5 m. What is its speed at the bottom? (g = 10 m/s²)",
+              "options": [
+                "5 m/s",
+                "10 m/s",
+                "50 m/s",
+                "7.07 m/s"
+              ],
+              "correct": 1,
+              "explanation": "Conservation of energy: mgh = ½mv² → v = √(2gh) = √(2 × 10 × 5) = √100 = 10 m/s."
+            },
+            {
+              "question": "The gravitational potential energy of an object depends on:",
+              "options": [
+                "Its speed",
+                "Its mass, height, and gravitational field strength",
+                "Its mass and speed only",
+                "Its height and speed only"
+              ],
+              "correct": 1,
+              "explanation": "GPE = mgh, where m is mass, g is gravitational field strength, and h is height above the reference level."
+            },
+            {
+              "question": "A spring is compressed by 2 cm and stores 0.04 J of energy. If compressed by 4 cm, how much energy is stored?",
+              "options": [
+                "0.08 J",
+                "0.12 J",
+                "0.16 J",
+                "0.02 J"
+              ],
+              "correct": 2,
+              "explanation": "Elastic PE = ½kx². Doubling the compression quadruples the stored energy: 4 × 0.04 = 0.16 J."
             }
           ],
           "xpReward": 100
@@ -839,6 +1366,39 @@
               ],
               "correct": 0,
               "explanation": "One horsepower is defined as approximately 746 watts. James Watt calculated this by estimating that a mill horse could do 33,000 foot-pounds of work per minute, which converts to about 746 watts."
+            },
+            {
+              "question": "A 60 W light bulb runs for 5 hours. How much energy (in kJ) does it consume?",
+              "options": [
+                "300 kJ",
+                "1080 kJ",
+                "18 kJ",
+                "0.3 kJ"
+              ],
+              "correct": 1,
+              "explanation": "Energy = Power × time = 60 W × 5 × 3600 s = 1,080,000 J = 1080 kJ."
+            },
+            {
+              "question": "A machine is 75% efficient and performs 600 J of useful work. How much energy was supplied to it?",
+              "options": [
+                "450 J",
+                "675 J",
+                "800 J",
+                "600 J"
+              ],
+              "correct": 2,
+              "explanation": "Efficiency = useful output / input → input = output / efficiency = 600 / 0.75 = 800 J."
+            },
+            {
+              "question": "Power can also be expressed as:",
+              "options": [
+                "Force × time",
+                "Force × velocity",
+                "Work × time",
+                "Mass × velocity"
+              ],
+              "correct": 1,
+              "explanation": "P = W/t = (F × d)/t = F × (d/t) = F × v. Power equals force multiplied by velocity."
             }
           ],
           "xpReward": 100
@@ -895,6 +1455,39 @@
               ],
               "correct": 2,
               "explanation": "Your momentum change upon stopping is the same whether you bend your knees or not. However, bending your knees increases the stopping time. Since impulse = F x t and the impulse is fixed, a longer time means a smaller force."
+            },
+            {
+              "question": "A 0.5 kg ball moving at 6 m/s is brought to rest in 0.03 s. What is the average force applied?",
+              "options": [
+                "9 N",
+                "100 N",
+                "3 N",
+                "90 N"
+              ],
+              "correct": 1,
+              "explanation": "Impulse = Δp = 0.5 × (0 − 6) = −3 N·s. Force = Impulse/time = 3/0.03 = 100 N."
+            },
+            {
+              "question": "The momentum of a 1500 kg car moving at 20 m/s is:",
+              "options": [
+                "75 kg·m/s",
+                "30,000 kg·m/s",
+                "7500 kg·m/s",
+                "1500 kg·m/s"
+              ],
+              "correct": 1,
+              "explanation": "p = mv = 1500 × 20 = 30,000 kg·m/s."
+            },
+            {
+              "question": "Why does crumple zone technology in cars reduce injury during a collision?",
+              "options": [
+                "It reduces the car's momentum",
+                "It makes the car lighter",
+                "It increases the collision time, reducing the average force on occupants",
+                "It absorbs heat from the collision"
+              ],
+              "correct": 2,
+              "explanation": "Crumple zones increase the time of the collision. Since Impulse = F × Δt and impulse (change in momentum) is fixed, a longer time means a smaller average force on the occupants."
             }
           ],
           "xpReward": 100
@@ -942,6 +1535,39 @@
               ],
               "correct": 2,
               "explanation": "In a head-on elastic collision between equal masses where one is at rest, the moving object stops completely and transfers all its momentum and kinetic energy to the other object, which moves off at the original speed."
+            },
+            {
+              "question": "A 3 kg cart at 4 m/s collides with a 2 kg cart moving at −1 m/s (opposite direction). After a perfectly inelastic collision, what is the final velocity?",
+              "options": [
+                "1.2 m/s",
+                "2 m/s",
+                "3 m/s",
+                "2.5 m/s"
+              ],
+              "correct": 1,
+              "explanation": "Total momentum = 3×4 + 2×(−1) = 12 − 2 = 10 kg·m/s. Final: (3+2)v = 10 → v = 2 m/s in the original direction."
+            },
+            {
+              "question": "In which type of collision is kinetic energy conserved?",
+              "options": [
+                "Perfectly inelastic",
+                "Inelastic",
+                "Elastic",
+                "All collisions"
+              ],
+              "correct": 2,
+              "explanation": "Kinetic energy is conserved only in perfectly elastic collisions. In inelastic collisions, some KE is lost to heat, sound, or deformation."
+            },
+            {
+              "question": "A stationary firecracker explodes into two fragments of mass 1 kg and 3 kg. The 1 kg fragment moves at 12 m/s. What is the speed of the 3 kg fragment?",
+              "options": [
+                "4 m/s",
+                "12 m/s",
+                "36 m/s",
+                "3 m/s"
+              ],
+              "correct": 0,
+              "explanation": "Initial momentum = 0. So 1×12 + 3×v = 0 → v = −4 m/s. Speed = 4 m/s (in the opposite direction)."
             }
           ],
           "xpReward": 100
@@ -989,6 +1615,39 @@
               ],
               "correct": 1,
               "explanation": "By conservation of momentum, the total momentum of the astronaut-wrench system must remain zero (as it was initially). When the wrench gains rightward momentum, the astronaut must gain equal leftward momentum and drifts to the left."
+            },
+            {
+              "question": "In a 2D elastic collision between two equal masses where one is initially at rest, the angle between the two post-collision velocity vectors is always:",
+              "options": [
+                "45°",
+                "60°",
+                "90°",
+                "180°"
+              ],
+              "correct": 2,
+              "explanation": "For elastic collisions between equal masses (one initially at rest), conservation of both momentum and kinetic energy requires the two post-collision velocities to be perpendicular."
+            },
+            {
+              "question": "Which quantity is NOT necessarily conserved in an inelastic 2D collision?",
+              "options": [
+                "Total momentum",
+                "Total kinetic energy",
+                "Total energy",
+                "Total mass"
+              ],
+              "correct": 1,
+              "explanation": "Momentum is always conserved (Newton's laws). Total energy is conserved (first law). But kinetic energy is not conserved in inelastic collisions — some converts to heat or deformation."
+            },
+            {
+              "question": "A 2 kg ball moving east at 5 m/s collides and sticks to a 3 kg ball at rest. What is the combined speed after impact?",
+              "options": [
+                "5 m/s",
+                "3 m/s",
+                "2 m/s",
+                "10 m/s"
+              ],
+              "correct": 2,
+              "explanation": "Momentum conservation: 2×5 = (2+3)v → v = 10/5 = 2 m/s east."
             }
           ],
           "xpReward": 100
@@ -1045,6 +1704,39 @@
               ],
               "correct": 0,
               "explanation": "Newton's second law for rotation is tau = I*alpha, where tau is the net torque, I is the moment of inertia (rotational analog of mass), and alpha is the angular acceleration (rotational analog of linear acceleration)."
+            },
+            {
+              "question": "A seesaw is balanced with a 60 kg person sitting 2 m from the pivot. How far must a 40 kg person sit on the other side to balance?",
+              "options": [
+                "2 m",
+                "3 m",
+                "1.5 m",
+                "4 m"
+              ],
+              "correct": 1,
+              "explanation": "Torque balance: 60g × 2 = 40g × d → d = 120/40 = 3 m."
+            },
+            {
+              "question": "What is the SI unit of torque?",
+              "options": [
+                "Joule",
+                "Newton",
+                "Newton-metre (N·m)",
+                "Watt"
+              ],
+              "correct": 2,
+              "explanation": "Torque = Force × perpendicular distance, so its unit is Newton × metre = N·m. Although this has the same dimensions as energy (J), torque is a vector and energy is a scalar, so different names are used."
+            },
+            {
+              "question": "If the same force is applied to a wrench twice as long, the torque:",
+              "options": [
+                "Stays the same",
+                "Halves",
+                "Doubles",
+                "Quadruples"
+              ],
+              "correct": 2,
+              "explanation": "Torque = F × d. Doubling the distance d while keeping F constant doubles the torque."
             }
           ],
           "xpReward": 100
@@ -1092,6 +1784,39 @@
               ],
               "correct": 1,
               "explanation": "The spinning wheels have angular momentum, which tends to maintain its direction by conservation of angular momentum. This gyroscopic effect resists changes to the orientation of the wheel's spin axis, contributing to the bicycle's stability."
+            },
+            {
+              "question": "A skater has moment of inertia 2 kg·m² spinning at 3 rad/s. She increases I to 6 kg·m² by extending her arms. What is her new angular velocity?",
+              "options": [
+                "9 rad/s",
+                "3 rad/s",
+                "1 rad/s",
+                "6 rad/s"
+              ],
+              "correct": 2,
+              "explanation": "Angular momentum is conserved: I₁ω₁ = I₂ω₂ → 2×3 = 6×ω₂ → ω₂ = 1 rad/s."
+            },
+            {
+              "question": "The Earth's rotation is slowly decreasing due to tidal friction. This means the Moon is:",
+              "options": [
+                "Getting closer to Earth",
+                "Moving away from Earth",
+                "Staying at the same distance",
+                "Increasing its orbital speed"
+              ],
+              "correct": 1,
+              "explanation": "As Earth loses angular momentum via tidal friction, the Moon gains angular momentum (conservation of total angular momentum of the Earth-Moon system), causing it to move to a slightly larger orbit."
+            },
+            {
+              "question": "A spinning top slows down and begins to wobble (precess) more rapidly. This is because:",
+              "options": [
+                "Friction increases angular momentum",
+                "Lower angular momentum means a stronger precession for the same gravitational torque",
+                "The top gains mass as it slows",
+                "The gravitational torque decreases as it slows"
+              ],
+              "correct": 1,
+              "explanation": "Precession rate ω_p = τ/L. As the top slows down, L decreases, so ω_p = τ/L increases — the top precesses faster."
             }
           ],
           "xpReward": 100
@@ -1139,6 +1864,39 @@
               ],
               "correct": 1,
               "explanation": "A gyroscope compass works because conservation of angular momentum keeps the spin axis pointing in a fixed direction in space. When the vehicle turns, the gyroscope resists the change, allowing it to serve as a reliable directional reference."
+            },
+            {
+              "question": "Why does a gyroscope resist changes in its orientation?",
+              "options": [
+                "It is very heavy",
+                "Its spinning creates angular momentum that resists changes in direction",
+                "It is attached to a fixed base",
+                "Air resistance stabilises it"
+              ],
+              "correct": 1,
+              "explanation": "By conservation of angular momentum, a spinning gyroscope's angular momentum vector tends to maintain its direction. Any applied torque causes precession rather than tipping."
+            },
+            {
+              "question": "A gyroscope is spinning rapidly and precessing. If the spin rate increases, the precession rate:",
+              "options": [
+                "Increases",
+                "Stays the same",
+                "Decreases",
+                "Becomes zero"
+              ],
+              "correct": 2,
+              "explanation": "Precession rate ω_p = mgd/(Iω). As spin ω increases, the precession rate decreases."
+            },
+            {
+              "question": "Gyroscopes are used in aircraft instruments because:",
+              "options": [
+                "They measure airspeed accurately",
+                "They provide a stable direction reference that resists changes in orientation",
+                "They reduce air drag on the aircraft",
+                "They power the navigation systems"
+              ],
+              "correct": 1,
+              "explanation": "A gyroscope maintains a fixed orientation in space regardless of how the aircraft moves around it, making it ideal for attitude indicators, directional gyros, and heading references."
             }
           ],
           "xpReward": 100
@@ -1195,6 +1953,39 @@
               ],
               "correct": 2,
               "explanation": "In 1798, Henry Cavendish used a sensitive torsion balance to measure the tiny gravitational force between lead spheres, from which he determined the gravitational constant G. This allowed the mass of the Earth to be calculated."
+            },
+            {
+              "question": "The gravitational force between two 1 kg masses separated by 1 m is approximately:",
+              "options": [
+                "9.8 N",
+                "6.67 × 10⁻¹¹ N",
+                "1 N",
+                "6.67 N"
+              ],
+              "correct": 1,
+              "explanation": "F = Gm₁m₂/r² = (6.67×10⁻¹¹ × 1 × 1)/1² = 6.67×10⁻¹¹ N. Gravity between ordinary masses is extremely weak."
+            },
+            {
+              "question": "On the surface of a planet with twice Earth's mass but the same radius, the gravitational field strength g would be:",
+              "options": [
+                "Same as Earth",
+                "Half of Earth's",
+                "Twice Earth's",
+                "Four times Earth's"
+              ],
+              "correct": 2,
+              "explanation": "g = GM/R². Doubling M while keeping R the same doubles g."
+            },
+            {
+              "question": "What happens to the gravitational force between two masses if both masses are doubled AND the distance is also doubled?",
+              "options": [
+                "It stays the same",
+                "It doubles",
+                "It quadruples",
+                "It halves"
+              ],
+              "correct": 0,
+              "explanation": "F = Gm₁m₂/r². Doubling both masses multiplies F by 4; doubling distance divides F by 4. Net effect: 4/4 = 1 — force stays the same."
             }
           ],
           "xpReward": 100
@@ -1242,6 +2033,39 @@
               ],
               "correct": 1,
               "explanation": "Orbital speed v = sqrt(GM/r). As the orbital radius r increases, the speed decreases. Satellites in higher orbits move more slowly and take longer to complete each orbit."
+            },
+            {
+              "question": "Kepler's second law (equal areas in equal times) means a planet moves:",
+              "options": [
+                "At constant speed throughout its orbit",
+                "Faster when closer to the Sun and slower when farther away",
+                "In a perfectly circular orbit",
+                "Faster when farther from the Sun"
+              ],
+              "correct": 1,
+              "explanation": "To sweep equal areas in equal times, a planet must move faster when it is closer to the Sun (perihelion) and slower when farther (aphelion). This follows from conservation of angular momentum."
+            },
+            {
+              "question": "A geostationary satellite appears stationary from Earth because:",
+              "options": [
+                "It is not actually orbiting",
+                "Its orbital speed matches Earth's surface speed",
+                "Its orbital period equals Earth's rotation period",
+                "It is above the atmosphere where there is no gravity"
+              ],
+              "correct": 2,
+              "explanation": "A geostationary satellite orbits with a period of 24 hours, matching Earth's rotation. It therefore stays above the same point on Earth's equator."
+            },
+            {
+              "question": "As a satellite moves to a higher orbit, its orbital speed:",
+              "options": [
+                "Increases",
+                "Stays the same",
+                "Decreases",
+                "First increases then decreases"
+              ],
+              "correct": 2,
+              "explanation": "v = √(GM/r). As r increases, orbital speed decreases. Higher orbits have lower speeds but longer periods (Kepler's 3rd law)."
             }
           ],
           "xpReward": 100
@@ -1289,6 +2113,39 @@
               ],
               "correct": 2,
               "explanation": "Escape velocity v_e = sqrt(2GM/R). Doubling M while keeping R the same gives v_e_new = sqrt(2G(2M)/R) = sqrt(2) * sqrt(2GM/R) = sqrt(2) * v_e, which is about 1.41 times the original escape velocity."
+            },
+            {
+              "question": "The escape velocity from Earth's surface is approximately:",
+              "options": [
+                "7.9 km/s",
+                "11.2 km/s",
+                "3 × 10⁸ m/s",
+                "5 km/s"
+              ],
+              "correct": 1,
+              "explanation": "v_esc = √(2GM/R) ≈ 11.2 km/s for Earth. This is the minimum speed needed to escape Earth's gravitational field from the surface."
+            },
+            {
+              "question": "Why does the Moon have almost no atmosphere?",
+              "options": [
+                "The Moon has no oxygen",
+                "The Moon is too cold for gases",
+                "The Moon's escape velocity is too low for gas molecules to be retained",
+                "Solar wind blows away any atmosphere immediately"
+              ],
+              "correct": 2,
+              "explanation": "The Moon's escape velocity (~2.4 km/s) is low. At typical temperatures, lighter gas molecules (e.g., H₂, He) have thermal speeds exceeding this, so they escape. Over billions of years, all atmosphere is lost."
+            },
+            {
+              "question": "Escape velocity from a planetary orbit (at orbital altitude) compared to from the surface is:",
+              "options": [
+                "Higher",
+                "The same",
+                "Lower",
+                "Zero — no escape from orbit"
+              ],
+              "correct": 2,
+              "explanation": "v_esc = √(2GM/r). At a higher altitude r, the escape velocity is lower than from the surface (r = R). Satellites are already partway 'out' of the gravity well."
             }
           ],
           "xpReward": 100
@@ -1345,6 +2202,39 @@
               ],
               "correct": 1,
               "explanation": "At the equilibrium position, all the energy is kinetic (potential energy is zero), so the speed is maximum. At maximum displacement, all energy is potential and the speed is momentarily zero."
+            },
+            {
+              "question": "Two springs (k = 200 N/m each) are connected in series. What is the effective spring constant?",
+              "options": [
+                "400 N/m",
+                "200 N/m",
+                "100 N/m",
+                "50 N/m"
+              ],
+              "correct": 2,
+              "explanation": "For springs in series: 1/k_eff = 1/k₁ + 1/k₂ = 1/200 + 1/200 = 2/200 → k_eff = 100 N/m."
+            },
+            {
+              "question": "In simple harmonic motion (SHM), where is the restoring force at its maximum?",
+              "options": [
+                "At the equilibrium position",
+                "At the maximum displacement (amplitude)",
+                "At the halfway point",
+                "The force is constant throughout"
+              ],
+              "correct": 1,
+              "explanation": "The restoring force F = −kx is proportional to displacement. At maximum displacement (amplitude), x is largest, so force is maximum. At equilibrium x = 0, force = 0."
+            },
+            {
+              "question": "A mass on a spring oscillates with period T. If the spring constant is doubled (same mass), the new period is:",
+              "options": [
+                "T/2",
+                "T/√2",
+                "T√2",
+                "2T"
+              ],
+              "correct": 1,
+              "explanation": "T = 2π√(m/k). Doubling k gives T_new = 2π√(m/2k) = T/√2."
             }
           ],
           "xpReward": 100
@@ -1392,6 +2282,39 @@
               ],
               "correct": 1,
               "explanation": "Since T = 2*pi*sqrt(L/g), to double T you need to quadruple L. Doubling the length would only increase the period by a factor of sqrt(2) (about 1.41). The mass has no effect."
+            },
+            {
+              "question": "A pendulum has a period of 2 s. Its length is shortened to one-quarter. What is the new period?",
+              "options": [
+                "0.5 s",
+                "1 s",
+                "4 s",
+                "8 s"
+              ],
+              "correct": 1,
+              "explanation": "T = 2π√(L/g). Reducing L to L/4 gives T_new = 2π√(L/4g) = T/2 = 1 s."
+            },
+            {
+              "question": "The restoring force on a pendulum bob is:",
+              "options": [
+                "The full weight of the bob",
+                "The tension in the string",
+                "The component of gravity directed along the arc toward equilibrium",
+                "Centripetal force toward the pivot"
+              ],
+              "correct": 2,
+              "explanation": "For a simple pendulum, the restoring force is mg sinθ — the component of gravity along the arc pointing back toward the equilibrium (lowest) position."
+            },
+            {
+              "question": "A pendulum clock keeps correct time at sea level. At the top of a mountain (where g is slightly less):",
+              "options": [
+                "It runs fast",
+                "It runs slow",
+                "It runs at the same rate",
+                "It stops"
+              ],
+              "correct": 1,
+              "explanation": "T = 2π√(L/g). Lower g gives a longer period — the clock swings more slowly and runs slow (loses time)."
             }
           ],
           "xpReward": 100
@@ -1439,6 +2362,39 @@
               ],
               "correct": 2,
               "explanation": "If many soldiers march in step, their synchronized footfalls could drive the bridge at or near its resonant frequency, causing dangerously large oscillations. Breaking step ensures the forces are applied at random times and do not build up a resonance."
+            },
+            {
+              "question": "A wine glass shatters when a singer hits a specific note. This is an example of:",
+              "options": [
+                "Constructive interference",
+                "Resonance",
+                "Destructive interference",
+                "Diffraction"
+              ],
+              "correct": 1,
+              "explanation": "The singer's note matches the natural frequency of the glass. This drives resonance, causing rapidly increasing amplitude until the glass shatters."
+            },
+            {
+              "question": "In a car's suspension system, shock absorbers are designed to:",
+              "options": [
+                "Increase the natural frequency of the car body",
+                "Damp oscillations and prevent resonance",
+                "Store energy from road bumps",
+                "Increase tyre contact with the road by adding weight"
+              ],
+              "correct": 1,
+              "explanation": "Shock absorbers introduce damping, which reduces the amplitude of oscillations and prevents the car body from resonating at the frequency of road bumps."
+            },
+            {
+              "question": "A child on a swing is pushed by a parent at exactly the right moment each cycle. The swing's amplitude gradually increases. This is because:",
+              "options": [
+                "The parent is pushing harder each time",
+                "The pushing frequency matches the swing's natural frequency (resonance)",
+                "Gravity increases with each push",
+                "The swing gains mass with each push"
+              ],
+              "correct": 1,
+              "explanation": "When the forcing frequency matches the natural frequency, energy is added efficiently with each push. This is resonance — amplitude builds up over successive cycles."
             }
           ],
           "xpReward": 100
@@ -1495,6 +2451,39 @@
               ],
               "correct": 2,
               "explanation": "The amplitude of a wave determines the energy it carries. For a mechanical wave, the energy is proportional to the square of the amplitude. A wave with twice the amplitude carries four times the energy."
+            },
+            {
+              "question": "A wave has frequency 200 Hz and wavelength 1.5 m. What is its speed?",
+              "options": [
+                "133 m/s",
+                "300 m/s",
+                "201.5 m/s",
+                "198.5 m/s"
+              ],
+              "correct": 1,
+              "explanation": "v = fλ = 200 × 1.5 = 300 m/s."
+            },
+            {
+              "question": "What is the key difference between transverse and longitudinal waves?",
+              "options": [
+                "Transverse waves travel faster",
+                "In transverse waves the oscillation is perpendicular to propagation; in longitudinal waves it is parallel",
+                "Longitudinal waves cannot travel through solids",
+                "Transverse waves require a medium; longitudinal waves do not"
+              ],
+              "correct": 1,
+              "explanation": "In transverse waves (e.g. light, water ripples) particles oscillate perpendicular to the wave direction. In longitudinal waves (e.g. sound) particles oscillate parallel to the wave direction."
+            },
+            {
+              "question": "When a wave passes from one medium into another, which property remains unchanged?",
+              "options": [
+                "Speed",
+                "Wavelength",
+                "Frequency",
+                "Amplitude"
+              ],
+              "correct": 2,
+              "explanation": "Frequency is determined by the source and does not change when a wave crosses a boundary. Speed and wavelength change together (v = fλ), but f stays constant."
             }
           ],
           "xpReward": 100
@@ -1542,6 +2531,39 @@
               ],
               "correct": 2,
               "explanation": "The alternating bright and dark fringes in Young's double-slit experiment can only be explained by wave interference. Light from the two slits interferes constructively (bright fringes) and destructively (dark fringes), proving light's wave nature."
+            },
+            {
+              "question": "Two sound waves of slightly different frequencies (e.g. 440 Hz and 443 Hz) are played together. What is heard?",
+              "options": [
+                "Complete silence",
+                "A single steady tone at 441.5 Hz",
+                "Beats — a periodic rise and fall in loudness at 3 Hz",
+                "Two separate tones"
+              ],
+              "correct": 2,
+              "explanation": "Beats arise from the superposition of two waves with slightly different frequencies. Beat frequency = |f₁ − f₂| = |440 − 443| = 3 Hz."
+            },
+            {
+              "question": "What path difference is required for the first destructive interference minimum?",
+              "options": [
+                "λ",
+                "λ/4",
+                "λ/2",
+                "2λ"
+              ],
+              "correct": 2,
+              "explanation": "Destructive interference occurs when the path difference is an odd multiple of half a wavelength. The first minimum occurs at path difference = λ/2."
+            },
+            {
+              "question": "In a ripple tank with two point sources in phase, the points of constructive interference form:",
+              "options": [
+                "A single line midway between the sources",
+                "Hyperbolic lines where path difference is a whole number of wavelengths",
+                "Circular rings centred on each source",
+                "No pattern — the waves cancel everywhere"
+              ],
+              "correct": 1,
+              "explanation": "Constructive interference occurs where the path difference equals nλ (n = 0, 1, 2, …). These points trace out hyperbolic lines, creating the characteristic interference fringe pattern."
             }
           ],
           "xpReward": 100
@@ -1589,6 +2611,39 @@
               ],
               "correct": 2,
               "explanation": "A node is a point on a standing wave that never moves -- the displacement there is always zero. Nodes form where the two traveling waves that create the standing wave always cancel by destructive interference."
+            },
+            {
+              "question": "A string fixed at both ends vibrates in its second harmonic. How many antinodes are present?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "correct": 1,
+              "explanation": "For a string fixed at both ends: the nth harmonic has n antinodes (and n+1 nodes including the endpoints). The second harmonic has 2 antinodes."
+            },
+            {
+              "question": "An open pipe (open at both ends) of length 0.5 m has what fundamental frequency? (speed of sound = 340 m/s)",
+              "options": [
+                "170 Hz",
+                "340 Hz",
+                "680 Hz",
+                "85 Hz"
+              ],
+              "correct": 1,
+              "explanation": "For an open pipe, fundamental: L = λ/2, so λ = 2L = 1 m. f = v/λ = 340/1 = 340 Hz."
+            },
+            {
+              "question": "At an antinode of a standing wave, the displacement oscillates:",
+              "options": [
+                "Never changes — it is always zero",
+                "Between maximum positive and maximum negative values",
+                "Only in one direction",
+                "At a constant amplitude equal to the original wave"
+              ],
+              "correct": 1,
+              "explanation": "An antinode is a point of maximum oscillation. The displacement there alternates between +A and −A (where A is the amplitude), unlike a node where displacement is always zero."
             }
           ],
           "xpReward": 100
@@ -1636,6 +2691,39 @@
               ],
               "correct": 1,
               "explanation": "When a galaxy moves away from us, the light waves are stretched to longer wavelengths (lower frequencies), shifting toward the red end of the spectrum. This cosmological redshift was key evidence for Edwin Hubble's discovery that the universe is expanding."
+            },
+            {
+              "question": "A stationary observer hears a high-pitched siren as an ambulance approaches. As the ambulance passes and moves away, the heard frequency:",
+              "options": [
+                "Increases further",
+                "Stays the same",
+                "Drops suddenly to a lower pitch",
+                "Drops to zero"
+              ],
+              "correct": 2,
+              "explanation": "As the ambulance approaches, the observer hears a higher frequency (compressed waves). As it passes and recedes, the waves are stretched, so frequency drops suddenly to below the emitted value."
+            },
+            {
+              "question": "Astronomers observe that light from distant galaxies is redshifted. This means the galaxies are:",
+              "options": [
+                "Getting hotter",
+                "Moving toward us at high speed",
+                "Moving away from us (recession)",
+                "Rotating very rapidly"
+              ],
+              "correct": 2,
+              "explanation": "Redshift means the observed wavelength is longer (lower frequency) than emitted. By the Doppler effect, this indicates the source is moving away from the observer."
+            },
+            {
+              "question": "The Doppler effect applies to:",
+              "options": [
+                "Sound waves only",
+                "Light waves only",
+                "All types of waves",
+                "Only mechanical waves"
+              ],
+              "correct": 2,
+              "explanation": "The Doppler effect applies to all wave types — sound, light, microwaves, water waves. It is observed whenever there is relative motion between source and observer."
             }
           ],
           "xpReward": 100
@@ -1692,6 +2780,39 @@
               ],
               "correct": 2,
               "explanation": "In a static (non-moving) fluid, pressure increases linearly with depth: P = P_surface + rho*g*h, where rho is the fluid density, g is gravitational acceleration, and h is the depth. Each additional meter of depth adds the same amount of pressure."
+            },
+            {
+              "question": "A diver descends to 10 m in seawater (ρ = 1025 kg/m³, g = 10 m/s²). The water pressure at this depth is approximately:",
+              "options": [
+                "100 kPa",
+                "102.5 kPa",
+                "200 kPa",
+                "10 kPa"
+              ],
+              "correct": 1,
+              "explanation": "Gauge pressure = ρgh = 1025 × 10 × 10 = 102,500 Pa ≈ 102.5 kPa. (Total pressure including atmosphere = 101 + 102.5 ≈ 203.5 kPa.)"
+            },
+            {
+              "question": "A mercury barometer at sea level shows a column height of approximately:",
+              "options": [
+                "10 mm",
+                "76 mm",
+                "760 mm",
+                "7600 mm"
+              ],
+              "correct": 2,
+              "explanation": "Standard atmospheric pressure supports a 760 mm column of mercury. This is why standard pressure is sometimes quoted as 760 mmHg or 1 atm."
+            },
+            {
+              "question": "An inflated balloon keeps its shape because:",
+              "options": [
+                "The rubber is rigid",
+                "Internal gas pressure exceeds external atmospheric pressure",
+                "The gas inside is lighter than air",
+                "Surface tension holds the shape"
+              ],
+              "correct": 1,
+              "explanation": "The balloon is inflated when internal pressure exceeds atmospheric pressure. This net outward pressure difference keeps the balloon expanded against its elastic restoring force."
             }
           ],
           "xpReward": 100
@@ -1739,6 +2860,39 @@
               ],
               "correct": 2,
               "explanation": "The ball sinks because its weight exceeds the buoyant force. The buoyant force equals the weight of water displaced (a volume of water equal to the ball), but since steel is denser than water, the ball weighs more than the water it displaces."
+            },
+            {
+              "question": "A wooden block (density 600 kg/m³) floats in water (density 1000 kg/m³). What fraction is above the waterline?",
+              "options": [
+                "60%",
+                "40%",
+                "50%",
+                "20%"
+              ],
+              "correct": 1,
+              "explanation": "Fraction submerged = ρ_object/ρ_fluid = 600/1000 = 0.6. So 60% is below water and 40% is above."
+            },
+            {
+              "question": "A person floats more easily in the Dead Sea than in a swimming pool because:",
+              "options": [
+                "The Dead Sea is warmer",
+                "The Dead Sea water is much denser due to dissolved salts",
+                "The Dead Sea has stronger currents",
+                "There is less gravity at the Dead Sea"
+              ],
+              "correct": 1,
+              "explanation": "The Dead Sea has very high salt concentration (~33% vs ~3.5% for normal seawater), making it much denser (~1240 kg/m³). The large buoyant force easily supports a person."
+            },
+            {
+              "question": "A solid object sinks when placed in water but floats in mercury (density 13,600 kg/m³). The object's density is:",
+              "options": [
+                "Less than 1000 kg/m³",
+                "Between 1000 and 13,600 kg/m³",
+                "Greater than 13,600 kg/m³",
+                "Equal to 1000 kg/m³"
+              ],
+              "correct": 1,
+              "explanation": "The object sinks in water (density > 1000 kg/m³) but floats in mercury (density < 13,600 kg/m³), so its density lies between the two: between 1000 and 13,600 kg/m³."
             }
           ],
           "xpReward": 100
@@ -1786,6 +2940,39 @@
               ],
               "correct": 2,
               "explanation": "By the continuity equation (conservation of mass): A1*v1 = A2*v2. So 0.1 x 2 = 0.05 x v2, giving v2 = 0.2/0.05 = 4 m/s. When the pipe narrows by half, the speed doubles."
+            },
+            {
+              "question": "You squeeze the end of a garden hose to reduce its opening. The water shoots out faster. This is explained by:",
+              "options": [
+                "Bernoulli's principle — reduced area means higher velocity at the same flow rate",
+                "Increased pressure at the squeeze point",
+                "The water becomes denser at the nozzle",
+                "Gravity pulling the water harder through the smaller opening"
+              ],
+              "correct": 0,
+              "explanation": "By the continuity equation (A₁v₁ = A₂v₂), reducing the area increases velocity. Bernoulli's equation then shows this higher velocity region has lower pressure."
+            },
+            {
+              "question": "Which assumption underlies the standard form of Bernoulli's equation?",
+              "options": [
+                "The fluid is compressible",
+                "The flow is turbulent",
+                "The fluid is incompressible with steady, non-viscous flow",
+                "Gravity is negligible"
+              ],
+              "correct": 2,
+              "explanation": "Bernoulli's equation (P + ½ρv² + ρgh = constant) assumes incompressible fluid with steady, streamline (non-turbulent), non-viscous flow."
+            },
+            {
+              "question": "In a Venturi meter (a pipe with a constriction), the pressure at the narrow section compared to the wide section is:",
+              "options": [
+                "Higher",
+                "The same",
+                "Lower",
+                "Zero"
+              ],
+              "correct": 2,
+              "explanation": "In the narrow section, velocity is higher (continuity equation). By Bernoulli's equation, higher velocity means lower pressure. A manometer measures this pressure difference to find flow rate."
             }
           ],
           "xpReward": 100
@@ -1842,6 +3029,39 @@
               ],
               "correct": 2,
               "explanation": "Thermal energy depends on both the temperature (average kinetic energy per particle) and the number of particles. The lake has enormously more molecules than the cup, so it contains vastly more total thermal energy despite the same temperature."
+            },
+            {
+              "question": "A temperature of 27°C is equal to how many Kelvin?",
+              "options": [
+                "27 K",
+                "246 K",
+                "300 K",
+                "373 K"
+              ],
+              "correct": 2,
+              "explanation": "K = °C + 273 = 27 + 273 = 300 K."
+            },
+            {
+              "question": "Heat flows spontaneously from:",
+              "options": [
+                "Cold to hot",
+                "Hot to cold",
+                "High pressure to low pressure",
+                "Heavy to light objects"
+              ],
+              "correct": 1,
+              "explanation": "By the second law of thermodynamics, heat spontaneously flows from regions of higher temperature to regions of lower temperature until thermal equilibrium is reached."
+            },
+            {
+              "question": "Which substance has the highest specific heat capacity?",
+              "options": [
+                "Iron",
+                "Copper",
+                "Water",
+                "Aluminium"
+              ],
+              "correct": 2,
+              "explanation": "Water has a specific heat capacity of ~4200 J/kg·K, far higher than metals (iron ~450, copper ~385, aluminium ~900 J/kg·K). This is why water is used in cooling systems."
             }
           ],
           "xpReward": 100
@@ -1889,6 +3109,39 @@
               ],
               "correct": 1,
               "explanation": "At constant pressure (the balloon can expand or shrink freely), Charles's law says V is proportional to T. V2/V1 = T2/T1 = 250/300 ≈ 0.833, so the volume decreases by about 17 %."
+            },
+            {
+              "question": "An ideal gas is compressed to half its original volume at constant temperature. What happens to its pressure?",
+              "options": [
+                "Halves",
+                "Stays the same",
+                "Doubles",
+                "Quadruples"
+              ],
+              "correct": 2,
+              "explanation": "At constant temperature, Boyle's Law applies: PV = constant. Halving V doubles P."
+            },
+            {
+              "question": "At constant pressure, the volume of an ideal gas is doubled. What happens to the absolute temperature?",
+              "options": [
+                "Stays the same",
+                "Doubles",
+                "Halves",
+                "Quadruples"
+              ],
+              "correct": 1,
+              "explanation": "Charles's Law: V/T = constant (constant pressure). If V doubles, T must double (in Kelvin)."
+            },
+            {
+              "question": "Why must temperature be in Kelvin (not Celsius) when using the ideal gas law?",
+              "options": [
+                "Celsius gives incorrect units",
+                "The ideal gas law requires an absolute temperature scale where 0 K means zero molecular motion",
+                "Kelvin is more accurate than Celsius",
+                "The formula only works at high temperatures"
+              ],
+              "correct": 1,
+              "explanation": "Zero on the Kelvin scale represents absolute zero — zero molecular kinetic energy. At 0°C (273 K) gas molecules still have kinetic energy. Using Celsius would give nonsensical results (e.g. volume going negative)."
             }
           ],
           "xpReward": 100
@@ -1936,6 +3189,39 @@
               ],
               "correct": 2,
               "explanation": "The second law states that the total entropy of an isolated system can never decrease over time. For reversible processes entropy stays constant; for irreversible (spontaneous) processes it increases. This is why broken eggs don't reassemble."
+            },
+            {
+              "question": "Which statement correctly describes entropy?",
+              "options": [
+                "Entropy measures the total energy of a system",
+                "Entropy measures the temperature of a system",
+                "Entropy is a measure of disorder or the number of possible microscopic arrangements",
+                "Entropy decreases in all natural processes"
+              ],
+              "correct": 2,
+              "explanation": "Entropy (S) quantifies disorder or the number of possible microstates (W) of a system: S = k ln W. Natural processes tend toward states of higher entropy."
+            },
+            {
+              "question": "A refrigerator moves heat from a cold compartment to a warm room. This does NOT violate the second law because:",
+              "options": [
+                "Heat can always flow in any direction",
+                "External work is done on the system, which is required by the second law",
+                "The cold compartment has lower entropy",
+                "The room temperature decreases as a result"
+              ],
+              "correct": 1,
+              "explanation": "The second law prohibits spontaneous heat flow from cold to hot. A refrigerator uses external work (from the compressor) to force this transfer, which is fully consistent with the second law."
+            },
+            {
+              "question": "The zeroth law of thermodynamics states that:",
+              "options": [
+                "Energy cannot be created or destroyed",
+                "Entropy always increases in isolated systems",
+                "If A is in thermal equilibrium with B, and B with C, then A and C are also in thermal equilibrium",
+                "It is impossible to reach absolute zero"
+              ],
+              "correct": 2,
+              "explanation": "The zeroth law establishes that thermal equilibrium is transitive, allowing temperature to be defined as a measurable, consistent quantity that all bodies in mutual equilibrium share."
             }
           ],
           "xpReward": 100
@@ -1983,6 +3269,39 @@
               ],
               "correct": 0,
               "explanation": "S = k ln W connects the macroscopic quantity entropy (S) to the number of microscopic arrangements (W, or microstates) of a system's particles. k is Boltzmann's constant. More microstates means higher entropy."
+            },
+            {
+              "question": "A heat engine absorbs 800 J of heat and exhausts 500 J to a cold reservoir. What is its efficiency?",
+              "options": [
+                "62.5%",
+                "37.5%",
+                "160%",
+                "40%"
+              ],
+              "correct": 1,
+              "explanation": "Efficiency = W/Q_hot = (Q_hot − Q_cold)/Q_hot = (800 − 500)/800 = 300/800 = 37.5%."
+            },
+            {
+              "question": "The Carnot efficiency depends only on:",
+              "options": [
+                "The type of working gas used",
+                "The temperatures of the hot and cold reservoirs (in Kelvin)",
+                "The pressure of the gas",
+                "The speed of the piston"
+              ],
+              "correct": 1,
+              "explanation": "Carnot efficiency η = 1 − T_cold/T_hot. It depends only on the absolute temperatures of the two reservoirs, not on the working substance or engine design."
+            },
+            {
+              "question": "In a refrigerator, heat is moved from cold to hot. This requires:",
+              "options": [
+                "No energy input — it happens spontaneously",
+                "External work input from a compressor",
+                "Heat from an external source",
+                "The cold reservoir to be very cold"
+              ],
+              "correct": 1,
+              "explanation": "By the second law, heat does not spontaneously flow from cold to hot. A compressor does work to compress the refrigerant, allowing it to absorb heat from the cold interior and release it to the warm room."
             }
           ],
           "xpReward": 100
@@ -2039,6 +3358,39 @@
               ],
               "correct": 2,
               "explanation": "The SI unit of electric charge is the coulomb (C), named after Charles-Augustin de Coulomb. One coulomb is the charge transported by a current of one ampere in one second. A single electron carries a charge of approximately 1.6 × 10⁻¹⁹ C."
+            },
+            {
+              "question": "Two equal positive charges of 1 μC are placed 0.1 m apart. The electrostatic force between them is approximately: (k = 9×10⁹ N·m²/C²)",
+              "options": [
+                "9 × 10⁻² N",
+                "9 × 10⁻³ N",
+                "0.9 N",
+                "9 N"
+              ],
+              "correct": 2,
+              "explanation": "F = kq₁q₂/r² = (9×10⁹ × 10⁻⁶ × 10⁻⁶) / 0.01 = 9×10⁻³ / 0.01 = 0.9 N."
+            },
+            {
+              "question": "The electrostatic force and gravitational force both follow the same mathematical form. What is it?",
+              "options": [
+                "Force ∝ r²",
+                "Force ∝ 1/r (inverse, not inverse square)",
+                "Force ∝ 1/r² (inverse-square law)",
+                "Force ∝ r"
+              ],
+              "correct": 2,
+              "explanation": "Both Coulomb's law (F = kq₁q₂/r²) and Newton's law of gravitation (F = Gm₁m₂/r²) follow an inverse-square relationship with distance."
+            },
+            {
+              "question": "A charge of +3 μC and a charge of −3 μC are separated by 0.2 m. What is the direction of the electric force on the positive charge?",
+              "options": [
+                "Away from the negative charge",
+                "Toward the negative charge",
+                "Perpendicular to the line joining the charges",
+                "There is no force"
+              ],
+              "correct": 1,
+              "explanation": "Opposite charges attract. The positive charge experiences a force directed toward the negative charge."
             }
           ],
           "xpReward": 100
@@ -2086,6 +3438,39 @@
               ],
               "correct": 2,
               "explanation": "In electrostatic equilibrium, all excess charge resides on the outer surface of a conductor, and the electric field inside is exactly zero. This is a consequence of Gauss's law and is the principle behind Faraday cages."
+            },
+            {
+              "question": "An electric field of 500 N/C acts on a charge of 4 × 10⁻⁶ C. What force does it experience?",
+              "options": [
+                "0.002 N",
+                "125,000 N",
+                "2 × 10⁻³ N",
+                "2 × 10⁻⁶ N"
+              ],
+              "correct": 2,
+              "explanation": "F = qE = 4×10⁻⁶ × 500 = 2×10⁻³ N = 0.002 N."
+            },
+            {
+              "question": "The electric field between two parallel plates 0.02 m apart with a potential difference of 200 V is:",
+              "options": [
+                "4 V/m",
+                "1000 V/m",
+                "10,000 V/m",
+                "400 V/m"
+              ],
+              "correct": 2,
+              "explanation": "E = V/d = 200 / 0.02 = 10,000 V/m."
+            },
+            {
+              "question": "What happens to the electric field strength if you move twice as far from a point charge?",
+              "options": [
+                "It halves",
+                "It doubles",
+                "It decreases to one-quarter",
+                "It stays the same"
+              ],
+              "correct": 2,
+              "explanation": "Electric field from a point charge E = kq/r². Doubling r gives E_new = kq/(2r)² = kq/(4r²) = E/4 — one-quarter of the original."
             }
           ],
           "xpReward": 100
@@ -2133,6 +3518,39 @@
               ],
               "correct": 1,
               "explanation": "The energy stored in a capacitor is E = ½CV² = ½QV = Q²/(2C). The factor of ½ arises because as charge builds up, each additional bit of charge must be pushed against the increasing voltage, so the average voltage during charging is half the final voltage."
+            },
+            {
+              "question": "Three 6 μF capacitors are connected in series. The total capacitance is:",
+              "options": [
+                "18 μF",
+                "6 μF",
+                "3 μF",
+                "2 μF"
+              ],
+              "correct": 3,
+              "explanation": "For capacitors in series: 1/C_total = 1/6 + 1/6 + 1/6 = 3/6 = 1/2, so C_total = 2 μF."
+            },
+            {
+              "question": "A fully charged capacitor in a DC circuit:",
+              "options": [
+                "Continues to allow current indefinitely",
+                "Allows no DC current (acts as open circuit once charged)",
+                "Slowly discharges through the wire",
+                "Increases its voltage continuously"
+              ],
+              "correct": 1,
+              "explanation": "Once a capacitor is fully charged to the supply voltage, no more current flows — it acts as an open circuit for DC. Capacitors only pass AC or transient currents."
+            },
+            {
+              "question": "Capacitors in parallel all share the same:",
+              "options": [
+                "Charge",
+                "Current",
+                "Voltage",
+                "Capacitance"
+              ],
+              "correct": 2,
+              "explanation": "In a parallel connection, all components share the same two nodes, so they all have the same voltage across them."
             }
           ],
           "xpReward": 100
@@ -2189,6 +3607,39 @@
               ],
               "correct": 0,
               "explanation": "Power P = I²R = (0.5)² × 100 = 0.25 × 100 = 25 W. You can also compute P = IV = 0.5 × 50 = 25 W, where V = IR = 50 V."
+            },
+            {
+              "question": "What is the voltage drop across a 20 Ω resistor carrying 3 A?",
+              "options": [
+                "23 V",
+                "6.67 V",
+                "60 V",
+                "0.15 V"
+              ],
+              "correct": 2,
+              "explanation": "V = IR = 3 × 20 = 60 V."
+            },
+            {
+              "question": "A 100 Ω and a 200 Ω resistor are connected in series to a 12 V battery. What is the voltage across the 200 Ω resistor?",
+              "options": [
+                "4 V",
+                "8 V",
+                "6 V",
+                "12 V"
+              ],
+              "correct": 1,
+              "explanation": "Total R = 300 Ω. Current I = 12/300 = 0.04 A. V₂ = IR₂ = 0.04 × 200 = 8 V."
+            },
+            {
+              "question": "Which material is an ohmic conductor?",
+              "options": [
+                "A diode",
+                "A light bulb filament (as it heats up)",
+                "A metal wire at constant temperature",
+                "A semiconductor"
+              ],
+              "correct": 2,
+              "explanation": "An ohmic conductor obeys V = IR with constant R. A metal wire at constant temperature has constant resistance. The filament changes resistance as it heats; diodes and semiconductors have non-linear I-V characteristics."
             }
           ],
           "xpReward": 100
@@ -2236,6 +3687,39 @@
               ],
               "correct": 0,
               "explanation": "1/R_eq = 1/4 + 1/12 = 3/12 + 1/12 = 4/12, so R_eq = 12/4 = 3 Ω. The equivalent resistance of resistors in parallel is always less than the smallest individual resistance."
+            },
+            {
+              "question": "In a parallel circuit, what is the same for all branches?",
+              "options": [
+                "Current",
+                "Resistance",
+                "Voltage",
+                "Power"
+              ],
+              "correct": 2,
+              "explanation": "In a parallel circuit, all branches connect between the same two nodes, so the voltage across each branch is the same. Current divides between branches according to their resistance."
+            },
+            {
+              "question": "Three 12 Ω resistors are connected in series to a 36 V supply. What current flows?",
+              "options": [
+                "9 A",
+                "3 A",
+                "1 A",
+                "0.33 A"
+              ],
+              "correct": 2,
+              "explanation": "Total resistance = 12 + 12 + 12 = 36 Ω. Current = V/R = 36/36 = 1 A."
+            },
+            {
+              "question": "A 6 Ω and a 3 Ω resistor are connected in parallel. The equivalent resistance is:",
+              "options": [
+                "9 Ω",
+                "4.5 Ω",
+                "3 Ω",
+                "2 Ω"
+              ],
+              "correct": 3,
+              "explanation": "1/R_eq = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2. So R_eq = 2 Ω."
             }
           ],
           "xpReward": 100
@@ -2283,6 +3767,39 @@
               ],
               "correct": 2,
               "explanation": "Kirchhoff's loop (or voltage) rule states that the algebraic sum of all potential differences around any closed loop is zero. This follows from conservation of energy: a charge that traverses a complete loop returns to its starting potential."
+            },
+            {
+              "question": "At a junction, 3 A flows in through one wire and 1.5 A through another. What current leaves through the third wire?",
+              "options": [
+                "1 A",
+                "1.5 A",
+                "3 A",
+                "4.5 A"
+              ],
+              "correct": 3,
+              "explanation": "Kirchhoff's Current Law: current in = current out. 3 + 1.5 = 4.5 A must leave through the third wire."
+            },
+            {
+              "question": "In a series circuit with a 12 V battery, R₁ has a 4 V drop and R₂ has a 3 V drop. What is the voltage drop across R₃?",
+              "options": [
+                "5 V",
+                "7 V",
+                "4 V",
+                "19 V"
+              ],
+              "correct": 0,
+              "explanation": "Kirchhoff's Voltage Law: total voltage drops = supply. 4 + 3 + V₃ = 12 → V₃ = 5 V."
+            },
+            {
+              "question": "Kirchhoff's Voltage Law (KVL) states that around any closed loop in a circuit:",
+              "options": [
+                "The current is the same everywhere",
+                "The sum of all voltage rises equals the sum of all voltage drops (net = zero)",
+                "The total resistance equals the total voltage",
+                "The power dissipated equals the voltage squared"
+              ],
+              "correct": 1,
+              "explanation": "KVL is based on conservation of energy. Going around any closed loop, the algebraic sum of all EMFs and voltage drops equals zero."
             }
           ],
           "xpReward": 100
@@ -2339,6 +3856,39 @@
               ],
               "correct": 2,
               "explanation": "Unlike electric field lines which start and end on charges, magnetic field lines always form closed loops — they go from north to south outside the magnet and continue from south to north inside it. This is because magnetic monopoles do not exist (∇ · B = 0)."
+            },
+            {
+              "question": "A proton moves east at 2×10⁶ m/s through a magnetic field pointing north. What is the direction of the magnetic force on the proton?",
+              "options": [
+                "Upward",
+                "Downward",
+                "West",
+                "East"
+              ],
+              "correct": 0,
+              "explanation": "F = qv×B. Velocity east × B north (using right-hand rule: fingers east, curl north, thumb points upward). Proton is positive, so force is upward."
+            },
+            {
+              "question": "A wire carries 5 A in a magnetic field of 0.3 T. The 0.2 m wire is perpendicular to the field. What is the force on the wire?",
+              "options": [
+                "0.03 N",
+                "0.30 N",
+                "1.5 N",
+                "0.15 N"
+              ],
+              "correct": 1,
+              "explanation": "F = BIL = 0.3 × 5 × 0.2 = 0.30 N."
+            },
+            {
+              "question": "Which of the following will NOT experience a force in a magnetic field?",
+              "options": [
+                "A moving electron",
+                "A stationary proton",
+                "A current-carrying wire",
+                "A moving proton"
+              ],
+              "correct": 1,
+              "explanation": "Magnetic force F = qv×B requires motion. A stationary charge has v = 0, so F = 0."
             }
           ],
           "xpReward": 100
@@ -2386,6 +3936,39 @@
               ],
               "correct": 1,
               "explanation": "Since the magnetic force is always perpendicular to velocity, it does zero work (W = F · d = 0 when F ⊥ d). Therefore it cannot change the particle's kinetic energy or speed — only its direction."
+            },
+            {
+              "question": "An electron moves at 3×10⁶ m/s perpendicular to a 0.5 T magnetic field. What is the radius of its circular path? (m_e = 9.11×10⁻³¹ kg, e = 1.6×10⁻¹⁹ C)",
+              "options": [
+                "0.034 mm",
+                "0.034 m",
+                "34 m",
+                "3.4 mm"
+              ],
+              "correct": 1,
+              "explanation": "r = mv/(qB) = (9.11×10⁻³¹ × 3×10⁶)/(1.6×10⁻¹⁹ × 0.5) = 2.73×10⁻²⁴/8×10⁻²⁰ ≈ 0.034 m."
+            },
+            {
+              "question": "A charged particle moves parallel to a magnetic field. The magnetic force on it is:",
+              "options": [
+                "Maximum",
+                "Half the maximum",
+                "Zero",
+                "Inversely proportional to its speed"
+              ],
+              "correct": 2,
+              "explanation": "F = qvB sinθ. When the particle moves parallel to B, θ = 0°, so sin0° = 0 and F = 0."
+            },
+            {
+              "question": "In a mass spectrometer, ions of the same charge but different masses are separated because heavier ions:",
+              "options": [
+                "Travel faster in the magnetic field",
+                "Curve with a larger radius in the magnetic field",
+                "Lose charge in the magnetic field",
+                "Absorb more energy from the field"
+              ],
+              "correct": 1,
+              "explanation": "r = mv/(qB). For the same charge and speed, heavier ions (larger m) travel in a larger radius arc, landing farther from the source."
             }
           ],
           "xpReward": 100
@@ -2433,6 +4016,39 @@
               ],
               "correct": 2,
               "explanation": "The magnetic field inside a solenoid is B = μ₀nI, where n is the number of turns per unit length. More turns means a larger n, which produces a proportionally stronger field. Each loop of wire contributes its own field, and they all add together inside the solenoid."
+            },
+            {
+              "question": "Which of the following will increase the strength of an electromagnet?",
+              "options": [
+                "Decreasing the current",
+                "Reducing the number of coil turns",
+                "Adding a soft iron core",
+                "Increasing the resistance of the wire"
+              ],
+              "correct": 2,
+              "explanation": "A soft iron core becomes magnetised and greatly amplifies the magnetic field, substantially increasing the electromagnet's strength."
+            },
+            {
+              "question": "A solenoid has 500 turns, length 0.25 m, and carries 2 A. What is the magnetic field inside? (μ₀ = 4π×10⁻⁷ T·m/A)",
+              "options": [
+                "5.0×10⁻³ T",
+                "2.5×10⁻³ T",
+                "1.0×10⁻² T",
+                "5.0×10⁻⁴ T"
+              ],
+              "correct": 0,
+              "explanation": "B = μ₀nI = μ₀(N/L)I = 4π×10⁻⁷ × (500/0.25) × 2 = 4π×10⁻⁷ × 2000 × 2 ≈ 5.03×10⁻³ T."
+            },
+            {
+              "question": "Why is soft iron (not steel) used as the core of an electromagnet?",
+              "options": [
+                "Soft iron has higher electrical conductivity",
+                "Soft iron is easily magnetised and demagnetised",
+                "Soft iron retains its magnetism permanently",
+                "Soft iron has no free electrons"
+              ],
+              "correct": 1,
+              "explanation": "Soft iron has high magnetic permeability and low coercivity — it magnetises strongly when current flows and demagnetises quickly when the current is switched off."
             }
           ],
           "xpReward": 100
@@ -2489,6 +4105,39 @@
               ],
               "correct": 2,
               "explanation": "By Faraday's law: |ε| = N × |ΔΦ/Δt| = 200 × (0.05/0.1) = 200 × 0.5 = 100 V. More turns means a larger EMF because each turn contributes its own share of induced voltage, and they all add up in series."
+            },
+            {
+              "question": "A circular coil of 50 turns and area 0.01 m² is placed in a field that changes from 0.2 T to 0.8 T in 0.5 s. What is the induced EMF?",
+              "options": [
+                "0.12 V",
+                "0.6 V",
+                "6 V",
+                "0.06 V"
+              ],
+              "correct": 1,
+              "explanation": "EMF = −N × ΔΦ/Δt = −50 × (0.8−0.2)×0.01 / 0.5 = −50 × 0.006/0.5 = −0.6 V. Magnitude = 0.6 V."
+            },
+            {
+              "question": "What does Faraday's law relate?",
+              "options": [
+                "Current to resistance",
+                "The rate of change of magnetic flux to induced EMF",
+                "Voltage to charge stored",
+                "The magnetic force on a moving charge"
+              ],
+              "correct": 1,
+              "explanation": "Faraday's law: EMF = −N(ΔΦ/Δt). The induced EMF equals the negative rate of change of magnetic flux linkage."
+            },
+            {
+              "question": "A transformer core is made of laminated iron sheets rather than a solid block to:",
+              "options": [
+                "Increase the magnetic permeability",
+                "Reduce eddy currents and energy losses",
+                "Improve electrical conductivity",
+                "Allow higher operating temperatures"
+              ],
+              "correct": 1,
+              "explanation": "Laminations interrupt the paths of eddy currents (induced circulating currents in the core), reducing I²R heating losses in the core."
             }
           ],
           "xpReward": 100
@@ -2536,6 +4185,39 @@
               ],
               "correct": 1,
               "explanation": "A transformer works by electromagnetic induction: a changing current in the primary coil creates a changing magnetic flux that induces a voltage in the secondary coil. DC produces a constant flux, so dΦ/dt = 0, and no voltage is induced in the secondary after the initial transient."
+            },
+            {
+              "question": "A step-up transformer increases voltage by a factor of 10. By what factor does the current change (assuming ideal transformer)?",
+              "options": [
+                "Increases by 10",
+                "Decreases by 10",
+                "Stays the same",
+                "Decreases by 100"
+              ],
+              "correct": 1,
+              "explanation": "Power is conserved in an ideal transformer: P = IV. If V increases by 10, I must decrease by 10 to keep P constant."
+            },
+            {
+              "question": "In an AC generator, what is the role of slip rings?",
+              "options": [
+                "To reverse the current every half rotation",
+                "To provide continuous connection to the rotating coil without reversing current",
+                "To increase the output voltage",
+                "To reduce friction on the axle"
+              ],
+              "correct": 1,
+              "explanation": "Slip rings allow the coil to rotate freely while maintaining continuous electrical contact, delivering AC output. A commutator (used in DC generators) reverses polarity."
+            },
+            {
+              "question": "National electricity grids transmit at high voltage (e.g. 400 kV) primarily to:",
+              "options": [
+                "Increase the current for consumers",
+                "Minimise power losses in the transmission cables",
+                "Make the electricity cheaper to generate",
+                "Increase the frequency of the AC supply"
+              ],
+              "correct": 1,
+              "explanation": "Transmission line power loss P = I²R. High voltage allows low current, drastically reducing resistive losses over long distances."
             }
           ],
           "xpReward": 100
@@ -2583,6 +4265,39 @@
               ],
               "correct": 0,
               "explanation": "In a capacitor, current I = C(dV/dt). The current is proportional to the rate of change of voltage, which peaks 90° before the voltage itself. The mnemonic 'ICE' — In a Capacitor, current (I) leads EMF (E) — helps remember this phase relationship."
+            },
+            {
+              "question": "An AC source has a peak voltage of 170 V. What is the RMS voltage?",
+              "options": [
+                "170 V",
+                "120 V",
+                "85 V",
+                "240 V"
+              ],
+              "correct": 1,
+              "explanation": "V_rms = V_peak / √2 = 170 / 1.414 ≈ 120 V. Household 120 V AC has a peak of about 170 V."
+            },
+            {
+              "question": "In a purely capacitive AC circuit, the current:",
+              "options": [
+                "Lags voltage by 90°",
+                "Is in phase with voltage",
+                "Leads voltage by 90°",
+                "Lags voltage by 45°"
+              ],
+              "correct": 2,
+              "explanation": "In a capacitor, current leads voltage by 90°. The capacitor charges/discharges, so current peaks before voltage does."
+            },
+            {
+              "question": "At resonance in a series RLC circuit, which statement is true?",
+              "options": [
+                "Impedance is maximum",
+                "Inductive reactance equals capacitive reactance",
+                "Current is minimum",
+                "Voltage across R is zero"
+              ],
+              "correct": 1,
+              "explanation": "At resonance, X_L = X_C, so they cancel. Net impedance equals R (minimum) and current is maximum."
             }
           ],
           "xpReward": 100
@@ -2639,6 +4354,39 @@
               ],
               "correct": 3,
               "explanation": "Maxwell added the displacement current term (ε₀ dΦ_E/dt) to Ampère's law to fix an inconsistency. This term means that a changing electric field (even in empty space with no actual current) produces a magnetic field, completing the symmetry that allows self-sustaining electromagnetic waves."
+            },
+            {
+              "question": "Maxwell's modification to Ampere's law introduced the concept of:",
+              "options": [
+                "Magnetic monopoles",
+                "Displacement current",
+                "Static electric fields",
+                "Gravitational waves"
+              ],
+              "correct": 1,
+              "explanation": "Maxwell added the displacement current term (ε₀ dΦ_E/dt) to Ampere's law, which predicts that a changing electric field produces a magnetic field — even in a vacuum."
+            },
+            {
+              "question": "Which of Maxwell's equations states that magnetic monopoles do not exist?",
+              "options": [
+                "Gauss's law for electricity",
+                "Gauss's law for magnetism (∇·B = 0)",
+                "Faraday's law",
+                "The Ampere-Maxwell law"
+              ],
+              "correct": 1,
+              "explanation": "Gauss's law for magnetism (∇·B = 0) states that magnetic field lines have no source or sink — they always form closed loops, implying no magnetic monopoles."
+            },
+            {
+              "question": "Electromagnetic waves in a vacuum travel at speed c because:",
+              "options": [
+                "They carry electric charge",
+                "The wave speed follows from Maxwell's equations: c = 1/√(μ₀ε₀)",
+                "They have zero rest mass",
+                "They travel only in straight lines"
+              ],
+              "correct": 1,
+              "explanation": "Maxwell showed that c = 1/√(μ₀ε₀) ≈ 3×10⁸ m/s. When he calculated this from electric and magnetic constants, it matched the measured speed of light — showing light is an EM wave."
             }
           ],
           "xpReward": 100
@@ -2686,6 +4434,39 @@
               ],
               "correct": 0,
               "explanation": "The wave equation c = λf relates the speed of a wave to its wavelength and frequency. Higher frequency means shorter wavelength, since their product is always c. This applies to all waves, not just EM waves."
+            },
+            {
+              "question": "Which part of the electromagnetic spectrum has the highest frequency?",
+              "options": [
+                "Radio waves",
+                "Visible light",
+                "X-rays",
+                "Gamma rays"
+              ],
+              "correct": 3,
+              "explanation": "Gamma rays have the highest frequency (and shortest wavelength) in the electromagnetic spectrum, giving them the most energy per photon."
+            },
+            {
+              "question": "All electromagnetic waves in a vacuum travel at the same speed regardless of:",
+              "options": [
+                "Their energy",
+                "Their frequency or wavelength",
+                "The direction of travel",
+                "Their polarisation"
+              ],
+              "correct": 1,
+              "explanation": "All EM waves travel at c = 3×10⁸ m/s in a vacuum, regardless of frequency or wavelength. Their frequency and wavelength adjust to satisfy c = fλ."
+            },
+            {
+              "question": "Mobile phones use which part of the EM spectrum to communicate?",
+              "options": [
+                "Infrared",
+                "Visible light",
+                "Microwaves / radio waves",
+                "Ultraviolet"
+              ],
+              "correct": 2,
+              "explanation": "Mobile phones operate in the microwave/radio wave range (roughly 700 MHz – 6 GHz for 4G/5G), which can penetrate buildings and travel long distances."
             }
           ],
           "xpReward": 100
@@ -2742,6 +4523,39 @@
               ],
               "correct": 1,
               "explanation": "When an object is placed at the center of curvature (C = 2f), a concave mirror forms a real, inverted image of the same size, located at the center of curvature on the opposite side. This follows from the mirror equation 1/f = 1/d_o + 1/d_i."
+            },
+            {
+              "question": "A concave mirror has a focal length of 15 cm. An object is placed 45 cm in front of it. Where is the image?",
+              "options": [
+                "22.5 cm in front of mirror (real)",
+                "22.5 cm behind mirror (virtual)",
+                "45 cm in front (real)",
+                "30 cm in front (real)"
+              ],
+              "correct": 0,
+              "explanation": "1/v + 1/u = 1/f → 1/v = 1/15 − 1/45 = 3/45 − 1/45 = 2/45, so v = 22.5 cm. Positive v means real image in front of mirror."
+            },
+            {
+              "question": "A convex mirror always produces an image that is:",
+              "options": [
+                "Real, inverted, and magnified",
+                "Virtual, upright, and diminished",
+                "Real, upright, and diminished",
+                "Virtual, inverted, and magnified"
+              ],
+              "correct": 1,
+              "explanation": "A convex (diverging) mirror always forms a virtual, upright, diminished image behind the mirror — useful for wide-field-of-view applications like car side mirrors."
+            },
+            {
+              "question": "The law of reflection states that the angle of incidence equals the angle of reflection. Both angles are measured from:",
+              "options": [
+                "The mirror surface",
+                "The normal to the mirror surface",
+                "The horizontal",
+                "The incoming ray"
+              ],
+              "correct": 1,
+              "explanation": "By convention, angles of incidence and reflection are always measured from the normal (perpendicular) to the reflecting surface, not from the surface itself."
             }
           ],
           "xpReward": 100
@@ -2789,6 +4603,39 @@
               ],
               "correct": 2,
               "explanation": "Total internal reflection only occurs when light travels from a medium with a higher refractive index to one with a lower refractive index (e.g., glass to air) and the angle of incidence exceeds the critical angle. It cannot occur when going from a less dense to a denser medium."
+            },
+            {
+              "question": "A ray of light passes from air (n = 1.0) into water (n = 1.33) at an angle of incidence of 45°. What is the angle of refraction? (sin 45° = 0.707)",
+              "options": [
+                "45°",
+                "32°",
+                "58°",
+                "27°"
+              ],
+              "correct": 1,
+              "explanation": "Snell's law: n₁sinθ₁ = n₂sinθ₂ → sinθ₂ = 1.0 × 0.707/1.33 = 0.532, so θ₂ ≈ 32°. Light bends toward the normal entering water."
+            },
+            {
+              "question": "Optical fibres transmit light using total internal reflection. This requires the light to travel:",
+              "options": [
+                "From a less dense medium to a denser medium",
+                "At exactly the critical angle",
+                "From a denser medium to a less dense medium at an angle greater than the critical angle",
+                "Perpendicular to the fibre axis"
+              ],
+              "correct": 2,
+              "explanation": "Total internal reflection occurs when light travels from a denser medium to a less dense medium (e.g. glass to air) at an angle of incidence greater than the critical angle."
+            },
+            {
+              "question": "A glass prism disperses white light into a spectrum because:",
+              "options": [
+                "Different colours reflect at different angles",
+                "Different colours travel at different speeds in glass (different refractive indices)",
+                "The prism absorbs some colours more than others",
+                "Diffraction separates the wavelengths"
+              ],
+              "correct": 1,
+              "explanation": "Dispersion occurs because glass has a slightly different refractive index for each frequency of light. Violet light bends more than red light, separating the colours."
             }
           ],
           "xpReward": 100
@@ -2836,6 +4683,39 @@
               ],
               "correct": 2,
               "explanation": "When the object is at the focal point (d_o = f), the thin-lens equation gives 1/d_i = 1/f − 1/f = 0, so d_i = ∞. The refracted rays emerge parallel and never converge. In practice, the image forms 'at infinity.'"
+            },
+            {
+              "question": "An object is placed 30 cm from a converging lens of focal length 10 cm. Where is the image formed?",
+              "options": [
+                "15 cm, same side as object",
+                "15 cm, opposite side",
+                "20 cm, opposite side",
+                "30 cm, opposite side"
+              ],
+              "correct": 1,
+              "explanation": "Using 1/v − 1/u = 1/f with sign convention: 1/v = 1/10 − 1/30 = 2/30, so v = 15 cm on the far side."
+            },
+            {
+              "question": "A diverging lens always produces an image that is:",
+              "options": [
+                "Real, inverted, and larger",
+                "Virtual, upright, and smaller",
+                "Real, upright, and smaller",
+                "Virtual, inverted, and larger"
+              ],
+              "correct": 1,
+              "explanation": "A diverging (concave) lens always produces a virtual, upright, diminished image on the same side as the object."
+            },
+            {
+              "question": "The power of a lens with focal length 25 cm is:",
+              "options": [
+                "4 D",
+                "0.25 D",
+                "25 D",
+                "40 D"
+              ],
+              "correct": 0,
+              "explanation": "Power P = 1/f (in metres) = 1/0.25 = 4 dioptres."
             }
           ],
           "xpReward": 100
@@ -2883,6 +4763,39 @@
               ],
               "correct": 1,
               "explanation": "Diffraction spreading is inversely proportional to slit width: the narrower the slit, the more the wave spreads out after passing through. This is described by sin θ = λ/a for the first minimum, where a is the slit width. Smaller a means larger θ."
+            },
+            {
+              "question": "In Young's double-slit experiment, increasing the slit separation will:",
+              "options": [
+                "Increase fringe spacing",
+                "Decrease fringe spacing",
+                "Have no effect on fringe spacing",
+                "Make fringes disappear"
+              ],
+              "correct": 1,
+              "explanation": "Fringe spacing y = λD/d. Increasing slit separation d decreases fringe spacing — fringes become closer together."
+            },
+            {
+              "question": "Which phenomenon can ONLY be explained by the wave nature of light?",
+              "options": [
+                "Reflection",
+                "Refraction",
+                "Diffraction",
+                "Rectilinear propagation"
+              ],
+              "correct": 2,
+              "explanation": "Diffraction (bending around obstacles) requires wave behaviour. Reflection and refraction can be modelled with rays."
+            },
+            {
+              "question": "In thin-film interference with one phase reversal on reflection, the condition for constructive interference is:",
+              "options": [
+                "2nt = mλ",
+                "2nt = (m + ½)λ",
+                "nt = mλ",
+                "t = mλ/n"
+              ],
+              "correct": 1,
+              "explanation": "With one phase reversal, constructive interference in reflected light requires 2nt = (m + ½)λ, where m = 0, 1, 2,..."
             }
           ],
           "xpReward": 100
@@ -2939,6 +4852,39 @@
               ],
               "correct": 2,
               "explanation": "The traveling twin experiences time dilation — less time passes for them. The paradox is resolved by noting that the situation is not symmetric: the traveling twin must accelerate and decelerate (change frames), while the stay-at-home twin remains in a single inertial frame."
+            },
+            {
+              "question": "A spaceship travels at 0.8c relative to Earth. Its onboard clock ticks at a rate that, to an Earth observer, appears:",
+              "options": [
+                "Faster than Earth clocks",
+                "Slower than Earth clocks",
+                "The same rate as Earth clocks",
+                "Dependent on direction of travel"
+              ],
+              "correct": 1,
+              "explanation": "Time dilation (special relativity): moving clocks run slow from the perspective of a stationary observer. At 0.8c, γ = 1/√(1−0.64) = 1/0.6 ≈ 1.67, so the ship's clock runs at 1/1.67 ≈ 60% of Earth's rate."
+            },
+            {
+              "question": "A muon created in the upper atmosphere at 0.99c has a rest-frame lifetime of 2.2 μs. What is its dilated lifetime as measured on Earth?",
+              "options": [
+                "2.2 μs",
+                "15.6 μs",
+                "0.31 μs",
+                "22 μs"
+              ],
+              "correct": 1,
+              "explanation": "γ = 1/√(1−0.99²) = 1/√0.0199 ≈ 7.09. Dilated lifetime = γ × 2.2 = 7.09 × 2.2 ≈ 15.6 μs. This allows muons to reach Earth's surface."
+            },
+            {
+              "question": "The twin paradox involves one twin travelling at high speed and returning to find their twin has aged more. The travelling twin ages less because:",
+              "options": [
+                "They accelerated, breaking the symmetry of the situation",
+                "Gravity acts differently on them",
+                "They carried a faster clock",
+                "Special relativity does not apply to humans"
+              ],
+              "correct": 0,
+              "explanation": "The travelling twin undergoes acceleration (turning around), which breaks the symmetry between the two frames. Only the non-inertial (accelerating) twin has a preferred frame analysis, and they genuinely age less."
             }
           ],
           "xpReward": 100
@@ -2986,6 +4932,39 @@
               ],
               "correct": 0,
               "explanation": "In the rod's own rest frame, it is always its full rest length. Length contraction is a relativistic effect observed only by someone in a different inertial frame. The moving observer, at rest relative to the rod, sees no contraction."
+            },
+            {
+              "question": "A spaceship of rest length 100 m travels at 0.6c past Earth. What length does an Earth observer measure?",
+              "options": [
+                "100 m",
+                "80 m",
+                "60 m",
+                "125 m"
+              ],
+              "correct": 1,
+              "explanation": "L = L₀/γ = L₀√(1 − v²/c²) = 100 × √(1 − 0.36) = 100 × 0.8 = 80 m. Objects appear shorter along the direction of motion."
+            },
+            {
+              "question": "Length contraction occurs:",
+              "options": [
+                "In all directions equally",
+                "Only in the direction of motion",
+                "Only perpendicular to motion",
+                "Only for objects with mass greater than 1 kg"
+              ],
+              "correct": 1,
+              "explanation": "Length contraction (Lorentz contraction) only affects dimensions along the direction of relative motion. Dimensions perpendicular to motion are unchanged."
+            },
+            {
+              "question": "According to special relativity, an observer in a rocket sees stationary Earth objects as:",
+              "options": [
+                "Longer in the direction of flight",
+                "Shorter in the direction of flight",
+                "Unchanged in length",
+                "Rotating"
+              ],
+              "correct": 1,
+              "explanation": "Length contraction is symmetric — each observer sees the other's objects as contracted along the direction of relative motion. Earth objects appear shorter to the rocket observer."
             }
           ],
           "xpReward": 100
@@ -3033,6 +5012,39 @@
               ],
               "correct": 1,
               "explanation": "The 'missing' mass (called the mass defect) was converted into energy — kinetic energy of the fission products and radiation — according to E = mc². This mass-energy conversion is the principle behind both nuclear reactors and nuclear weapons."
+            },
+            {
+              "question": "A nuclear reaction converts 0.001 kg of mass entirely to energy. How much energy is released? (c = 3×10⁸ m/s)",
+              "options": [
+                "3×10⁵ J",
+                "9×10¹³ J",
+                "3×10¹¹ J",
+                "9×10¹⁶ J"
+              ],
+              "correct": 1,
+              "explanation": "E = mc² = 0.001 × (3×10⁸)² = 0.001 × 9×10¹⁶ = 9×10¹³ J."
+            },
+            {
+              "question": "The rest energy of an electron (m = 9.11×10⁻³¹ kg) in MeV is approximately:",
+              "options": [
+                "0.511 MeV",
+                "5.11 MeV",
+                "0.0511 MeV",
+                "511 MeV"
+              ],
+              "correct": 0,
+              "explanation": "E = mc² = 9.11×10⁻³¹ × (3×10⁸)² = 8.2×10⁻¹⁴ J. Converting: 8.2×10⁻¹⁴ / 1.6×10⁻¹³ = 0.511 MeV."
+            },
+            {
+              "question": "The equation E = mc² implies that:",
+              "options": [
+                "Mass and energy are the same thing expressed in different units",
+                "Only nuclear reactions can convert mass to energy",
+                "Energy increases with velocity without limit",
+                "Rest mass is always conserved in reactions"
+              ],
+              "correct": 0,
+              "explanation": "E = mc² shows mass-energy equivalence — mass is a form of stored energy. The conversion factor c² is very large, so small mass changes release enormous energy."
             }
           ],
           "xpReward": 100
@@ -3089,6 +5101,39 @@
               ],
               "correct": 1,
               "explanation": "Einstein's photoelectric equation: KE_max = hf − φ, where hf is the photon energy and φ (phi) is the work function (minimum energy needed to free an electron from the surface). The electron uses energy φ to escape, and any remaining energy becomes kinetic energy."
+            },
+            {
+              "question": "In the photoelectric effect, increasing the intensity of light (keeping frequency constant) will:",
+              "options": [
+                "Increase the maximum KE of emitted electrons",
+                "Increase the number of emitted electrons per second",
+                "Decrease the work function",
+                "Increase the threshold frequency"
+              ],
+              "correct": 1,
+              "explanation": "More intensity means more photons per second. Each photon has the same energy (frequency unchanged), so KE_max is unchanged but more electrons are emitted per second."
+            },
+            {
+              "question": "The stopping voltage in the photoelectric effect is the voltage needed to:",
+              "options": [
+                "Accelerate electrons toward the collector",
+                "Prevent all electrons from reaching the collector",
+                "Increase photon energy",
+                "Reduce the threshold frequency"
+              ],
+              "correct": 1,
+              "explanation": "Stopping voltage V_s is the reverse voltage that halts the most energetic electrons: eV_s = KE_max = hf − φ."
+            },
+            {
+              "question": "Light of frequency 8×10¹⁴ Hz hits a metal with work function 2.0 eV. What is the maximum KE of emitted electrons? (h = 4.14×10⁻¹⁵ eV·s)",
+              "options": [
+                "1.31 eV",
+                "3.31 eV",
+                "2.0 eV",
+                "5.31 eV"
+              ],
+              "correct": 0,
+              "explanation": "hf = 4.14×10⁻¹⁵ × 8×10¹⁴ = 3.31 eV. KE_max = 3.31 − 2.0 = 1.31 eV."
             }
           ],
           "xpReward": 100
@@ -3136,6 +5181,39 @@
               ],
               "correct": 1,
               "explanation": "Higher kinetic energy means higher momentum (p = √(2mKE)), and λ = h/p, so higher momentum gives a shorter wavelength. This is why electron microscopes use high voltages — faster electrons have shorter wavelengths and can resolve finer details."
+            },
+            {
+              "question": "The de Broglie wavelength of a particle is given by λ = h/p. For a faster particle with the same mass, the de Broglie wavelength will:",
+              "options": [
+                "Increase",
+                "Decrease",
+                "Stay the same",
+                "Become zero"
+              ],
+              "correct": 1,
+              "explanation": "λ = h/p = h/(mv). Faster particle → larger momentum p → smaller wavelength λ. More massive or faster particles have shorter de Broglie wavelengths."
+            },
+            {
+              "question": "In the double-slit experiment with electrons, which observation demonstrates wave nature?",
+              "options": [
+                "Electrons hit the screen in clusters at two bright spots",
+                "An interference pattern of bright and dark fringes appears on the screen",
+                "Electrons are deflected by the slits",
+                "Electrons pass through both slits simultaneously as particles"
+              ],
+              "correct": 1,
+              "explanation": "An interference pattern (alternating bright/dark fringes) is the hallmark of wave behaviour. This appears even when electrons are sent one at a time, showing each electron interferes with itself."
+            },
+            {
+              "question": "Calculate the de Broglie wavelength of a proton moving at 1×10⁷ m/s. (m_p = 1.67×10⁻²⁷ kg, h = 6.63×10⁻³⁴ J·s)",
+              "options": [
+                "3.97×10⁻¹⁴ m",
+                "3.97×10⁻¹¹ m",
+                "3.97×10⁻⁸ m",
+                "3.97×10⁻⁵ m"
+              ],
+              "correct": 0,
+              "explanation": "λ = h/(mv) = 6.63×10⁻³⁴ / (1.67×10⁻²⁷ × 1×10⁷) = 6.63×10⁻³⁴ / 1.67×10⁻²⁰ ≈ 3.97×10⁻¹⁴ m."
             }
           ],
           "xpReward": 100
@@ -3183,6 +5261,39 @@
               ],
               "correct": 2,
               "explanation": "The ground-state energy of hydrogen is −13.6 eV. Ionization means removing the electron to E = 0 (n = ∞), so the minimum energy required is 13.6 eV. This is the ionization energy of hydrogen and is a fundamental constant in atomic physics."
+            },
+            {
+              "question": "The energy levels of hydrogen are given by E_n = −13.6/n² eV. What is the ionisation energy from the ground state?",
+              "options": [
+                "−13.6 eV",
+                "13.6 eV",
+                "3.4 eV",
+                "6.8 eV"
+              ],
+              "correct": 1,
+              "explanation": "Ionisation energy is the energy needed to remove the electron from n=1 (E₁ = −13.6 eV) to n=∞ (E=0). It requires +13.6 eV, so the ionisation energy is 13.6 eV."
+            },
+            {
+              "question": "An electron in an atom absorbs a photon and moves to a higher energy level. The photon's energy must equal:",
+              "options": [
+                "The total energy of the upper level",
+                "The difference between the upper and lower energy levels",
+                "The kinetic energy of the electron",
+                "The binding energy of the nucleus"
+              ],
+              "correct": 1,
+              "explanation": "The photon energy E = hf must exactly equal the energy difference ΔE = E_upper − E_lower. Photons with too little or too much energy cannot be absorbed."
+            },
+            {
+              "question": "The Heisenberg uncertainty principle (ΔxΔp ≥ ℏ/2) means that:",
+              "options": [
+                "Measurement instruments are imperfect",
+                "Position and momentum cannot simultaneously have precisely defined values",
+                "Energy is always conserved",
+                "Particles cannot occupy the same state"
+              ],
+              "correct": 1,
+              "explanation": "The uncertainty principle is a fundamental feature of quantum mechanics, not an instrument limitation. A particle cannot simultaneously have a precisely defined position and momentum."
             }
           ],
           "xpReward": 100
@@ -3239,6 +5350,39 @@
               ],
               "correct": 2,
               "explanation": "Gamma rays (high-energy photons) are the most penetrating — they can pass through several centimeters of lead. Beta particles (electrons/positrons) can penetrate a few millimeters of aluminum. Alpha particles (helium nuclei) are stopped by a sheet of paper or a few centimeters of air."
+            },
+            {
+              "question": "In beta-minus (β⁻) decay, the nucleus emits:",
+              "options": [
+                "A helium nucleus",
+                "A high-energy photon",
+                "An electron and an antineutrino",
+                "A positron and a neutrino"
+              ],
+              "correct": 2,
+              "explanation": "In β⁻ decay, a neutron converts to a proton: n → p + e⁻ + ν̄_e. The nucleus emits an electron and an antineutrino, and the atomic number increases by 1."
+            },
+            {
+              "question": "Which type of radiation is stopped by a sheet of paper?",
+              "options": [
+                "Alpha (α)",
+                "Beta (β)",
+                "Gamma (γ)",
+                "Neutron"
+              ],
+              "correct": 0,
+              "explanation": "Alpha particles (helium nuclei) are large and highly ionising. They travel only a few centimetres in air and are stopped by a thin sheet of paper or skin."
+            },
+            {
+              "question": "A radioactive isotope has an activity of 800 Bq. After 6 hours the activity is 100 Bq. What is the half-life?",
+              "options": [
+                "1 hour",
+                "2 hours",
+                "3 hours",
+                "4 hours"
+              ],
+              "correct": 1,
+              "explanation": "Activity drops from 800 to 100 — a factor of 8 = 2³. So 3 half-lives have elapsed in 6 hours. Half-life = 6/3 = 2 hours."
             }
           ],
           "xpReward": 100
@@ -3286,6 +5430,39 @@
               ],
               "correct": 1,
               "explanation": "Iron-56 sits at the peak of the binding energy per nucleon curve. Elements heavier than iron can release energy by fission (splitting into smaller, more tightly bound nuclei). Elements lighter than iron release energy by fusion (combining into larger, more tightly bound nuclei). Iron itself cannot release nuclear energy by either process."
+            },
+            {
+              "question": "In nuclear fusion, energy is released because:",
+              "options": [
+                "Heavy nuclei split into lighter fragments",
+                "Light nuclei combine and the product has less mass than the reactants",
+                "Protons are converted directly to electrons",
+                "Neutrons are absorbed by the nucleus"
+              ],
+              "correct": 1,
+              "explanation": "When light nuclei (e.g. hydrogen isotopes) fuse, the product has less mass than the sum of reactants. This mass deficit is released as energy via E = mc²."
+            },
+            {
+              "question": "A nuclear chain reaction in a fission reactor is controlled using:",
+              "options": [
+                "Lead shields",
+                "Control rods made of neutron-absorbing materials (e.g. boron)",
+                "A moderator that speeds up neutrons",
+                "Cooling water that reflects neutrons"
+              ],
+              "correct": 1,
+              "explanation": "Control rods (boron, cadmium) absorb excess neutrons, reducing the reaction rate. Inserting them more deeply slows or stops the chain reaction."
+            },
+            {
+              "question": "Why is nuclear fusion difficult to achieve on Earth?",
+              "options": [
+                "Fusion fuel is extremely rare",
+                "Extremely high temperatures (~10⁷–10⁸ K) are needed to overcome electrostatic repulsion between nuclei",
+                "Fusion produces dangerous radiation that is hard to contain",
+                "No materials can withstand the fusion reaction"
+              ],
+              "correct": 1,
+              "explanation": "Protons repel each other strongly. Fusion requires nuclei to come close enough (within ~10⁻¹⁵ m) for the strong force to dominate, which requires enormous kinetic energy — achievable only at very high temperatures."
             }
           ],
           "xpReward": 100
@@ -3333,6 +5510,39 @@
               ],
               "correct": 1,
               "explanation": "The Higgs field permeates all of space. Fundamental particles interact with it to varying degrees, and this interaction gives them their mass. Particles that interact strongly with the Higgs field (like the top quark) are heavy, while those that do not interact (like photons) are massless."
+            },
+            {
+              "question": "Quarks are held together inside protons and neutrons by which fundamental force?",
+              "options": [
+                "Gravitational force",
+                "Electromagnetic force",
+                "Weak nuclear force",
+                "Strong nuclear force"
+              ],
+              "correct": 3,
+              "explanation": "The strong nuclear force, mediated by gluons, binds quarks together inside hadrons (protons and neutrons) and also holds the nucleus together."
+            },
+            {
+              "question": "A proton is composed of:",
+              "options": [
+                "Three electrons",
+                "Two up quarks and one down quark",
+                "One up quark and two down quarks",
+                "Two protons and one neutron"
+              ],
+              "correct": 1,
+              "explanation": "A proton (charge +1) is made of two up quarks (charge +2/3 each) and one down quark (charge −1/3). Total charge = 2/3 + 2/3 − 1/3 = +1."
+            },
+            {
+              "question": "The Higgs boson, discovered in 2012, is associated with:",
+              "options": [
+                "The strong nuclear force",
+                "The electromagnetic force",
+                "The mechanism by which particles acquire mass",
+                "Gravitational attraction between particles"
+              ],
+              "correct": 2,
+              "explanation": "The Higgs field (and its associated boson) gives fundamental particles their mass via the Higgs mechanism — particles that interact more strongly with the Higgs field are heavier."
             }
           ],
           "xpReward": 100
@@ -3359,21 +5569,69 @@
           "quiz": [
             {
               "question": "In an n-type semiconductor, the majority charge carriers are:",
-              "options": ["Holes", "Electrons", "Protons", "Neutrons"],
+              "options": [
+                "Holes",
+                "Electrons",
+                "Protons",
+                "Neutrons"
+              ],
               "correct": 1,
               "explanation": "In n-type semiconductors, pentavalent impurities (such as phosphorus or arsenic) are added to silicon. These donor atoms have 5 valence electrons — 4 form covalent bonds with silicon, and the 5th is weakly bound and easily freed. Electrons become the majority carriers, and holes become the minority carriers."
             },
             {
               "question": "Which semiconductor has a smaller energy band gap?",
-              "options": ["Silicon (1.12 eV)", "Germanium (0.67 eV)", "Diamond (5.5 eV)", "Carbon (insulator)"],
+              "options": [
+                "Silicon (1.12 eV)",
+                "Germanium (0.67 eV)",
+                "Diamond (5.5 eV)",
+                "Carbon (insulator)"
+              ],
               "correct": 1,
               "explanation": "Germanium has a band gap of about 0.67 eV, smaller than silicon's 1.12 eV. A smaller band gap means electrons can jump to the conduction band more easily, making Ge more conductive at room temperature but also more sensitive to temperature changes."
             },
             {
               "question": "The conductivity of a semiconductor increases with temperature because:",
-              "options": ["Its resistance decreases like a metal", "More electron-hole pairs are thermally generated, increasing carrier concentration", "The band gap increases, freeing more electrons", "Impurity atoms become ionized only at high temperatures"],
+              "options": [
+                "Its resistance decreases like a metal",
+                "More electron-hole pairs are thermally generated, increasing carrier concentration",
+                "The band gap increases, freeing more electrons",
+                "Impurity atoms become ionized only at high temperatures"
+              ],
               "correct": 1,
               "explanation": "As temperature rises, more electrons gain enough thermal energy to jump across the band gap from the valence band to the conduction band, creating electron-hole pairs. This increases the number of charge carriers, which increases conductivity — the opposite behaviour from metals."
+            },
+            {
+              "question": "In an n-type semiconductor, the majority charge carriers are:",
+              "options": [
+                "Holes",
+                "Protons",
+                "Electrons",
+                "Positrons"
+              ],
+              "correct": 2,
+              "explanation": "N-type semiconductors are doped with donor atoms (e.g., phosphorus in silicon) that donate extra electrons, making electrons the majority carriers."
+            },
+            {
+              "question": "A p-n junction diode allows current to flow easily when:",
+              "options": [
+                "The p-side is connected to the negative terminal (reverse bias)",
+                "The p-side is connected to the positive terminal (forward bias)",
+                "No voltage is applied (zero bias)",
+                "Reverse breakdown voltage is applied"
+              ],
+              "correct": 1,
+              "explanation": "Forward bias (p-side positive) reduces the depletion region and allows majority carriers to flow across the junction."
+            },
+            {
+              "question": "What is the main function of a transistor in a digital circuit?",
+              "options": [
+                "To convert AC to DC",
+                "To act as a switch or amplifier",
+                "To store electrical charge",
+                "To increase resistance"
+              ],
+              "correct": 1,
+              "explanation": "Transistors act as electronically controlled switches (in digital circuits) or amplifiers (in analog circuits) — they are the fundamental building block of modern electronics."
             }
           ],
           "xpReward": 100
@@ -3391,21 +5649,69 @@
           "quiz": [
             {
               "question": "In forward biasing of a p-n junction diode, the p-side is connected to:",
-              "options": ["Negative terminal of battery", "Positive terminal of battery", "Either terminal — it does not matter", "Ground only"],
+              "options": [
+                "Negative terminal of battery",
+                "Positive terminal of battery",
+                "Either terminal — it does not matter",
+                "Ground only"
+              ],
               "correct": 1,
               "explanation": "In forward bias, the positive terminal of the battery is connected to the p-side and the negative terminal to the n-side. This reduces the built-in potential barrier across the depletion region, allowing majority carriers to diffuse across and produce a significant current."
             },
             {
               "question": "The depletion region of a p-n junction is formed because:",
-              "options": ["Electrons are injected from outside", "Electrons and holes near the junction recombine, leaving a region devoid of free carriers", "The semiconductor is heated", "Light falls on the junction"],
+              "options": [
+                "Electrons are injected from outside",
+                "Electrons and holes near the junction recombine, leaving a region devoid of free carriers",
+                "The semiconductor is heated",
+                "Light falls on the junction"
+              ],
               "correct": 1,
               "explanation": "At the p-n junction boundary, electrons from the n-side diffuse into the p-side and recombine with holes, and holes from the p-side diffuse into the n-side and recombine with electrons. This leaves a narrow region — the depletion region — with no free charge carriers but with fixed ionised impurity atoms, creating a built-in electric field."
             },
             {
               "question": "Which best describes the I-V characteristic of a p-n diode in forward bias?",
-              "options": ["Linear — current increases proportionally with voltage", "Exponential — current rises steeply above the knee voltage (~0.7 V for Si)", "Constant — current does not depend on voltage", "The current decreases as voltage increases"],
+              "options": [
+                "Linear — current increases proportionally with voltage",
+                "Exponential — current rises steeply above the knee voltage (~0.7 V for Si)",
+                "Constant — current does not depend on voltage",
+                "The current decreases as voltage increases"
+              ],
               "correct": 1,
               "explanation": "The diode equation I = I₀(e^(V/V_T) − 1) describes exponential growth. Below the knee voltage the current is negligible; above it (about 0.6–0.7 V for silicon) current rises steeply. This makes the diode act as a one-way valve for current — conducting easily in one direction and blocking in the other."
+            },
+            {
+              "question": "In a reverse-biased p-n junction:",
+              "options": [
+                "Large current flows as majority carriers cross the junction",
+                "The depletion region widens and very little current flows",
+                "The diode emits light",
+                "The junction breaks down immediately"
+              ],
+              "correct": 1,
+              "explanation": "Reverse bias widens the depletion region, removing majority carriers from the junction. Only a tiny reverse saturation current (due to minority carriers) flows."
+            },
+            {
+              "question": "A light-emitting diode (LED) emits light when:",
+              "options": [
+                "Reverse biased above breakdown voltage",
+                "Forward biased, as electrons and holes recombine and release photons",
+                "Exposed to external light",
+                "Connected to an AC supply"
+              ],
+              "correct": 1,
+              "explanation": "In a forward-biased LED, electrons from the n-side and holes from the p-side recombine at the junction, releasing energy as photons. The colour depends on the semiconductor's bandgap."
+            },
+            {
+              "question": "The depletion region of an unbiased p-n junction forms because:",
+              "options": [
+                "The battery removes charge from both sides",
+                "Electrons diffuse from n to p and holes diffuse from p to n, creating a charge-free zone",
+                "The semiconductor heats up at the junction",
+                "Covalent bonds break spontaneously"
+              ],
+              "correct": 1,
+              "explanation": "Carriers diffuse down concentration gradients (electrons to p-side, holes to n-side), recombining and leaving behind fixed donor/acceptor ions. This creates a built-in electric field that stops further diffusion."
             }
           ],
           "xpReward": 100
@@ -3423,21 +5729,69 @@
           "quiz": [
             {
               "question": "In a common-emitter NPN transistor circuit, if IB = 50 μA and β = 100, the collector current IC is:",
-              "options": ["0.5 μA", "50 mA", "5 mA", "500 mA"],
+              "options": [
+                "0.5 μA",
+                "50 mA",
+                "5 mA",
+                "500 mA"
+              ],
               "correct": 2,
               "explanation": "IC = β × IB = 100 × 50 μA = 5000 μA = 5 mA. The transistor amplifies the small base current by a factor of β to produce a much larger collector current. This current amplification is what makes transistors useful as amplifiers."
             },
             {
               "question": "A transistor acts as a switch in which two operating regions?",
-              "options": ["Active and linear regions", "Saturation and cutoff regions", "Active and saturation regions", "Cutoff and linear regions"],
+              "options": [
+                "Active and linear regions",
+                "Saturation and cutoff regions",
+                "Active and saturation regions",
+                "Cutoff and linear regions"
+              ],
               "correct": 1,
               "explanation": "When used as a digital switch, a transistor operates in saturation (fully ON — collector-emitter acts like a closed switch, VCE ≈ 0 V) or cutoff (fully OFF — IC ≈ 0). The active region is used for analogue amplification, not switching."
             },
             {
               "question": "The output of an AND gate is HIGH only when:",
-              "options": ["At least one input is HIGH", "Both inputs are LOW", "Both inputs are HIGH", "Neither input is HIGH"],
+              "options": [
+                "At least one input is HIGH",
+                "Both inputs are LOW",
+                "Both inputs are HIGH",
+                "Neither input is HIGH"
+              ],
               "correct": 2,
               "explanation": "An AND gate produces a HIGH output (logic 1) only when all of its inputs are simultaneously HIGH. If any input is LOW, the output is LOW. This matches the Boolean expression Y = A·B. AND gates are fundamental building blocks of digital arithmetic circuits like adders."
+            },
+            {
+              "question": "In a common-emitter BJT amplifier, a small base current controls a:",
+              "options": [
+                "Large collector current",
+                "Small emitter voltage",
+                "Large base voltage",
+                "Small collector resistance"
+              ],
+              "correct": 0,
+              "explanation": "BJT current gain β = I_C / I_B. A small base current I_B controls a much larger collector current I_C, providing current amplification."
+            },
+            {
+              "question": "In a MOSFET, the gate terminal controls current flow by:",
+              "options": [
+                "Changing the doping level of the channel",
+                "Creating or eliminating a conducting channel via electric field",
+                "Heating the semiconductor",
+                "Injecting charge carriers directly"
+              ],
+              "correct": 1,
+              "explanation": "Voltage on the MOSFET gate creates an electric field that induces a conducting channel between source and drain — no gate current flows (extremely high input impedance)."
+            },
+            {
+              "question": "A BJT has β = 150 and a base current of 0.04 mA. What is the collector current?",
+              "options": [
+                "6 mA",
+                "0.6 mA",
+                "60 mA",
+                "0.06 mA"
+              ],
+              "correct": 0,
+              "explanation": "I_C = β × I_B = 150 × 0.04 = 6 mA."
             }
           ],
           "xpReward": 100
@@ -3464,21 +5818,69 @@
           "quiz": [
             {
               "question": "In amplitude modulation (AM), the bandwidth required for transmission is:",
-              "options": ["Equal to the carrier frequency fc", "Equal to the message frequency fm", "Twice the message frequency (2fm)", "Half the carrier frequency (fc/2)"],
+              "options": [
+                "Equal to the carrier frequency fc",
+                "Equal to the message frequency fm",
+                "Twice the message frequency (2fm)",
+                "Half the carrier frequency (fc/2)"
+              ],
               "correct": 2,
               "explanation": "AM produces two sidebands — an upper sideband at (fc + fm) and a lower sideband at (fc − fm). The total bandwidth occupied is (fc + fm) − (fc − fm) = 2fm. For example, a 5 kHz audio signal requires 10 kHz of bandwidth in AM."
             },
             {
               "question": "Which of the following is an advantage of FM over AM?",
-              "options": ["FM requires less bandwidth than AM", "FM is less affected by noise and interference", "FM transmitters are cheaper to build", "FM signals travel farther than AM signals"],
+              "options": [
+                "FM requires less bandwidth than AM",
+                "FM is less affected by noise and interference",
+                "FM transmitters are cheaper to build",
+                "FM signals travel farther than AM signals"
+              ],
               "correct": 1,
               "explanation": "FM encodes information in the frequency of the carrier wave rather than its amplitude. Noise (which primarily affects signal amplitude) has minimal effect on the frequency, so FM receivers can reject most noise. This is why FM radio sounds clearer than AM radio, even though AM can travel farther due to ionospheric reflection."
             },
             {
               "question": "If the carrier amplitude is 10 V and the message amplitude is 6 V, the AM modulation index μ is:",
-              "options": ["1.67", "0.6", "16 V", "4 V"],
+              "options": [
+                "1.67",
+                "0.6",
+                "16 V",
+                "4 V"
+              ],
               "correct": 1,
               "explanation": "Modulation index μ = Am / Ac = 6 / 10 = 0.6. A modulation index of 0 means no modulation, μ = 1 means 100% modulation (maximum without distortion), and μ > 1 causes over-modulation and distortion."
+            },
+            {
+              "question": "In AM (amplitude modulation) radio, the information signal is encoded by varying the:",
+              "options": [
+                "Frequency of the carrier wave",
+                "Amplitude of the carrier wave",
+                "Phase of the carrier wave",
+                "Wavelength of the carrier wave"
+              ],
+              "correct": 1,
+              "explanation": "In AM, the amplitude of a high-frequency carrier wave is varied in proportion to the audio signal. The carrier frequency itself remains constant."
+            },
+            {
+              "question": "FM (frequency modulation) has better noise immunity than AM because:",
+              "options": [
+                "FM uses a higher frequency carrier",
+                "Noise affects amplitude more than frequency, and FM encodes information in frequency",
+                "FM signals travel farther",
+                "FM uses digital encoding"
+              ],
+              "correct": 1,
+              "explanation": "Most electrical noise manifests as amplitude variations. Since FM encodes information in frequency (not amplitude), amplitude noise can be clipped/filtered without losing the audio signal."
+            },
+            {
+              "question": "A digital signal is different from an analogue signal in that it:",
+              "options": [
+                "Always has a higher frequency",
+                "Only takes discrete values (e.g. 0 and 1)",
+                "Cannot be transmitted wirelessly",
+                "Requires more bandwidth"
+              ],
+              "correct": 1,
+              "explanation": "A digital signal uses discrete levels (binary: 0 and 1). Analogue signals vary continuously. Digital signals are more resistant to noise and can be perfectly regenerated."
             }
           ],
           "xpReward": 100
@@ -3496,21 +5898,69 @@
           "quiz": [
             {
               "question": "Sky wave propagation is most suitable for which frequency range?",
-              "options": ["Very Low Frequency (3–30 kHz)", "High Frequency shortwave (3–30 MHz)", "Very High Frequency (30–300 MHz)", "Microwave (1–100 GHz)"],
+              "options": [
+                "Very Low Frequency (3–30 kHz)",
+                "High Frequency shortwave (3–30 MHz)",
+                "Very High Frequency (30–300 MHz)",
+                "Microwave (1–100 GHz)"
+              ],
               "correct": 1,
               "explanation": "Shortwave signals in the HF band (3–30 MHz) are reflected by the ionosphere back to Earth, enabling long-distance communication without satellites. At higher frequencies (VHF and above), waves penetrate the ionosphere rather than reflecting, so sky wave propagation is not possible above about 30 MHz."
             },
             {
               "question": "The maximum line-of-sight range (d) of a transmitting antenna of height h on Earth of radius R is:",
-              "options": ["d = h / R", "d = √(2Rh)", "d = 2Rh", "d = R / √h"],
+              "options": [
+                "d = h / R",
+                "d = √(2Rh)",
+                "d = 2Rh",
+                "d = R / √h"
+              ],
               "correct": 1,
               "explanation": "The line-of-sight range d = √(2Rh), where R is Earth's radius (~6400 km) and h is the antenna height. This formula comes from the geometry of a tangent line from the top of the antenna to Earth's surface. For example, a 100 m tall antenna has a range of about 36 km."
             },
             {
               "question": "A geostationary satellite is placed at an altitude of approximately 36,000 km because at this height:",
-              "options": ["The satellite's orbital period equals one year", "The satellite's orbital period equals exactly 24 hours, matching Earth's rotation", "The satellite experiences zero gravity", "Radio waves travel fastest at this altitude"],
+              "options": [
+                "The satellite's orbital period equals one year",
+                "The satellite's orbital period equals exactly 24 hours, matching Earth's rotation",
+                "The satellite experiences zero gravity",
+                "Radio waves travel fastest at this altitude"
+              ],
               "correct": 1,
               "explanation": "At ~36,000 km, the orbital period equals 24 hours — the same as Earth's rotation. The satellite appears stationary above a fixed point on the equator, making it ideal for continuous communication with fixed ground antennas. Three equally-spaced geostationary satellites can cover almost the entire Earth."
+            },
+            {
+              "question": "Ground waves in radio propagation:",
+              "options": [
+                "Reflect off the ionosphere",
+                "Travel along the Earth's surface and are attenuated by it",
+                "Require line-of-sight between transmitter and receiver",
+                "Only travel in a vacuum"
+              ],
+              "correct": 1,
+              "explanation": "Ground (surface) waves travel along the Earth's surface and are gradually attenuated. They are used for low-frequency AM broadcasts and can propagate beyond the horizon."
+            },
+            {
+              "question": "Sky waves (shortwave) can travel long distances because they:",
+              "options": [
+                "Travel faster than the speed of light",
+                "Reflect off the ionosphere back to Earth",
+                "Diffract over the horizon",
+                "Are guided by underground cables"
+              ],
+              "correct": 1,
+              "explanation": "Sky waves (HF, shortwave) refract/reflect off the ionosphere and return to Earth, allowing them to travel thousands of kilometres — used for international broadcasts."
+            },
+            {
+              "question": "Why do higher-frequency (UHF/microwave) signals generally require line-of-sight transmission?",
+              "options": [
+                "They are reflected by the ionosphere too strongly",
+                "Their short wavelengths diffract less around obstacles",
+                "They travel slower than lower-frequency waves",
+                "They are absorbed by the atmosphere completely"
+              ],
+              "correct": 1,
+              "explanation": "Diffraction angle is approximately λ/d. Higher-frequency (shorter wavelength) signals diffract less around obstacles and terrain, so they require a relatively clear path between transmitter and receiver."
             }
           ],
           "xpReward": 100
@@ -3528,21 +5978,69 @@
           "quiz": [
             {
               "question": "According to the Nyquist theorem, to faithfully reproduce a signal of maximum frequency fm, the sampling rate must be at least:",
-              "options": ["fm / 2", "fm", "2fm", "4fm"],
+              "options": [
+                "fm / 2",
+                "fm",
+                "2fm",
+                "4fm"
+              ],
               "correct": 2,
               "explanation": "The Nyquist theorem states that the sampling rate must be at least twice the highest frequency component in the signal (fs ≥ 2fm). If the sampling rate is lower, aliasing occurs — high-frequency components appear as false lower frequencies. Audio CDs sample at 44,100 Hz to handle signals up to 22,050 Hz, safely above the human hearing limit of ~20,000 Hz."
             },
             {
               "question": "PCM (Pulse Code Modulation) converts an analog signal to digital by which sequence?",
-              "options": ["Encoding → Sampling → Quantisation", "Sampling → Quantisation → Encoding", "Quantisation → Encoding → Sampling", "Encoding → Quantisation → Sampling"],
+              "options": [
+                "Encoding → Sampling → Quantisation",
+                "Sampling → Quantisation → Encoding",
+                "Quantisation → Encoding → Sampling",
+                "Encoding → Quantisation → Sampling"
+              ],
               "correct": 1,
               "explanation": "PCM works in three steps: (1) Sampling — the analog signal is measured at regular time intervals; (2) Quantisation — each sample value is rounded to the nearest of 2^n discrete levels; (3) Encoding — each quantised value is converted to a binary number. The resulting sequence of bits is the digital signal."
             },
             {
               "question": "Which of the following is NOT an advantage of digital over analog communication?",
-              "options": ["Digital signals are more resistant to noise", "Digital signals can be easily encrypted", "Digital signals always require less bandwidth than analog", "Digital signals can be perfectly regenerated by repeaters"],
+              "options": [
+                "Digital signals are more resistant to noise",
+                "Digital signals can be easily encrypted",
+                "Digital signals always require less bandwidth than analog",
+                "Digital signals can be perfectly regenerated by repeaters"
+              ],
               "correct": 2,
               "explanation": "Digital communication is not always more bandwidth-efficient than analog — PCM typically requires more bandwidth than the original analog signal. However, digital's advantages — noise immunity, encryption, error correction, and lossless regeneration — usually outweigh the bandwidth cost, which can be recovered using compression algorithms."
+            },
+            {
+              "question": "An analogue-to-digital converter (ADC) samples an audio signal at 44,100 Hz with 16-bit resolution. The bit rate of the digital audio is:",
+              "options": [
+                "44,100 bps",
+                "705,600 bps",
+                "16 bps",
+                "88,200 bps"
+              ],
+              "correct": 1,
+              "explanation": "Bit rate = sample rate × bit depth = 44,100 × 16 = 705,600 bits/s (705.6 kbps). This is the standard for CD-quality audio (mono channel)."
+            },
+            {
+              "question": "The Nyquist theorem states that to accurately digitise a signal, the sampling rate must be:",
+              "options": [
+                "Equal to the signal's highest frequency",
+                "At least twice the signal's highest frequency",
+                "Half the signal's highest frequency",
+                "Ten times the signal's highest frequency"
+              ],
+              "correct": 1,
+              "explanation": "The Nyquist-Shannon theorem: to reconstruct a signal without aliasing, the sampling rate must be at least 2f_max. CD audio samples at 44.1 kHz to faithfully capture audio up to ~22 kHz."
+            },
+            {
+              "question": "Error correction codes in digital communication work by:",
+              "options": [
+                "Slowing down the transmission to reduce errors",
+                "Adding redundant bits that allow detection and correction of transmission errors",
+                "Increasing signal amplitude",
+                "Using only analogue signals as backup"
+              ],
+              "correct": 1,
+              "explanation": "Error-correcting codes (e.g. Hamming codes, Reed-Solomon) add carefully chosen redundant bits. The receiver uses these to detect and correct errors without needing to request a retransmission."
             }
           ],
           "xpReward": 100
