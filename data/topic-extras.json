@@ -58,13 +58,7 @@
         "errorStep": 1,
         "explanation": "The numerator and denominator are swapped. It should be \u0394x/x = 2/200, giving 1%."
       }
-    ],
-    "challenge": {
-      "title": "Designing a Friction Experiment",
-      "description": "A student claims heavier objects experience more friction on the same surface. Design a controlled experiment to test this. (a) State a testable hypothesis. (b) Identify the independent, dependent, and all controlled variables. (c) Describe the method using school lab equipment. (d) State two sources of systematic error and how to reduce them. (e) Sketch a results table and predict the shape of a friction-force vs mass graph.",
-      "hint": "Friction force F = \u03bcN = \u03bcmg. If \u03bc stays constant, friction is proportional to weight \u2014 but does the experiment actually test whether \u03bc changes? Think carefully about what variable you are isolating.",
-      "xpBonus": 75
-    }
+    ]
   },
   "units-measurement": {
     "formulaCard": [
