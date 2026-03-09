@@ -299,5 +299,80 @@ function init() {
 
   if (topicData) renderFunFacts(document.getElementById('facts-container'), topicData.funFacts);
   if (topicData) renderQuiz(document.getElementById('quiz-container'), topicData.quiz, topicData.slug);
+
+  // ── Beat the Sim ────────────────────────────────────────────────────
+  // Target: make the vacuum ball land in exactly X seconds.
+  // Fixed drop height = 100 m.  t_vacuum = sqrt(2 * 100 / g) = sqrt(200 / g)
+  // Corresponding gravity values for each target time:
+  //   4 s → g ≈ 12.5 m/s²    5 s → g = 8.0 m/s²
+  //   6 s → g ≈ 5.56 m/s²    7 s → g ≈ 4.08 m/s²
+  const simEl = document.getElementById('simulation');
+  if (simEl) {
+    const TARGET_TIMES = [4, 5, 6, 7];
+    let targetIdx = 0;
+    let attempts  = 0;
+    let best      = null;
+
+    const beatDiv = document.createElement('div');
+    beatDiv.className = 'beat-sim';
+    simEl.appendChild(beatDiv);
+
+    function getTarget() { return TARGET_TIMES[targetIdx % TARGET_TIMES.length]; }
+
+    function renderBeat() {
+      const target = getTarget();
+      const hint   = (200 / (target * target)).toFixed(2);
+      beatDiv.innerHTML = `
+        <div class="beat-sim__header">🎯 Beat the Sim</div>
+        <div class="beat-sim__target">
+          Make the <strong>vacuum ball</strong> land in exactly <strong>${target} seconds</strong>.<br>
+          Adjust the <em>Gravity</em> slider — the drop height is fixed at 100 m.
+        </div>
+        <div class="beat-sim__actions">
+          <button class="btn beat-launch-btn">🚀 Drop!</button>
+          <button class="btn beat-new-btn">New Target</button>
+        </div>
+        <div class="beat-sim__result" aria-live="polite"></div>
+        <div class="beat-sim__meta">${attempts > 0 ? `Attempts: ${attempts}${best !== null ? ' · Best diff: ' + best.toFixed(2) + ' s' : ''}` : ''}</div>
+      `;
+
+      beatDiv.querySelector('.beat-launch-btn').addEventListener('click', () => {
+        const g  = engine.getParam('gravity');
+        const tVacuum = Math.sqrt(200 / g);
+        const diff = Math.abs(tVacuum - target);
+        attempts++;
+        if (best === null || diff < best) best = diff;
+
+        engine.play();
+
+        const resultEl = beatDiv.querySelector('.beat-sim__result');
+        const metaEl   = beatDiv.querySelector('.beat-sim__meta');
+
+        if (diff < 0.05) {
+          resultEl.textContent = `🎉 BULLSEYE! Lands in ${tVacuum.toFixed(2)} s — only ${diff.toFixed(3)} s off!`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--win';
+        } else if (diff < 0.25) {
+          resultEl.textContent = `⭐ So close! ${tVacuum.toFixed(2)} s (${diff.toFixed(2)} s off target)`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--close';
+        } else if (tVacuum < target) {
+          resultEl.textContent = `📏 Too fast! Landed in ${tVacuum.toFixed(2)} s (need ${target} s — try lower g)`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--miss';
+        } else {
+          resultEl.textContent = `📏 Too slow! Landed in ${tVacuum.toFixed(2)} s (need ${target} s — try higher g)`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--miss';
+        }
+        metaEl.textContent = `Attempts: ${attempts} · Best diff: ${best.toFixed(2)} s`;
+      });
+
+      beatDiv.querySelector('.beat-new-btn').addEventListener('click', () => {
+        targetIdx++;
+        attempts = 0;
+        best = null;
+        renderBeat();
+      });
+    }
+
+    renderBeat();
+  }
 }
 init();

@@ -238,5 +238,76 @@ function init() {
 
   if (topicData) renderFunFacts(document.getElementById('facts-container'), topicData.funFacts);
   if (topicData) renderQuiz(document.getElementById('quiz-container'), topicData.quiz, topicData.slug);
+
+  // ── Beat the Sim ────────────────────────────────────────────────────
+  const simEl = document.getElementById('simulation');
+  if (simEl) {
+    const TARGETS = [50, 75, 100, 120, 150];
+    let targetIdx = 0;
+    let attempts  = 0;
+    let best      = null;
+
+    const beatDiv = document.createElement('div');
+    beatDiv.className = 'beat-sim';
+    simEl.appendChild(beatDiv);
+
+    function getTarget() { return TARGETS[targetIdx % TARGETS.length]; }
+
+    function renderBeat() {
+      const target = getTarget();
+      beatDiv.innerHTML = `
+        <div class="beat-sim__header">🎯 Beat the Sim</div>
+        <div class="beat-sim__target">
+          Hit a displacement of exactly <strong>${target} m</strong>.<br>
+          Adjust the sliders above, then launch!
+        </div>
+        <div class="beat-sim__actions">
+          <button class="btn beat-launch-btn">🚀 Launch!</button>
+          <button class="btn beat-new-btn">New Target</button>
+        </div>
+        <div class="beat-sim__result" aria-live="polite"></div>
+        <div class="beat-sim__meta">${attempts > 0 ? `Attempts: ${attempts}${best !== null ? ' · Best diff: ' + best.toFixed(1) + ' m' : ''}` : ''}</div>
+      `;
+
+      beatDiv.querySelector('.beat-launch-btn').addEventListener('click', () => {
+        const v0 = engine.getParam('initialVelocity');
+        const a  = engine.getParam('acceleration');
+        const t  = engine.getParam('time');
+        const s  = v0 * t + 0.5 * a * t * t;
+        const diff = Math.abs(s - target);
+        attempts++;
+        if (best === null || diff < best) best = diff;
+
+        engine.play();
+
+        const resultEl = beatDiv.querySelector('.beat-sim__result');
+        const metaEl   = beatDiv.querySelector('.beat-sim__meta');
+
+        if (diff < 1) {
+          resultEl.textContent = `🎉 BULLSEYE! You hit ${s.toFixed(1)} m — only ${diff.toFixed(2)} m off!`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--win';
+        } else if (diff < 5) {
+          resultEl.textContent = `⭐ So close! Got ${s.toFixed(1)} m (${diff.toFixed(1)} m off target)`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--close';
+        } else if (s < target) {
+          resultEl.textContent = `📏 ${diff.toFixed(1)} m short (got ${s.toFixed(1)} m, need ${target} m)`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--miss';
+        } else {
+          resultEl.textContent = `📏 ${diff.toFixed(1)} m overshoot (got ${s.toFixed(1)} m, need ${target} m)`;
+          resultEl.className   = 'beat-sim__result beat-sim__result--miss';
+        }
+        metaEl.textContent = `Attempts: ${attempts} · Best diff: ${best.toFixed(1)} m`;
+      });
+
+      beatDiv.querySelector('.beat-new-btn').addEventListener('click', () => {
+        targetIdx++;
+        attempts = 0;
+        best = null;
+        renderBeat();
+      });
+    }
+
+    renderBeat();
+  }
 }
 init();

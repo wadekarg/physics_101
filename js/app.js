@@ -19,6 +19,9 @@ import { renderWorkedExamples } from './worked-examples.js';
 import { renderConceptConnections } from './concept-connections.js';
 import { renderChallenges } from './sim-challenges.js';
 import { initSummaryCard } from './summary-card.js';
+import { renderStoryTheory } from './story-theory.js';
+import { renderMatchTheMotion } from './match-the-motion.js';
+import { renderTheoryAnimation } from './theory-animation.js';
 
 // ── Determine data path (root vs topics/ subdirectory) ──────────────
 const isTopicPage = window.location.pathname.includes('/topics/');
@@ -82,6 +85,9 @@ const extrasPath = isTopicPage ? '../data/topic-extras.json' : 'data/topic-extra
     renderConceptConnections(document.getElementById('concept-connections'), topicExtras, chapters);
     renderChallenges(document.getElementById('sim-challenges'), topicExtras, addXP);
     initSummaryCard(document.getElementById('summary-card'), topicData, topicExtras);
+    renderTheoryAnimation(document.getElementById('theory'), slug);
+    renderStoryTheory(document.getElementById('theory'), topicExtras);
+    renderMatchTheMotion(document.getElementById('match-the-motion'), topicExtras);
     renderChapterNav(slug, chapters);
 
   } else if (document.getElementById('chapters-grid')) {
@@ -112,6 +118,9 @@ const extrasPath = isTopicPage ? '../data/topic-extras.json' : 'data/topic-extra
     renderConceptConnections,
     renderChallenges,
     initSummaryCard,
+    renderStoryTheory,
+    renderMatchTheMotion,
+    renderTheoryAnimation,
   };
 })();
 
@@ -156,9 +165,10 @@ function injectFeatureSections() {
     theory.insertAdjacentElement('afterend', makeSection('formula-card', '📐 Formula Card'));
   }
 
-  // After #simulation: Simulation Challenge
+  // After #simulation: Match the Motion → Simulation Challenge
   if (sim) {
     sim.insertAdjacentElement('afterend', makeSection('sim-challenges', '🧪 Challenge Lab'));
+    sim.insertAdjacentElement('afterend', makeSection('match-the-motion', '🎯 Match the Motion'));
   }
 
   // After #quiz-section: Summary Card → Concept Connections
@@ -212,39 +222,37 @@ function findTopicBySlug(chapters, slug) {
  * Appended directly to .topic-content (or <main> as fallback).
  */
 function renderChapterNav(slug, chapters) {
-  // Find which chapter index contains this slug
-  let chapterIdx = -1;
-  for (let i = 0; i < chapters.length; i++) {
-    for (const topic of chapters[i].topics || []) {
-      if ((topic.slug || topic.id) === slug) { chapterIdx = i; break; }
+  // Flatten all topics across all chapters into one ordered list
+  const allTopics = [];
+  for (const ch of chapters) {
+    for (const topic of ch.topics || []) {
+      allTopics.push({ slug: topic.slug || topic.id, title: topic.title || '', icon: topic.icon || ch.icon || '' });
     }
-    if (chapterIdx !== -1) break;
   }
-  if (chapterIdx === -1) return;
 
-  const prev = chapterIdx > 0 ? chapters[chapterIdx - 1] : null;
-  const next = chapterIdx < chapters.length - 1 ? chapters[chapterIdx + 1] : null;
+  const currentIdx = allTopics.findIndex(t => t.slug === slug);
+  if (currentIdx === -1) return;
 
-  const chapterHref = (ch) => {
-    const first = (ch.topics || [])[0];
-    return first ? `../topics/${first.slug || first.id}.html` : '#';
-  };
+  const prev = currentIdx > 0 ? allTopics[currentIdx - 1] : null;
+  const next = currentIdx < allTopics.length - 1 ? allTopics[currentIdx + 1] : null;
+
+  const topicHref = (t) => `../topics/${t.slug}.html`;
 
   const prevHtml = prev
-    ? `<a href="${chapterHref(prev)}" class="chapter-nav__btn chapter-nav__btn--prev">
+    ? `<a href="${topicHref(prev)}" class="chapter-nav__btn chapter-nav__btn--prev">
          <span class="chapter-nav__arrow">←</span>
          <span class="chapter-nav__text">
-           <span class="chapter-nav__label">Previous Chapter</span>
-           <span class="chapter-nav__title">${escapeHtml(prev.icon || '')} ${escapeHtml(prev.title)}</span>
+           <span class="chapter-nav__label">Previous Topic</span>
+           <span class="chapter-nav__title">${escapeHtml(prev.icon)} ${escapeHtml(prev.title)}</span>
          </span>
        </a>`
     : `<span></span>`;
 
   const nextHtml = next
-    ? `<a href="${chapterHref(next)}" class="chapter-nav__btn chapter-nav__btn--next">
+    ? `<a href="${topicHref(next)}" class="chapter-nav__btn chapter-nav__btn--next">
          <span class="chapter-nav__text">
-           <span class="chapter-nav__label">Next Chapter</span>
-           <span class="chapter-nav__title">${escapeHtml(next.icon || '')} ${escapeHtml(next.title)}</span>
+           <span class="chapter-nav__label">Next Topic</span>
+           <span class="chapter-nav__title">${escapeHtml(next.icon)} ${escapeHtml(next.title)}</span>
          </span>
          <span class="chapter-nav__arrow">→</span>
        </a>`
