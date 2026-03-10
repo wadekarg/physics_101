@@ -32,6 +32,17 @@ export function initNav(chapters) {
     overlay.addEventListener('click', closeSidebar);
   }
 
+  // Inject hamburger button into header if not already present
+  const header = document.querySelector('.header');
+  if (header && !header.querySelector('[data-action="toggle-sidebar"]')) {
+    const hamburger = document.createElement('button');
+    hamburger.className = 'btn btn--icon btn--ghost header__hamburger';
+    hamburger.setAttribute('data-action', 'toggle-sidebar');
+    hamburger.setAttribute('aria-label', 'Open navigation');
+    hamburger.innerHTML = '<span style="font-size:1.2rem">&#9776;</span>';
+    header.insertBefore(hamburger, header.firstChild);
+  }
+
   // Bind hamburger / mobile toggle
   document.querySelectorAll('[data-action="toggle-sidebar"]').forEach((btn) => {
     btn.addEventListener('click', toggleSidebar);

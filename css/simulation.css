@@ -130,6 +130,37 @@
   background: var(--bg-primary);
 }
 
+@media (max-width: 600px) {
+  .sim-canvas-container {
+    min-height: 280px;
+  }
+
+  .sim-graph canvas {
+    height: 140px;
+  }
+
+  .sim-params {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-param-label {
+    min-width: 80px;
+  }
+
+  .sim-controls {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .topic-nav__link {
+    max-width: 48%;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .topic-nav__title {
+    font-size: var(--fs-xs);
+  }
+}
+
 /* Topic Page Layout */
 .topic-hero {
   margin-bottom: var(--space-2xl);

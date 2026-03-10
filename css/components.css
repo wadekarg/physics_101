@@ -477,8 +477,8 @@ input[type="range"]::-moz-range-thumb {
   border-left: 4px solid var(--accent);
   border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-lg);
-  min-width: 280px;
-  max-width: 400px;
+  min-width: min(280px, calc(100vw - 2rem));
+  max-width: min(400px, calc(100vw - 2rem));
   animation: toastIn 0.4s var(--transition-spring) forwards;
   display: flex;
   align-items: center;
