@@ -105,39 +105,39 @@
 
 /* Aurora Theme */
 [data-theme="aurora"] {
-  --bg-primary: #020c18;
-  --bg-secondary: #04111f;
-  --bg-tertiary: #071828;
-  --bg-card: rgba(4, 20, 38, 0.88);
-  --bg-glass: rgba(4, 20, 38, 0.65);
+  --bg-primary: #030d1a;
+  --bg-secondary: #061422;
+  --bg-tertiary: #0a1c2e;
+  --bg-card: rgba(6, 22, 38, 0.90);
+  --bg-glass: rgba(6, 22, 38, 0.68);
 
-  --text-primary: #cff0ee;
-  --text-secondary: #7ecece;
-  --text-muted: #3d7a88;
-  --text-heading: #e8fafa;
+  --text-primary: #b8d8d8;
+  --text-secondary: #6aacac;
+  --text-muted: #3a6870;
+  --text-heading: #d0eaea;
 
-  --neon-mechanics: #00d4c8;
-  --neon-waves: #00ffcc;
-  --neon-thermo: #00c9a7;
-  --neon-em: #a855f7;
-  --neon-optics: #00e5ff;
-  --neon-modern: #c084fc;
-  --neon-intro: #5eead4;
+  --neon-mechanics: #3dbfb8;
+  --neon-waves: #3dd4a8;
+  --neon-thermo: #3db89a;
+  --neon-em: #8b5cf6;
+  --neon-optics: #38bcd4;
+  --neon-modern: #a78bfa;
+  --neon-intro: #4ecdc4;
 
-  --accent: #00d4c8;
-  --accent-dim: rgba(0, 212, 200, 0.14);
-  --accent-glow: rgba(0, 212, 200, 0.32);
+  --accent: #3dbfb8;
+  --accent-dim: rgba(61, 191, 184, 0.10);
+  --accent-glow: rgba(61, 191, 184, 0.18);
 
-  --border-color: rgba(0, 212, 200, 0.12);
-  --border-glow: rgba(0, 212, 200, 0.28);
-  --glass-bg: rgba(4, 20, 38, 0.65);
-  --glass-border: 1px solid rgba(0, 212, 200, 0.15);
+  --border-color: rgba(61, 191, 184, 0.09);
+  --border-glow: rgba(61, 191, 184, 0.18);
+  --glass-bg: rgba(6, 22, 38, 0.68);
+  --glass-border: 1px solid rgba(61, 191, 184, 0.12);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 8px 36px rgba(0, 0, 0, 0.65);
-  --shadow-glow: 0 0 24px rgba(0, 212, 200, 0.28);
-  --shadow-neon: 0 0 10px #00d4c8, 0 0 32px rgba(0, 212, 200, 0.18);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.50);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.60);
+  --shadow-lg: 0 8px 36px rgba(0, 0, 0, 0.70);
+  --shadow-glow: 0 0 20px rgba(61, 191, 184, 0.14);
+  --shadow-neon: 0 0 8px rgba(61, 191, 184, 0.5), 0 0 24px rgba(61, 191, 184, 0.10);
 }
 
 /* Light Theme Override */
