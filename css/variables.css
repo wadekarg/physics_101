@@ -103,6 +103,43 @@
   --content-max-width: 1200px;
 }
 
+/* Aurora Theme */
+[data-theme="aurora"] {
+  --bg-primary: #020c18;
+  --bg-secondary: #04111f;
+  --bg-tertiary: #071828;
+  --bg-card: rgba(4, 20, 38, 0.88);
+  --bg-glass: rgba(4, 20, 38, 0.65);
+
+  --text-primary: #cff0ee;
+  --text-secondary: #7ecece;
+  --text-muted: #3d7a88;
+  --text-heading: #e8fafa;
+
+  --neon-mechanics: #00d4c8;
+  --neon-waves: #00ffcc;
+  --neon-thermo: #00c9a7;
+  --neon-em: #a855f7;
+  --neon-optics: #00e5ff;
+  --neon-modern: #c084fc;
+  --neon-intro: #5eead4;
+
+  --accent: #00d4c8;
+  --accent-dim: rgba(0, 212, 200, 0.14);
+  --accent-glow: rgba(0, 212, 200, 0.32);
+
+  --border-color: rgba(0, 212, 200, 0.12);
+  --border-glow: rgba(0, 212, 200, 0.28);
+  --glass-bg: rgba(4, 20, 38, 0.65);
+  --glass-border: 1px solid rgba(0, 212, 200, 0.15);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 8px 36px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 24px rgba(0, 212, 200, 0.28);
+  --shadow-neon: 0 0 10px #00d4c8, 0 0 32px rgba(0, 212, 200, 0.18);
+}
+
 /* Light Theme Override */
 [data-theme="light"] {
   --bg-primary: #f0f0f8;
